@@ -4,34 +4,37 @@
             1: {
                 id: 1,
                     Title: "Why Cat's are the best",
-                    Description: "Cat's are cute and cuddly"
-                    authorId: 2,
-      },
+                        Description: "Cat's are cute and cuddly",
+                            authorId: 2,
+                                number_of_views: 100
+            },
             2: {
                 id: 2,
                     Title: "Why Dog's are the best",
                         Description: "Dog's are loyal companions",
-                        authorId: 6,
-      },
+                            authorId: 6,
+                                number_of_views: 1000
+            },
             3: {
                 id: 3,
                     Title: "Jokes on you, fishes are the best",
                         Description: "GLUB GLUB",
-                        authorId: 20,
-      }
+                            authorId: 20,
+                                number_of_views: 100000
+            }
         },
         users: {
             2: {
                 id: 2,
                     username: "hellowkitty9000",
-                    CreatedVideoIds: [10, 30],    
+                        CreatedVideoIds: [10, 30],    
 
       },
             3: {
                 id: 3,
                     username: "thehulk2000",
-                    CreatedVideoIds: [29],
-                    imgUrl: "https://i.kym-cdn.com/entries/icons/original/000/000/166/keyboar.jpg"
+                        CreatedVideoIds: [29],
+                            imgUrl: "https://i.kym-cdn.com/entries/icons/original/000/000/166/keyboar.jpg"
             }
         },
         VideoLikes: {
@@ -65,31 +68,31 @@
         VideoRepliesToComments: {
             100: {
                 ReplyerId: 15,
-                CommentId: 5,
-                videoId: 1,
+                    CommentId: 5,
+                        videoId: 1,
       },
             200: {
                 ReplyerId: 13,
-                CommentId: 10,
-                    videoId: 5,
+                    CommentId: 10,
+                        videoId: 5,
       },
             300: {
                 ReplyerId: 30,
-                CommentId: 30,
-                    videoId: 3,
+                    CommentId: 30,
+                        videoId: 3,
       },
         }
 
     },
     ui: { //confused on what to put here
         loading: true / false,
-        loadingVideoError: true/false,
+            loadingVideoError: true / false,
     },
     errors: {
         login: ["Incorrect username/password combination"],
             CreatingVideoForm: ["Video title cannot be blank"],
-            CreatingCommentForm: ["Your comment cannot be blank"],
-            CreatingReplyForm: ["Your reply cannot be blank"]
-  },
+                CreatingCommentForm: ["Your comment cannot be blank"],
+                    CreatingReplyForm: ["Your reply cannot be blank"]
+    },
     session: { currentUserId: 29 }
 }

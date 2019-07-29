@@ -1,0 +1,24 @@
+Started GET "/" for ::1 at 2019-07-29 12:58:03 -0700
+
+PG::ConnectionBad - FATAL:  database "videozz_development" does not exist
+:
+
+Started POST "/__better_errors/d6c6b0a1ddc6e4a1/variables" for ::1 at 2019-07-29 12:58:03 -0700
+  [1m[35m (542.6ms)[0m  [1m[35mCREATE DATABASE "videozz_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (443.0ms)[0m  [1m[35mCREATE DATABASE "videozz_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-07-29 13:00:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.3ms)
+Completed 200 OK in 1745ms (Views: 1735.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-07-29 13:01:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 41ms (Views: 36.2ms | ActiveRecord: 0.0ms)
+
+
