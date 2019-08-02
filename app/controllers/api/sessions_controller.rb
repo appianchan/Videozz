@@ -6,8 +6,7 @@ class Api::SessionsController < ApplicationController
             
             render json: {id: user.id, username: user.username}
         else
-
-            render json: [' Cant signin this user'], status:404
+            render json: ["Invalid username/password combination"], status:404
         end
     end
 
@@ -18,7 +17,7 @@ class Api::SessionsController < ApplicationController
            logout 
            render json: [1,2,3];
         else
-            render json: ['error banana 404'], status:404
+            render json: ['Nobody is signed in'], status:404
         end
     end
 end
