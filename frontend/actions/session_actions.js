@@ -24,11 +24,13 @@ const receiveErrors = errors => {
     };
 };
 
-export const createNewUser = formUser => dispatch =>
-    ApiFn.signup(formUser).then(
+export const createNewUser = formUser => dispatch =>{
+    console.log(formUser)
+    return ApiFn.signup(formUser).then(
         user => dispatch(receiveCurrentUser(user)),
         errors => dispatch(receiveErrors(errors))
     );
+}
 
 export const login = formUser => dispatch =>
     ApiFn.login(formUser).then(

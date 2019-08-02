@@ -18,11 +18,10 @@ class Greeting extends React.Component {
         );
     } else {
         return (
-            <div>
+            <div className="nav-2">
                 {/* <p>{this.props.errors.responseJSON}</p> */}
-                <Link to="/signup">Signup</Link>
-                <br />
-                <Link to="/login">Login</Link>
+                <Link className="signup-button" to="/signup">Signup</Link>
+                <Link className="login-button" to="/login">Login</Link>
             </div>
         );
     }
