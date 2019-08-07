@@ -26,6 +26,7 @@ class SessionForm extends React.Component {
     }
 
     renderErrors() {
+    
             // <ul>
             //     {this.props.errors.map.responseJSON.map((error, i) => (
             //         <li key={`error-${i}`}>
@@ -35,12 +36,14 @@ class SessionForm extends React.Component {
             // </ul>
         
       // debugger;
+
       if (this.props.errors instanceof Array || this.props.errors === null) {
         return (
           []
         )
       }else{
         // debugger;
+        console.log(this.props.errors);
         return (
           // this.props.errors.responseJSON
           <ul>
