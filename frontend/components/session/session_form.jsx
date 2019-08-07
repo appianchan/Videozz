@@ -65,7 +65,7 @@ class SessionForm extends React.Component {
           <br/>
           <div className="Choose">Please {this.props.formType} or {this.props.navLink}</div>
           <br/>
-          {this.renderErrors()}
+          
           <div className="login-form">
             <br/>
             <label>Username:
@@ -84,6 +84,7 @@ class SessionForm extends React.Component {
                 className="password"
               />
             </label>
+            {this.renderErrors()}
             <br/>
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
