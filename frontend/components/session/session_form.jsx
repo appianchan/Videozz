@@ -26,27 +26,44 @@ class SessionForm extends React.Component {
     }
 
     renderErrors() {
-      // debugger;
-        return (
             // <ul>
-            //     {this.props.errors.map((error, i) => (
+            //     {this.props.errors.map.responseJSON.map((error, i) => (
             //         <li key={`error-${i}`}>
             //             {error}
             //         </li>
             //     ))}
             // </ul>
-           
-            this.props.errors.responseJSON
+        
+      // debugger;
+      if (this.props.errors instanceof Array || this.props.errors === null) {
+        return (
+          []
+        )
+      }else{
+        // debugger;
+        return (
+          // this.props.errors.responseJSON
+          <ul>
+                {this.props.errors.responseJSON.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
         );
+      }
     }
 
     render(){
     return (
         <div className="login-form-container">
+
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Videozz!
+          <img src='https://amp.businessinsider.com/images/59a59a8d79bbfd1d008b601a-960-480.png' width='100px'
+            height='50px' alt="logo" className="logo-sign-in"/>
+          <h1 className="Welcome-to-Videozz" >Welcome to Videozz!</h1>
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
+          <div className="Choose">Please {this.props.formType} or {this.props.navLink}</div>
           <br/>
           {this.renderErrors()}
           <div className="login-form">
@@ -55,15 +72,16 @@ class SessionForm extends React.Component {
               <input type="text"
                 value={this.state.username}
                 onChange={this.handleInput('username')}
-                
+                className="username"
               />
             </label>
             <br/>
+            
             <label>Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.handleInput('password')}
-
+                className="password"
               />
             </label>
             <br/>

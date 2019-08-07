@@ -7,7 +7,9 @@ import {createNewUser} from "../../actions/session_actions"
 import signupForm from "./session_form";
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger;
     const errors = state.errors.session;
+    state.errors.session = null;
     return {
         errors: errors,
         formType: "Signup",

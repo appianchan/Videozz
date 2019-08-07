@@ -17,19 +17,137 @@
 .header-link {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
+    /* background-image: url(./YouTube-618x350.jpg); */
 }
 
 .signup-button{
     display: inline;
+    text-decoration: none;
+    color: blue;
+    font-size: 20px;
+    margin-left: 20px;
 }
 
 .login-button{
     float: left;
+    color: blue;
+    text-decoration: none;
+    font-size: 20px;
+    
+	
 }
 .nav-1 {
     float: left;
-    background: red;
+    
 }
 .nav-2 {
     float: right;
+}
+
+.login-form-container {
+    /* margin-left: auto;
+    margin-right: auto;
+     */
+    height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center 
+}
+
+.login-form{
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.login-form-box {
+   display: inline-flex;
+        font-size: 20px;
+        border-radius: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        border-style: solid;
+        border-color: grey;
+        padding-top: 48px;
+    padding-right: 40px;
+    padding-bottom: 36px;
+    padding-left: 40px;
+    width: 368px;
+    /* height: 416px; */
+    height: 500px;
+    flex-direction: column;
+
+    /* justify-content: space-between; */
+
+    
+}
+.logo-sign-in{
+    align-self: center;
+}
+
+.Choose{
+    align-self: center;
+    font-weight: normal;
+}
+
+.Welcome-to-Videozz{
+    align-self: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.username{
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.password{
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    font-size: 20px;
+    
+}
+
+.greeting-text-block{
+    /* display: block; */
+    float: right;
+    /* vertical-align: top; */
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.greeting-message{
+    display: inline-block;
+    /* width: 50%; */
+    margin: 0;
+    /* vertical-align: top; */
+}
+
+.logout-button{
+   background-color: blue;
+    color: white;
+    width: 75px;
+    height: 25px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 20px;
+    /* width: 50%; */
+    /* vertical-align: top; */
+}
+
+.session-submit{
+    background-color: blue;
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-size: 25px;
+    /* align-items: flex-end; */
+    border-radius: 5px;
+    align-self: flex-end;
 }
