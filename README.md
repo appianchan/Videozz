@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Videozz is a video presentation application similar to the application youtube. 
 
-Things you may want to cover:
+# FEATURES
 
-* Ruby version
+- allows for login/signin
 
-* System dependencies
 
-* Configuration
+# PROJECT DESIGN
 
-* Database creation
+- Passwords are secured using BCrypt to generate a passord_digest. A user session_token is stored in the database to keep track of each user session. When a user successfully logs in, a session token is generated, stored in the database, and stored on the client-side as a browser cookie.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#FUTURE DIRECTIONS OF THE PROJECT
+1. Video index page
+- will show a feed of videos in the front page and when logged in
+2. Video show page
+- Will be able to show individual videos with comments, view count, and other videos I can access on the side
+3. Profile page
+- be able to see personal information and edit them as needed. 
