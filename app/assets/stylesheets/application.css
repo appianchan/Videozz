@@ -21,11 +21,20 @@
 }
 
 .signup-button{
-    display: inline;
+    display: inline-flex;
     text-decoration: none;
     color: blue;
     font-size: 20px;
     margin-left: 20px;
+    border-radius: 2px;
+    border-width: thin;
+    border-color: blue;
+    border-style: solid;
+    padding-top: 5px;
+    padding-right: 11px;
+    padding-bottom: 5px;
+    padding-left: 11px;
+    margin-top: 2px;
 }
 
 .login-button{
@@ -33,8 +42,15 @@
     color: blue;
     text-decoration: none;
     font-size: 20px;
-    
-	
+    border-color: blue;
+    border-style: solid;
+    padding-top: 5px;
+    padding-right: 11px;
+    padding-bottom: 5px;
+    padding-left: 11px;
+    border-radius: 2px;
+    border-width: thin;
+    margin-top: 2px;
 }
 .nav-1 {
     float: left;
@@ -127,17 +143,28 @@
 .greeting-message{
     display: inline-block;
     /* width: 50%; */
-    margin: 0;
+    margin-top: 10px;
     /* vertical-align: top; */
 }
 
 .logout-button{
-   background-color: blue;
+   /* background-color: blue;
     color: white;
     width: 75px;
     height: 25px;
     font-size: 15px;
-    border-radius: 5px;
+    border-radius: 5px; */
+
+    color: blue;
+    font-size: 20px;
+    border-color: blue;
+    border-style: solid;
+    padding-top: 5px;
+    padding-right: 11px;
+    padding-bottom: 5px;
+    padding-left: 11px;
+    border-radius: 2px;
+    border-width: thin;
     margin-left: 20px;
     /* width: 50%; */
     /* vertical-align: top; */
