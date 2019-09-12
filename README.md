@@ -18,3 +18,6 @@ Videozz is a video presentation application similar to the application youtube.
 - Will be able to show individual videos with comments, view count, and other videos I can access on the side
 3. Profile page
 - be able to see personal information and edit them as needed. 
+
+# Project Link
+https://videozz.herokuapp.com/#/
