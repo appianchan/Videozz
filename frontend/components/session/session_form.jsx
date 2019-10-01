@@ -62,7 +62,7 @@ class SessionForm extends React.Component {
         <div className="login-form-container">
 
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <img src='https://amp.businessinsider.com/images/59a59a8d79bbfd1d008b601a-960-480.png' width='100px'
+          <img src='images/logo.png' width='100px'
             height='50px' alt="logo" className="logo-sign-in"/>
           <h1 className="Welcome-to-Videozz" >Welcome to Videozz!</h1>
           <br/>
