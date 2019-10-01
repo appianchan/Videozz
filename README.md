@@ -10,4 +10,5 @@ Videozz is built with React/Redux on the frontend and Ruby on Rails in the backe
 
 - Passwords are secured using BCrypt to generate a passord_digest. A user session_token is stored in the database to keep track of each user session. When a user successfully logs in, a session token is generated, stored in the database, and stored on the client-side as a browser cookie.
 
+![image](/screenshots/Screen Shot 2019-10-01 at 1.31.54 PM.png)
 
