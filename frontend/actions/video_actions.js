@@ -21,7 +21,7 @@ export const fetchVideos = () => dispatch => (
 
 export const fetchVideo = id => dispatch => (
     APIUtil.fetchVideo(id).then(video => (
-        dispatch(receiveBench(video))
+        dispatch(receiveVideo(video))
     ))
 );
 

@@ -52,6 +52,11 @@
     border-width: thin;
     margin-top: 2px;
 }
+.entire-nav-bar{
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
 .nav-1 {
     float: left;
     

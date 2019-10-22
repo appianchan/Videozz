@@ -3,3 +3,10 @@ export const selectAllVideos = ({ entities: { videos } }) => {
         Object.values(videos)
     )
 }
+
+export const selectAVideo = (state, videoId) => {
+    debugger;
+    return (
+        state.entities.videos[`${videoId}`]
+    )
+}

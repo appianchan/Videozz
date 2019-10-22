@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom';
+import VideoShowContainer from './video_show_container'
 
 export default class VideoIndex extends React.Component {
 
@@ -8,10 +9,12 @@ export default class VideoIndex extends React.Component {
     }
 
     render() {
-        debugger;
         const videos = this.props.videos.map(video =>
-            video.title
+            // video.title
+            <Link to={`/videos/${video.id}`} key={video.id}> {video.title} </Link>
+            
         );
+
 
         return (
 

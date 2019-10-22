@@ -10,8 +10,8 @@ import { Link, Route } from 'react-router-dom';
 const Root = ({ store }) => (
     <Provider store={store}>
         <HashRouter>
-            {/* <App /> */}
-            <Route path="/" component={VideoIndexContainer} />
+            <App />
+            {/* <Route path="/" component={VideoIndexContainer} /> */}
         </HashRouter>
     </Provider>
 );
