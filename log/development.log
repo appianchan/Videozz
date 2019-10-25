@@ -24339,3 +24339,64 @@ Redirected to https://videozz-dev.s3.us-west-1.amazonaws.com/sh4AS518JNPWkACUM3h
 Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
 
 
+Started GET "/" for ::1 at 2019-10-25 01:35:05 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/anthonychan/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  Rendered static_pages/root.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 1722ms (Views: 1689.6ms | ActiveRecord: 27.7ms)
+
+
+Started GET "/api/videos" for ::1 at 2019-10-25 01:35:07 -0700
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (0.8ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Video"], ["name", "video_attatchment"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:4
+  Rendered api/videos/index.json.jbuilder (100.2ms)
+Completed 200 OK in 113ms (Views: 73.8ms | ActiveRecord: 31.8ms)
+
+
+Started GET "/api/videos/2" for ::1 at 2019-10-25 01:35:09 -0700
+Processing by Api::VideosController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mVideo Load (0.4ms)[0m  [1m[34mSELECT  "videos".* FROM "videos" WHERE "videos"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/videos_controller.rb:8
+  Rendering api/videos/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Video"], ["name", "video_attatchment"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/show.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/videos/show.json.jbuilder:3
+  Rendered api/videos/show.json.jbuilder (6.4ms)
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3f4bf32827b9d2115a35c4926a83c42e7a71b3f9/test.mov" for ::1 at 2019-10-25 01:35:09 -0700
+Processing by ActiveStorage::BlobsController#show as 
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3f4bf32827b9d2115a35c4926a83c42e7a71b3f9", "filename"=>"test"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/anthonychan/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.6ms) [0m[34mGenerated URL for file at key: sh4AS518JNPWkACUM3h1CCEk (https://videozz-dev.s3.us-west-1.amazonaws.com/sh4AS518JNPWkACUM3h1CCEk?response-content-disposition=attachment%3B%20filename%3D%22test.mov%22%3B%20filename%2A%3DUTF-8%27%27test.mov&response-content-type=video%2Fquicktime&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4LJGS5X5JUPANTMJ%2F20191025%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20191025T083509Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=921d670cd674fbf6f69aef093fc583f4a4dc2d32472728cea68415f1969d6458)[0m
+Redirected to https://videozz-dev.s3.us-west-1.amazonaws.com/sh4AS518JNPWkACUM3h1CCEk?response-content-disposition=attachment%3B%20filename%3D%22test.mov%22%3B%20filename%2A%3DUTF-8%27%27test.mov&response-content-type=video%2Fquicktime&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4LJGS5X5JUPANTMJ%2F20191025%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20191025T083509Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=921d670cd674fbf6f69aef093fc583f4a4dc2d32472728cea68415f1969d6458
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/api/videos" for ::1 at 2019-10-25 01:35:11 -0700
+Processing by Api::VideosController#index as JSON
+  Rendering api/videos/index.json.jbuilder
+  [1m[36mVideo Load (0.7ms)[0m  [1m[34mSELECT "videos".* FROM "videos"[0m
+  ↳ app/views/api/videos/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Video"], ["name", "video_attatchment"], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:4
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/videos/index.json.jbuilder:4
+  Rendered api/videos/index.json.jbuilder (6.9ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 1.7ms)
+
+
