@@ -15,5 +15,5 @@ u = User.first
 Video.create!(title: "First Video", description: "let's show this video", user_id: u.id, view_count: 3)
 
 v = Video.first
-file = open('https://videozz-dev.s3-us-west-1.amazonaws.com/sh4AS518JNPWkACUM3h1CCEk')
+file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/test_video.mov')
 v.video_attatchment.attach(io: file, filename: "test_video.mov")
