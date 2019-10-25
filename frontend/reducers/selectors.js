@@ -5,7 +5,7 @@ export const selectAllVideos = ({ entities: { videos } }) => {
 }
 
 export const selectAVideo = (state, videoId) => {
-    debugger;
+    // debugger;
     return (
         state.entities.videos[`${videoId}`]
     )

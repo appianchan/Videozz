@@ -8,7 +8,7 @@ export const receiveVideos = videos => ({
     videos,
 });
 
-export const receiveVideo = ({video}) => ({
+export const receiveVideo = (video) => ({
     type: RECEIVE_VIDEO,
     video,
 });
