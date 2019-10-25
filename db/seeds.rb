@@ -14,4 +14,4 @@ u = User.first
 Video.create!(title: "First Video", description: "let's show this video", user_id: u.id, view_count: 3)
 
 v = Video.first
-v.video_attatchment.attach(io: File.open("/User/anthonychan/Desktop/test_video.mov"), filename: "test_video.mov")
+v.video_attatchment.attach(io: File.open("/Users/anthonychan/Desktop/test_video.mov"), filename: "test_video.mov")
