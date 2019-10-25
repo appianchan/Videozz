@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
 
 User.destroy_all
 Video.destroy_all
@@ -14,4 +15,5 @@ u = User.first
 Video.create!(title: "First Video", description: "let's show this video", user_id: u.id, view_count: 3)
 
 v = Video.first
-v.video_attatchment.attach(io: File.open("https://videozz-dev.s3-us-west-1.amazonaws.com/sh4AS518JNPWkACUM3h1CCEk"), filename: "test_video.mov")
+file = open('https://videozz-dev.s3-us-west-1.amazonaws.com/sh4AS518JNPWkACUM3h1CCEk')
+v.video_attatchment.attach(io: file, filename: "test_video.mov")
