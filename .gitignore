@@ -1,3 +1,4 @@
 node_modules/
+config/master.key
 bundle.js
 bundle.js.map
