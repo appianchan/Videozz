@@ -5,7 +5,6 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         // console.log('this is my props:', props);
-        // debugger;
         this.state = {
             username: "",
             password: ""
@@ -62,8 +61,8 @@ class SessionForm extends React.Component {
         <div className="login-form-container">
 
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <img src='images/logo.png' width='100px'
-            height='50px' alt="logo" className="logo-sign-in"/>
+          <img src={window.logoURL} width='75px'
+            height='75px' alt="logo" className="logo-sign-in"/>
           <h1 className="Welcome-to-Videozz" >Welcome to Videozz!</h1>
           <br/>
           <div className="Choose">Please {this.props.formType} or {this.props.navLink}</div>

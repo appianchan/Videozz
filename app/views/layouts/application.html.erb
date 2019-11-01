@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
+  <script type="text/javascript">
+    window.logoURL = "<%= image_url('Logo.jpeg') %>"
+  </script>
   <head>
     <title>Videozz</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all'%>
+
 
     <%= javascript_include_tag 'application'%>
   </head>

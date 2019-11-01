@@ -8,11 +8,12 @@ import VideoShow from './video_show';
 
 export const mapStateToProps = (state, ownProps) => {
     // debugger;
-    const videoId = ownProps.match.params['videoId']
+    const videoId = ownProps.match.params['videoId'];
+    const currentUserId = state.session.id;
     return ({
         video: selectAVideo(state, videoId),
-        videoId: videoId
-
+        videoId: videoId,
+        currentUserId: currentUserId
     })
 }
 
