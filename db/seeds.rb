@@ -19,12 +19,12 @@ file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/test_video.m
 v.video_attatchment.attach(io: file, filename: "test_video.mov")
 
 Video.create!(title: "Second Video", description: "This is the awesomest video ever", user_id: u.id, view_count: 5)
-v = Video.last
+c = Video.last
 file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/vid_2.mov')
-v.video_attatchment.attach(io: file, filename: "test_video_2.mov")
+c.video_attatchment.attach(io: file, filename: "test_video_2.mov")
 
 Video.create!(title: "Third Video", description: "This video is better than the last", user_id: u.id, view_count: 10)
-v = Video.last
+d = Video.last
 file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/vid_3.mov')
-v.video_attatchment.attach(io: file, filename: "test_video_3.mov")
+d.video_attatchment.attach(io: file, filename: "test_video_3.mov")
 
