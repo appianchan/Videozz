@@ -7,6 +7,7 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
 
     has_many :videos 
+    has_many :reviews
 
     def self.find_by_credentials(uname, pwd)
        user = User.find_by(username: uname )

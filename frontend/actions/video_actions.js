@@ -25,3 +25,9 @@ export const fetchVideo = id => dispatch => (
     ))
 );
 
+export const updateVideo = video => dispatch => (
+    APIUtil.updateVideo(video).then(updatedvideo => (
+        dispatch(receiveVideo(updatedvideo))
+    ))
+);
+
