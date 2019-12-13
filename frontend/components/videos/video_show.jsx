@@ -16,15 +16,18 @@ export default class VideoShow extends React.Component {
     componentDidMount() {
         const videoId = this.props.videoId;
         this.props.requestAVideo(videoId);
+        // debugger;
         if (this.props.video) {
             this.props.update(this.props.video);
         }
-        
+        // this.props.update(this.props.video);
     }
     
 
     render() {
+        
         const video = this.props.video;
+        debugger;
         if (!video) {
             return null;
         }

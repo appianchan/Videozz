@@ -15,7 +15,7 @@ export const fetchVideo = id => (
 export const updateVideo = video => (
     $.ajax({
         method: 'PATCH',
-        url: `api/videos/${video.id}`,
+        url: `/api/videos/${video.id}`,
         data: {video}
     })
 );

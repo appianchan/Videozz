@@ -11,11 +11,12 @@ export default class VideoShow extends React.Component {
         };
         this.handleClick = this.handleClick.bind(this);
     }
-    componentDidMount() {
+    // componentDidMount() {
         
-        this.props.update(this.props.video);
+    //     this.props.update(this.state.video);
 
-    }
+    // }
+    
 
     handleClick(e) {
         e.preventDefault();
@@ -39,14 +40,21 @@ export default class VideoShow extends React.Component {
 
             
         } else {
-            // debugger;
+            
+
             this.state.likes.push(this.state.currentUserId);
             
+           
             this.setState((state, props) => ({
                 likes: this.state.likes
             }))
             this.props.update(this.state.video);
-            // this.props.video.likes.push(this.props.currentUserId);
+            // this.state.video.likes.push(this.state.currentUserId);
+            // debugger;
+            // this.props.update(this.state.video).then(this.setState((state, props) => ({
+            //     likes: this.state.likes
+            // })))
+            
         }
     }
     render(){
