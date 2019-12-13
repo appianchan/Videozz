@@ -19,7 +19,14 @@ export default class Reviews extends React.Component {
     // }
 
 
-    handleClick(e) {
+    handleSubmit(e) {
+        <input type="review"
+            value={this.state.password}
+            onChange={this.handleInput('review')}
+            className="review"
+        />
+    }
+    addReview(){
         
     }
 
@@ -37,10 +44,15 @@ export default class Reviews extends React.Component {
         //     )
         // }
         return(
-            <textarea cols="50" rows="5">
-                Write your review here
-            </textarea>
-        )
+            <form onSubmit={this.handleSubmit}>
+                <input type="review"
+                    value="Write a review here"
+                    onChange={this.addReview()}
+                    className="review"
+                />
+           </form>
+
+        );
         
     }
 
