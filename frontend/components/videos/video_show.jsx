@@ -60,12 +60,16 @@ export default class VideoShow extends React.Component {
                     
                     <div className="show-description">{this.props.video.description}</div>
                 </div>
-                {/* <div className="review-container">
+                <div className="review-container">
                     <Reviews 
                         id={this.props.video.id}
+                        update={this.props.update}
+                        reviews={this.props.video.reviews}
                         currentUserId={this.props.currentUserId}
+                        video={this.props.video}
                     />
-                </div> */}
+                </div>
+                
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 
             </div>
