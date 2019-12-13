@@ -6,28 +6,29 @@ export default class Reviews extends React.Component {
         // debugger;
         this.state = {
             reviews: this.props.reviews || [],
+            review: "",
             currentUserId: this.props.currentUserId,
             video: this.props.video,
             edit: false
         };
-        this.handleClick = this.handleClick.bind(this);
     }
     // componentDidMount() {
 
     //     this.props.update(this.state.video);
 
     // }
+    handleInput(type) {
+        return e => {
+            this.setState({ [type]: e.target.value });
+        };
+    }
 
 
     handleSubmit(e) {
-        <input type="review"
-            value={this.state.password}
-            onChange={this.handleInput('review')}
-            className="review"
-        />
+        
     }
     addReview(){
-        
+
     }
 
     render() {
@@ -46,10 +47,11 @@ export default class Reviews extends React.Component {
         return(
             <form onSubmit={this.handleSubmit}>
                 <input type="review"
-                    value="Write a review here"
-                    onChange={this.addReview()}
+                    // value="Write a review here"
+                    onChange={this.handleInput('review')}
                     className="review"
                 />
+                <input className="review-submit" type="submit" value="submit" />
            </form>
 
         );
