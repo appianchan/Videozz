@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class VideoShow extends React.Component {
+export default class Likes extends React.Component {
     constructor(props) {
         super(props);
         // debugger;
