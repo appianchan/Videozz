@@ -28,7 +28,6 @@ export default class VideoShow extends React.Component {
     render() {
         
         const video = this.props.video;
-        debugger;
         if (!video) {
             return null;
         }
@@ -76,6 +75,7 @@ export default class VideoShow extends React.Component {
                         reviews={this.props.video.reviews}
                         currentUserId={this.props.currentUserId}
                         video={this.props.video}
+                        username={this.props.username}
                     />
                 </div>
                 
