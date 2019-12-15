@@ -141,9 +141,14 @@ export default class Likes extends React.Component {
     render(){
         return (
     <div>
-        <i class="far fa-thumbs-up" onClick={this.handleLikes}>&nbsp;{this.state.likes.length}</i>
-        <i class="far fa-thumbs-down" onClick={this.handleDislikes}>&nbsp;{this.state.dislikes.length}</i>
+        {/* <i class="far fa-thumbs-up" onClick={this.handleLikes}>&nbsp;{this.state.likes.length}</i>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="far fa-thumbs-down"  onClick={this.handleDislikes}>&nbsp;{this.state.dislikes.length}</i> */}
 
+        <i class={this.state.likes.includes(this.state.currentUserId) ? "fas fa-thumbs-up" : "far fa-thumbs-up"} onClick={this.handleLikes}>&nbsp;{this.state.likes.length}</i>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <i class={this.state.dislikes.includes(this.state.currentUserId) ? "fas fa-thumbs-down" : "far fa-thumbs-down"}  onClick={this.handleDislikes}>&nbsp;{this.state.dislikes.length}</i>
+        
 
         {/* <div className="show-likes" onClick={this.handleLikes}>Likes: {this.state.likes.length}</div> */}
         {/* <div className="show-dislikes" onClick={this.handleDislikes}>Dislikes: {this.state.dislikes.length}</div> */}
