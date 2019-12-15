@@ -7,6 +7,7 @@ export default class Reviews extends React.Component {
         this.state = {
             reviews: this.props.reviews || [],
             review: "",
+            username: this.props.username,
             currentUserId: this.props.currentUserId,
             video: this.props.video,
             edit: false
@@ -21,13 +22,20 @@ export default class Reviews extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        
+        const review = {};
+        review["username"] = review;
+
+        this.setState(state => ({
+            reviews: this.state.reviews.push(this.state.review),
+            review: ""
+        }));
     }
     
 
     render() {
        
         return(
+            <div>
             <form onSubmit={this.handleSubmit}>
                 <input type="review"
                     // value="Write a review here"
@@ -36,7 +44,11 @@ export default class Reviews extends React.Component {
                 />
                 <input className="review-submit" type="submit" value="comment" />
            </form>
+            <div>
+                {this.state.reviews}
+            </div>
 
+            </div>
         );
         
     }
