@@ -6,10 +6,12 @@ export default class Likes extends React.Component {
         // debugger;
         this.state = {
             likes: this.props.likes || [],
+            dislikes: this.props.dislikes || [],
             currentUserId: this.props.currentUserId,
             video: this.props.video
         };
-        this.handleClick = this.handleClick.bind(this);
+        this.handleLikes = this.handleLikes.bind(this);
+        this.handleDislikes = this.handleDislikes.bind(this);
     }
     // componentDidMount() {
         
@@ -18,9 +20,9 @@ export default class Likes extends React.Component {
     // }
     
 
-    handleClick(e) {
+    handleLikes(e) {
         e.preventDefault();
-        // debugger;
+        // first if case: if likes array includes the userID
         if (this.state.likes.includes(this.state.currentUserId)) {
             const index_item = this.state.likes.indexOf(this.state.currentUserId);
             const temp = this.state.likes
@@ -37,8 +39,29 @@ export default class Likes extends React.Component {
                 }));
                 this.props.update(this.state.video);
             }
-
+        // second if case: if dislikes includes the userID
+        } else if (this.state.dislikes.includes(this.state.currentUserId)){
+            const index_item = this.state.dislikes.indexOf(this.state.currentUserId);
+            const temp = this.state.dislikes
             
+            if (this.state.dislikes.length === 1) {
+                this.state.likes.push(this.state.currentUserId);
+                this.setState(state => ({
+                    dislikes: [],
+                    likes: this.state.likes
+                }))
+                this.props.update(this.state.video);
+            } else {
+                const temp2 = temp.slice(0, index_item) + temp.slice(index_item + 1, -1);
+                this.state.likes.push(this.state.currentUserId);
+                this.setState(state => ({
+                    dislikes: temp2,
+                    likes: this.state.likes
+                }));
+                this.props.update(this.state.video);
+            }
+
+        //last case: if none includes the userID
         } else {
             
 
@@ -57,10 +80,69 @@ export default class Likes extends React.Component {
             
         }
     }
+
+    handleDislikes(e) {
+        e.preventDefault();
+        debugger;
+        // first if case: if dislikes array includes the userID
+        if (this.state.dislikes.includes(this.state.currentUserId)) {
+            const index_item = this.state.dislikes.indexOf(this.state.currentUserId);
+            const temp = this.state.dislikes
+
+            if (this.state.dislikes.length === 1) {
+                this.setState(state => ({
+                    dislikes: []
+                }))
+                this.props.update(this.state.video);
+            } else {
+                const temp2 = temp.slice(0, index_item) + temp.slice(index_item + 1, -1);
+                this.setState(state => ({
+                    dislikes: temp2
+                }));
+                this.props.update(this.state.video);
+            }
+
+        } else if (this.state.likes.includes(this.state.currentUserId)) {
+            const index_item = this.state.likes.indexOf(this.state.currentUserId);
+            const temp = this.state.likes
+
+            if (this.state.likes.length === 1) {
+                this.state.dislikes.push(this.state.currentUserId);
+                this.setState(state => ({
+                    likes: [],
+                    dislikes: this.state.dislikes
+                }))
+                this.props.update(this.state.video);
+            } else {
+                const temp2 = temp.slice(0, index_item) + temp.slice(index_item + 1, -1);
+                this.state.dislikes.push(this.state.currentUserId);
+                this.setState(state => ({
+                    likes: temp2,
+                    dislikes: this.state.likes
+                }));
+                this.props.update(this.state.video);
+            }
+
+        //last case: if none includes the userID
+        } else {
+
+
+            this.state.dislikes.push(this.state.currentUserId);
+
+
+            this.setState((state, props) => ({
+                dislikes: this.state.dislikes
+            }))
+            this.props.update(this.state.video);
+
+
+        }
+    }
     render(){
         return (
     <div>
-        <div className="show-likes" onClick={this.handleClick}>Likes: {this.state.likes.length}</div>
+        <div className="show-likes" onClick={this.handleLikes}>Likes: {this.state.likes.length}</div>
+        <div className="show-dislikes" onClick={this.handleDislikes}>Dislikes: {this.state.dislikes.length}</div>
     </div>
         )
     }

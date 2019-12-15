@@ -50,13 +50,13 @@ export default class VideoShow extends React.Component {
                         dislikes={this.props.video.dislikes}
                         currentUserId={this.props.currentUserId}
                         video={this.props.video} />
-                    <Dislikes 
+                    {/* <Dislikes 
                         id={this.props.video.id}
                         update={this.props.update}
                         likes={this.props.video.likes}
                         dislikes={this.props.video.dislikes}
                         currentUserId={this.props.currentUserId}
-                        video={this.props.video} />
+                        video={this.props.video} /> */}
                 </div>
                 
                 {/* <div>

@@ -6,6 +6,7 @@ export default class Dislikes extends React.Component {
        
         this.state = {
             dislikes: this.props.dislikes || [],
+            likes: this.props.likes || [],
             currentUserId: this.props.currentUserId,
             video: this.props.video
         };
