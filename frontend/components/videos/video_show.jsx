@@ -1,7 +1,7 @@
 import React from 'react';
-import Likes from './likes';
+import LikesandDislikes from './likes';
 import Reviews from './reviews';
-import Dislikes from './dislikes';
+// import Dislikes from './dislikes';
 
 export default class VideoShow extends React.Component {
 
@@ -43,7 +43,7 @@ export default class VideoShow extends React.Component {
 
                 <div className="title-container">
                     <div className="show-title">{this.props.video.title}</div>
-                    <Likes
+                    <LikesandDislikes
                         id={this.props.video.id}
                         update={this.props.update}
                         likes={this.props.video.likes}
