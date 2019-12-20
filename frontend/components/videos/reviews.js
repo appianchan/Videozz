@@ -14,41 +14,56 @@ export default class Reviews extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    // componentDidMount() {
-
-    //     this.props.update(this.state.video);
-
-    // }
+    
+  update(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value});
+    };
+  }
 
     handleSubmit(e) {
         e.preventDefault();
-        const review = {};
-        review["username"] = review;
-
+        // debugger;
+        const empty = this.state.reviews;
+        empty.push(this.state.review);
         this.setState(state => ({
-            reviews: this.state.reviews.push(this.state.review),
-            review: ""
+          reviews: empty,
+          review: ""
         }));
+        debugger;
     }
     
 
     render() {
        
-        return(
-            <div>
-            <form onSubmit={this.handleSubmit}>
-                <input type="review"
+        return (
+          <div>
+            <form className="comment-form" onSubmit={this.handleSubmit}>
+              {/* <input type="review"
                     // value="Write a review here"
                     // onChange={this.handleInput('review')}
                     className="review"
+                /> */}
+              <div className="textarea-container">
+                <div className="comment-length">{this.state.reviews.length} Comments</div>
+                <textarea
+                  rows="6"
+                  cols="160"
+                  className="review-textbox"
+                  value={this.state.review}
+                  onChange={this.update("review")}
                 />
-                <input className="review-submit" type="submit" value="comment" />
-           </form>
-            <div>
-                {this.state.reviews}
-            </div>
+              </div>
 
-            </div>
+              <input className="comment-submit" type="submit" value="comment" />
+            </form>
+            {/* <div>{this.state.reviews}</div> */}
+            <ul className="review-index">
+              {this.state.reviews.map((review, i) => (
+                <li key={`review-${i}`}>{review}</li>
+              ))}
+            </ul>
+          </div>
         );
         
     }
