@@ -38,27 +38,27 @@ export default class Reviews extends React.Component {
        
         return (
           <div>
-            <form onSubmit={this.handleSubmit}>
+            <form className="comment-form" onSubmit={this.handleSubmit}>
               {/* <input type="review"
                     // value="Write a review here"
                     // onChange={this.handleInput('review')}
                     className="review"
                 /> */}
               <div className="textarea-container">
-                <div>{this.state.reviews.length} Comments</div>
+                <div className="comment-length">{this.state.reviews.length} Comments</div>
                 <textarea
                   rows="6"
-                  cols="200"
+                  cols="160"
                   className="review-textbox"
                   value={this.state.review}
                   onChange={this.update("review")}
                 />
               </div>
 
-              <input className="review-submit" type="submit" value="comment" />
+              <input className="comment-submit" type="submit" value="comment" />
             </form>
             {/* <div>{this.state.reviews}</div> */}
-            <ul>
+            <ul className="review-index">
               {this.state.reviews.map((review, i) => (
                 <li key={`review-${i}`}>{review}</li>
               ))}
