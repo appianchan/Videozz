@@ -24,7 +24,7 @@ export default class Reviews extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // debugger;
-        const empty = [];
+        const empty = this.state.reviews;
         empty.push(this.state.review);
         this.setState(state => ({
           reviews: empty,
@@ -44,13 +44,25 @@ export default class Reviews extends React.Component {
                     // onChange={this.handleInput('review')}
                     className="review"
                 /> */}
-              <textarea
-                value={this.state.review}
-                onChange={this.update("review")}
-              />
+              <div className="textarea-container">
+                <div>{this.state.reviews.length} Comments</div>
+                <textarea
+                  rows="6"
+                  cols="200"
+                  className="review-textbox"
+                  value={this.state.review}
+                  onChange={this.update("review")}
+                />
+              </div>
+
               <input className="review-submit" type="submit" value="comment" />
             </form>
-            <div>{this.state.reviews}</div>
+            {/* <div>{this.state.reviews}</div> */}
+            <ul>
+              {this.state.reviews.map((review, i) => (
+                <li key={`review-${i}`}>{review}</li>
+              ))}
+            </ul>
           </div>
         );
         
