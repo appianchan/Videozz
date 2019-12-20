@@ -14,41 +14,44 @@ export default class Reviews extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    // componentDidMount() {
-
-    //     this.props.update(this.state.video);
-
-    // }
+    
+  update(field) {
+    return (e) => {
+      this.setState({[field]: e.target.value});
+    };
+  }
 
     handleSubmit(e) {
         e.preventDefault();
-        const review = {};
-        review["username"] = review;
-
+        // debugger;
+        const empty = [];
+        empty.push(this.state.review);
         this.setState(state => ({
-            reviews: this.state.reviews.push(this.state.review),
-            review: ""
+          reviews: empty,
+          review: ""
         }));
+        debugger;
     }
     
 
     render() {
        
-        return(
-            <div>
+        return (
+          <div>
             <form onSubmit={this.handleSubmit}>
-                <input type="review"
+              {/* <input type="review"
                     // value="Write a review here"
                     // onChange={this.handleInput('review')}
                     className="review"
-                />
-                <input className="review-submit" type="submit" value="comment" />
-           </form>
-            <div>
-                {this.state.reviews}
-            </div>
-
-            </div>
+                /> */}
+              <textarea
+                value={this.state.review}
+                onChange={this.update("review")}
+              />
+              <input className="review-submit" type="submit" value="comment" />
+            </form>
+            <div>{this.state.reviews}</div>
+          </div>
         );
         
     }

@@ -11,8 +11,8 @@ export const mapStateToProps = (state, ownProps) => {
     // debugger;
     const videoId = ownProps.match.params['videoId'];
     const currentUserId = state.session.id;
-    // debugger;
-    const username = state.entities.users[currentUserId].username;
+    // const username = state.entities.users[currentUserId].username;
+    
     // if(currentUserId !== undefined){
     //     debugger;
     //     const username = state.session.entities[currentUserId].username;
@@ -23,7 +23,7 @@ export const mapStateToProps = (state, ownProps) => {
         video: selectAVideo(state, videoId),
         videoId: videoId,
         currentUserId: currentUserId,
-        username: username
+        // username: username
     })
 }
 
