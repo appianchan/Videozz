@@ -64,7 +64,7 @@ export default class VideoShow extends React.Component {
                 
                 
                 <div className="description-container">
-                    <div className="description-title">Description:</div>
+                    {/* <div className="description-title">Description:</div> */}
                     
                     <div className="show-description">{this.props.video.description}</div>
                 </div>
