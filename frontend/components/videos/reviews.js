@@ -47,7 +47,7 @@ export default class Reviews extends React.Component {
               <div className="textarea-container">
                 <div className="comment-length">{this.state.reviews.length} Comments</div>
                 <textarea
-                  rows="6"
+                  rows="1"
                   cols="160"
                   className="review-textbox"
                   value={this.state.review}
