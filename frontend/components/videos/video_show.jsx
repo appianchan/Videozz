@@ -7,7 +7,6 @@ export default class VideoShow extends React.Component {
 
     constructor(props){
         super(props);
-        // debugger;
     
         this.state = {
             video: this.props.video || []
@@ -17,7 +16,6 @@ export default class VideoShow extends React.Component {
     componentDidMount() {
         const videoId = this.props.videoId;
         this.props.requestAVideo(videoId);
-        // debugger;
         if (this.props.video) {
             this.props.update(this.props.video);
         }

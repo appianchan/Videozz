@@ -23,14 +23,12 @@ export default class Reviews extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger;
         const empty = this.state.reviews;
         empty.push(this.state.review);
         this.setState(state => ({
           reviews: empty,
           review: ""
         }));
-        debugger;
     }
     
 
@@ -56,6 +54,7 @@ export default class Reviews extends React.Component {
               </div>
 
               <input className="comment-submit" type="submit" value="comment" />
+              
             </form>
             {/* <div>{this.state.reviews}</div> */}
             <ul className="review-index">
