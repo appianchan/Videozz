@@ -20,6 +20,9 @@ export default class Reviews extends React.Component {
       this.setState({[field]: e.target.value});
     };
   }
+  onClick(){
+
+  }
 
     handleSubmit(e) {
         e.preventDefault();
