@@ -221,9 +221,11 @@
 } */
 .fa-thumbs-up{
     font-size: 30px;
+    color: grey;
 }
 .fa-thumbs-down{
     font-size: 30px;
+    color: grey
 }
 
 .description-container{
