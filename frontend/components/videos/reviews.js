@@ -10,9 +10,11 @@ export default class Reviews extends React.Component {
             username: this.props.username,
             currentUserId: this.props.currentUserId,
             video: this.props.video,
-            edit: false
+            edit: false,
+            button: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.showButton = this.showButton.bind(this);
     }
     
   update(field) {
@@ -20,8 +22,10 @@ export default class Reviews extends React.Component {
       this.setState({[field]: e.target.value});
     };
   }
-  onClick(){
-
+  showButton(){
+    this.setState(state => ({
+      button: true
+    }));
   }
 
     handleSubmit(e) {
@@ -50,13 +54,15 @@ export default class Reviews extends React.Component {
                 <textarea
                   rows="1"
                   cols="160"
+             
                   className="review-textbox"
                   value={this.state.review}
                   onChange={this.update("review")}
                 />
               </div>
 
-              <input className="comment-submit" type="submit" value="comment" />
+              <input className="comment-submit" visibility="hidden" type="submit" value="comment" />
+              {/* style={this.state.button === false ? { "display: none;"} : { "display: initial;"}} */}
               
             </form>
             {/* <div>{this.state.reviews}</div> */}
