@@ -14,7 +14,7 @@ export const mapStateToProps = (state, ownProps) => {
     const currentUserId = state.session.id;
     // const username = state.entities.users[currentUserId].username;
     if(currentUserId !== undefined){
-        var user = state.entities.users[17].username;
+        var user = state.entities.users[currentUserId].username;
     }
     
     

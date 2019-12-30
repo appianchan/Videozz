@@ -7,7 +7,7 @@ export default class Reviews extends React.Component {
         this.state = {
             reviews: this.props.reviews || [],
             review: "Add a public comment...",
-            username: this.props.username,
+            user: this.props.user,
             currentUserId: this.props.currentUserId,
             video: this.props.video,
             edit: false,
@@ -35,7 +35,7 @@ export default class Reviews extends React.Component {
         // debugger;
         if(this.state.review !== ""){
           const empty = this.state.reviews;
-          empty.push(this.state.review);
+          empty.push([this.state.user, this.state.review]);
           this.setState(state => ({
             reviews: empty,
             review: "Add a public comment...",
@@ -54,7 +54,7 @@ export default class Reviews extends React.Component {
     
 
     render() {
-      //  debugger;
+       debugger;
         return (
           <div>
             <form className="comment-form" onSubmit={this.handleSubmit}>
@@ -88,7 +88,7 @@ export default class Reviews extends React.Component {
             {/* <div>{this.state.reviews}</div> */}
             <ul className="review-index">
               {this.state.reviews.map((review, i) => (
-                <li key={`review-${i}`}>{review}</li>
+                <li key={`review-${i}`}>{review[0]}{review[1]}</li>
               ))}
             </ul>
           </div>
