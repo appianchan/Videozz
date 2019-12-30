@@ -54,7 +54,7 @@ export default class Reviews extends React.Component {
     
 
     render() {
-       debugger;
+      //  debugger;
         return (
           <div>
             <form className="comment-form" onSubmit={this.handleSubmit}>
@@ -88,7 +88,9 @@ export default class Reviews extends React.Component {
             {/* <div>{this.state.reviews}</div> */}
             <ul className="review-index">
               {this.state.reviews.map((review, i) => (
-                <li key={`review-${i}`}>{review[0]}{review[1]}</li>
+                // <li key={`review-user`}>{review[0]}{review[1]}</li>
+                <li className="review-user">{review[0]}{review[1]}</li>
+                // <li className="review-body">{review[1]}</li>
               ))}
             </ul>
           </div>
