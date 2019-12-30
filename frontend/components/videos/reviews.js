@@ -41,7 +41,8 @@ export default class Reviews extends React.Component {
 
     hideButton(){
       this.setState((state, props) => ({
-        button: false
+        button: false,
+        review: ""
       }))
     }
     
@@ -68,13 +69,13 @@ export default class Reviews extends React.Component {
                 />
               </div>
 
-              {/* <input style={{display: 'none'}} className="comment-submit" type="submit" value="comment" /> */}
-              <input style={{ display: this.state.button === false ? "none" : "initial" }} className="comment-submit" type="submit" value="comment" />
+              
+              <button type="button" onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit">CANCEL</button> 
+              <input style={{ display: this.state.button === false ? "none" : "initial" }} className="comment-submit" type="submit" value="COMMENT" />
               
               
               {/* styles={this.state.button === false ? "display: hidden;" : "display: initial;"} */}
             </form>
-              <button onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit" value="Cancel" />
             {/* <div>{this.state.reviews}</div> */}
             <ul className="review-index">
               {this.state.reviews.map((review, i) => (

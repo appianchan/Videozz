@@ -276,8 +276,22 @@
     height: 50px;
     font-size: 25px;
     /* align-items: flex-end; */
+    font-family: Roboto, Arial, sans-serif;
     margin-right: 80px;
     border-radius: 5px;
+    align-self: flex-end;
+    /* display:none; */
+}
+.cancel-submit{
+    background-color: white;
+    color: grey;
+    height: 50px;
+    font-size: 25px;
+    /* align-items: flex-end; */
+    font-family: Roboto, Arial, sans-serif;
+    margin-right: 80px;
+    /* border-radius: 5px; */
+    border: none;
     align-self: flex-end;
     /* display:none; */
 }
