@@ -9,21 +9,20 @@ import VideoShow from './video_show';
 
 export const mapStateToProps = (state, ownProps) => {
     // debugger;
+
     const videoId = ownProps.match.params['videoId'];
     const currentUserId = state.session.id;
     // const username = state.entities.users[currentUserId].username;
-    
-    // if(currentUserId !== undefined){
-    //     debugger;
-    //     const username = state.session.entities[currentUserId].username;
-    // }
+    if(currentUserId !== undefined){
+        var user = state.entities.users[currentUserId].username;
+    }
     
     
     return ({
         video: selectAVideo(state, videoId),
         videoId: videoId,
         currentUserId: currentUserId,
-        // username: username
+        user: user || ""
     })
 }
 

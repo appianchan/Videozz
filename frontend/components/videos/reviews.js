@@ -6,13 +6,15 @@ export default class Reviews extends React.Component {
         // debugger;
         this.state = {
             reviews: this.props.reviews || [],
-            review: "",
-            username: this.props.username,
+            review: "Add a public comment...",
+            user: this.props.user,
             currentUserId: this.props.currentUserId,
             video: this.props.video,
-            edit: false
+            edit: false,
+            button: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        // this.showButton = this.showButton.bind(this);
     }
     
   update(field) {
@@ -20,23 +22,39 @@ export default class Reviews extends React.Component {
       this.setState({[field]: e.target.value});
     };
   }
-  onClick(){
-
+  showButton(){
+    // document.getElementsByClassName("comment-submit").style.display="initial";
+    this.setState((state, props) => ({
+      review: "",
+      button: true
+    }))
   }
 
     handleSubmit(e) {
         e.preventDefault();
-        const empty = this.state.reviews;
-        empty.push(this.state.review);
-        this.setState(state => ({
-          reviews: empty,
-          review: ""
-        }));
+        // debugger;
+        if(this.state.review !== ""){
+          const empty = this.state.reviews;
+          empty.push([this.state.user, this.state.review]);
+          this.setState(state => ({
+            reviews: empty,
+            review: "Add a public comment...",
+            button: false
+          }));
+        }
+        
+    }
+
+    hideButton(){
+      this.setState((state, props) => ({
+        button: false,
+        review: "Add a public comment..."
+      }))
     }
     
 
     render() {
-       
+      //  debugger;
         return (
           <div>
             <form className="comment-form" onSubmit={this.handleSubmit}>
@@ -50,19 +68,32 @@ export default class Reviews extends React.Component {
                 <textarea
                   rows="1"
                   cols="160"
+                  onClick={this.showButton.bind(this)}
                   className="review-textbox"
                   value={this.state.review}
                   onChange={this.update("review")}
                 />
               </div>
 
-              <input className="comment-submit" type="submit" value="comment" />
+                <div className="comment-button-group">
+                  <button type="button" onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit">CANCEL</button>
+                  <input style={{ display: this.state.button === false ? "none" : "initial" }} className="comment-submit" type="submit" value="COMMENT" />
+                </div>
               
+              
+              
+              
+              {/* styles={this.state.button === false ? "display: hidden;" : "display: initial;"} */}
             </form>
             {/* <div>{this.state.reviews}</div> */}
             <ul className="review-index">
               {this.state.reviews.map((review, i) => (
-                <li key={`review-${i}`}>{review}</li>
+                // <li key={`review-user`}>{review[0]}{review[1]}</li>
+                <li className="review-content">
+                  <div className="review-user">{review[0]}</div>
+                  <div className="review-body">{review[1]}</div>
+                  </li>
+                // <li className="review-body">{review[1]}</li>
               ))}
             </ul>
           </div>

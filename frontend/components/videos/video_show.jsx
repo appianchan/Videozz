@@ -31,7 +31,7 @@ export default class VideoShow extends React.Component {
         }
         // debugger;
         return (
-
+            
             <div className="show-container">
                 <div className="video-container">
                     <video className="show-video" width="1600px" height="700px" src={`${this.props.video.videoUrl}`} controls>
@@ -71,6 +71,7 @@ export default class VideoShow extends React.Component {
                         id={this.props.video.id}
                         update={this.props.update}
                         reviews={this.props.video.reviews}
+                        user={this.props.user}
                         currentUserId={this.props.currentUserId}
                         video={this.props.video}
                         username={this.props.username}

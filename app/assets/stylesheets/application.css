@@ -202,7 +202,7 @@
 .title-container{
     margin-left: 80px;
     margin-top: 5px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid lightgray;
     margin-bottom: 15px;
     margin-right: 80px;
     height: 50px;
@@ -251,8 +251,13 @@
     flex-direction: column;
     
 }
+.comment-button-group{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-end;
+}
 .textarea-container{
-    border-top: 1px solid black;
+    border-top: 1px solid lightgrey;
     margin-left: 80px;
     margin-right: 80px;
     
@@ -270,14 +275,36 @@
     font-size: 20px;
     margin-left: 50px;
 }
+.review-user{
+    font-family:Roboto, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+
+}
+.review-body{
+    font-family:Roboto, Arial, sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
 .comment-submit{
     background-color: blue;
     color: white;
     height: 50px;
     font-size: 25px;
     /* align-items: flex-end; */
+    font-family: Roboto, Arial, sans-serif;
     margin-right: 80px;
     border-radius: 5px;
+    align-self: flex-end;
+    /* display:none; */
+}
+.cancel-submit{
+    background-color: white;
+    color: grey;
+    height: 50px;
+    font-size: 25px;
+    font-family: Roboto, Arial, sans-serif;
+    border: none;
     align-self: flex-end;
 }
 /* video index css starts here */
