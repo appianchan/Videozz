@@ -14,15 +14,15 @@ export const mapStateToProps = (state, ownProps) => {
     const currentUserId = state.session.id;
     // const username = state.entities.users[currentUserId].username;
     if(currentUserId !== undefined){
-        const user = state.entities.users[currentUserId].username;
+        var user = state.entities.users[17].username;
     }
     
     
     return ({
         video: selectAVideo(state, videoId),
         videoId: videoId,
-        currentUserId: currentUserId
-        // user: user
+        currentUserId: currentUserId,
+        user: user || ""
     })
 }
 
