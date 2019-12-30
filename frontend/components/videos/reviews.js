@@ -89,7 +89,10 @@ export default class Reviews extends React.Component {
             <ul className="review-index">
               {this.state.reviews.map((review, i) => (
                 // <li key={`review-user`}>{review[0]}{review[1]}</li>
-                <li className="review-user">{review[0]}{review[1]}</li>
+                <li className="review-content">
+                  <div className="review-user">{review[0]}</div>
+                  <div className="review-body">{review[1]}</div>
+                  </li>
                 // <li className="review-body">{review[1]}</li>
               ))}
             </ul>

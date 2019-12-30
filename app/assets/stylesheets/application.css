@@ -275,6 +275,17 @@
     font-size: 20px;
     margin-left: 50px;
 }
+.review-user{
+    font-family:Roboto, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+
+}
+.review-body{
+    font-family:Roboto, Arial, sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
 .comment-submit{
     background-color: blue;
     color: white;
