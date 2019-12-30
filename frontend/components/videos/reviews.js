@@ -6,7 +6,7 @@ export default class Reviews extends React.Component {
         // debugger;
         this.state = {
             reviews: this.props.reviews || [],
-            review: "",
+            review: "Add A Public Comment...",
             username: this.props.username,
             currentUserId: this.props.currentUserId,
             video: this.props.video,
@@ -25,6 +25,7 @@ export default class Reviews extends React.Component {
   showButton(){
     // document.getElementsByClassName("comment-submit").style.display="initial";
     this.setState((state, props) => ({
+      review: "",
       button: true
     }))
   }
@@ -35,14 +36,14 @@ export default class Reviews extends React.Component {
         empty.push(this.state.review);
         this.setState(state => ({
           reviews: empty,
-          review: ""
+          review: "Add a public comment..."
         }));
     }
 
     hideButton(){
       this.setState((state, props) => ({
         button: false,
-        review: ""
+        review: "Add a public comment..."
       }))
     }
     
@@ -69,9 +70,12 @@ export default class Reviews extends React.Component {
                 />
               </div>
 
+                <div className="comment-button-group">
+                  <button type="button" onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit">CANCEL</button>
+                  <input style={{ display: this.state.button === false ? "none" : "initial" }} className="comment-submit" type="submit" value="COMMENT" />
+                </div>
               
-              <button type="button" onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit">CANCEL</button> 
-              <input style={{ display: this.state.button === false ? "none" : "initial" }} className="comment-submit" type="submit" value="COMMENT" />
+              
               
               
               {/* styles={this.state.button === false ? "display: hidden;" : "display: initial;"} */}

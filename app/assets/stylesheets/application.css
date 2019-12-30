@@ -251,6 +251,11 @@
     flex-direction: column;
     
 }
+.comment-button-group{
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-end;
+}
 .textarea-container{
     border-top: 1px solid lightgrey;
     margin-left: 80px;
@@ -287,13 +292,9 @@
     color: grey;
     height: 50px;
     font-size: 25px;
-    /* align-items: flex-end; */
     font-family: Roboto, Arial, sans-serif;
-    margin-right: 80px;
-    /* border-radius: 5px; */
     border: none;
     align-self: flex-end;
-    /* display:none; */
 }
 /* video index css starts here */
 .thumbnail{
