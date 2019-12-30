@@ -14,7 +14,7 @@ export default class Reviews extends React.Component {
             button: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.showButton = this.showButton.bind(this);
+        // this.showButton = this.showButton.bind(this);
     }
     
   update(field) {
@@ -23,7 +23,10 @@ export default class Reviews extends React.Component {
     };
   }
   showButton(){
-    // document.getElementsByClassName("rawr").style.display="initial";
+    // document.getElementsByClassName("comment-submit").style.display="initial";
+    this.setState((state, props) => ({
+      button: true
+    }))
   }
 
     handleSubmit(e) {
@@ -35,10 +38,16 @@ export default class Reviews extends React.Component {
           review: ""
         }));
     }
+
+    hideButton(){
+      this.setState((state, props) => ({
+        button: false
+      }))
+    }
     
 
     render() {
-       debugger;
+      //  debugger;
         return (
           <div>
             <form className="comment-form" onSubmit={this.handleSubmit}>
@@ -52,17 +61,20 @@ export default class Reviews extends React.Component {
                 <textarea
                   rows="1"
                   cols="160"
-                  onClick={this.showButton()}
+                  onClick={this.showButton.bind(this)}
                   className="review-textbox"
                   value={this.state.review}
                   onChange={this.update("review")}
                 />
               </div>
 
-              <input id="rawr" className="comment-submit" type="submit" value="comment" />
+              {/* <input style={{display: 'none'}} className="comment-submit" type="submit" value="comment" /> */}
+              <input style={{ display: this.state.button === false ? "none" : "initial" }} className="comment-submit" type="submit" value="comment" />
+              
               
               {/* styles={this.state.button === false ? "display: hidden;" : "display: initial;"} */}
             </form>
+              <button onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit" value="Cancel" />
             {/* <div>{this.state.reviews}</div> */}
             <ul className="review-index">
               {this.state.reviews.map((review, i) => (
