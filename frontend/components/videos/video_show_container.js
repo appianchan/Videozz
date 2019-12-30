@@ -9,7 +9,7 @@ import VideoShow from './video_show';
 
 export const mapStateToProps = (state, ownProps) => {
     // debugger;
-    debugger;
+
     const videoId = ownProps.match.params['videoId'];
     const currentUserId = state.session.id;
     // const username = state.entities.users[currentUserId].username;

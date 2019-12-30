@@ -6,7 +6,7 @@ export default class Reviews extends React.Component {
         // debugger;
         this.state = {
             reviews: this.props.reviews || [],
-            review: "Add A Public Comment...",
+            review: "Add a public comment...",
             username: this.props.username,
             currentUserId: this.props.currentUserId,
             video: this.props.video,
@@ -32,12 +32,17 @@ export default class Reviews extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const empty = this.state.reviews;
-        empty.push(this.state.review);
-        this.setState(state => ({
-          reviews: empty,
-          review: "Add a public comment..."
-        }));
+        // debugger;
+        if(this.state.review !== ""){
+          const empty = this.state.reviews;
+          empty.push(this.state.review);
+          this.setState(state => ({
+            reviews: empty,
+            review: "Add a public comment...",
+            button: false
+          }));
+        }
+        
     }
 
     hideButton(){
