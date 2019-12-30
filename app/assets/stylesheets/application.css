@@ -279,7 +279,7 @@
     margin-right: 80px;
     border-radius: 5px;
     align-self: flex-end;
-    
+    display:none;
 }
 /* video index css starts here */
 .thumbnail{

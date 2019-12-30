@@ -23,9 +23,7 @@ export default class Reviews extends React.Component {
     };
   }
   showButton(){
-    this.setState(state => ({
-      button: true
-    }));
+    // document.getElementsByClassName("rawr").style.display="initial";
   }
 
     handleSubmit(e) {
@@ -40,7 +38,7 @@ export default class Reviews extends React.Component {
     
 
     render() {
-       
+       debugger;
         return (
           <div>
             <form className="comment-form" onSubmit={this.handleSubmit}>
@@ -61,9 +59,9 @@ export default class Reviews extends React.Component {
                 />
               </div>
 
-              <input className="comment-submit" visibility="hidden" type="submit" value="comment" />
-              {/* style={this.state.button === false ? { "display: none;"} : { "display: initial;"}} */}
+              <input id="rawr" className="comment-submit" type="submit" value="comment" />
               
+              {/* styles={this.state.button === false ? "display: hidden;" : "display: initial;"} */}
             </form>
             {/* <div>{this.state.reviews}</div> */}
             <ul className="review-index">
