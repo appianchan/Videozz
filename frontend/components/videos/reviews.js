@@ -54,7 +54,7 @@ export default class Reviews extends React.Component {
                 <textarea
                   rows="1"
                   cols="160"
-             
+                  onClick={this.showButton()}
                   className="review-textbox"
                   value={this.state.review}
                   onChange={this.update("review")}
