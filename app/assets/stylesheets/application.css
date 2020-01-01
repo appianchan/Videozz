@@ -290,19 +290,23 @@
     /* background-color: blue; */
     color: white;
     height: 50px;
-    font-size: 25px;
+    font-size: 18px;
     /* align-items: flex-end; */
     font-family: Roboto, Arial, sans-serif;
     margin-right: 80px;
     border-radius: 5px;
     align-self: flex-end;
     /* display:none; */
+    padding-top: 10px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  padding-left: 16px;
 }
 .cancel-submit{
     background-color: white;
     color: grey;
     height: 50px;
-    font-size: 25px;
+    font-size: 18px;
     font-family: Roboto, Arial, sans-serif;
     border: none;
     align-self: flex-end;
