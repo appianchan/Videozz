@@ -50,6 +50,7 @@ export default class Reviews extends React.Component {
           this.setState(state => ({
             reviews: empty,
             review: "Add a public comment...",
+            reviewcounter: false,
             button: false
           }));
         }
