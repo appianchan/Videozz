@@ -7,6 +7,7 @@ export default class Reviews extends React.Component {
         this.state = {
             reviews: this.props.reviews || [],
             review: "Add a public comment...",
+            reviewcounter: false,
             user: this.props.user,
             currentUserId: this.props.currentUserId,
             video: this.props.video,
@@ -24,10 +25,20 @@ export default class Reviews extends React.Component {
   }
   showButton(){
     // document.getElementsByClassName("comment-submit").style.display="initial";
-    this.setState((state, props) => ({
-      review: "",
-      button: true
-    }))
+    var reviewprevious = this.state.review;
+    if (this.state.reviewcounter === false){
+      this.setState((state, props) => ({
+        reviewcounter: true,
+        review: "",
+        button: true
+      }))
+    } else {
+      this.setState((state, props) => ({
+        review: reviewprevious,
+        button: true
+      }))
+    }
+    
   }
 
     handleSubmit(e) {
@@ -35,7 +46,7 @@ export default class Reviews extends React.Component {
         // debugger;
         if(this.state.review !== ""){
           const empty = this.state.reviews;
-          empty.push([this.state.user, this.state.review]);
+          empty.unshift([this.state.user, this.state.review]);
           this.setState(state => ({
             reviews: empty,
             review: "Add a public comment...",
@@ -77,7 +88,12 @@ export default class Reviews extends React.Component {
 
                 <div className="comment-button-group">
                   <button type="button" onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit">CANCEL</button>
-                  <input style={{ display: this.state.button === false ? "none" : "initial" }} className="comment-submit" type="submit" value="COMMENT" />
+                  <input 
+                  style={{ display: this.state.button === false ? "none" : "initial", backgroundColor: this.state.review === "" ? "grey" : "rgba(6, 95, 212)"}}
+                  // style={{ color: "grey" }}
+                  className="comment-submit" 
+                  type="submit" 
+                  value="COMMENT" />
                 </div>
               
               
