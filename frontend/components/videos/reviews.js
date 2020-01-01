@@ -35,7 +35,7 @@ export default class Reviews extends React.Component {
         // debugger;
         if(this.state.review !== ""){
           const empty = this.state.reviews;
-          empty.push([this.state.user, this.state.review]);
+          empty.unshift([this.state.user, this.state.review]);
           this.setState(state => ({
             reviews: empty,
             review: "Add a public comment...",
