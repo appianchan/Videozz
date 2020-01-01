@@ -287,7 +287,7 @@
     margin-bottom: 20px;
 }
 .comment-submit{
-    background-color: blue;
+    /* background-color: blue; */
     color: white;
     height: 50px;
     font-size: 25px;

@@ -77,7 +77,12 @@ export default class Reviews extends React.Component {
 
                 <div className="comment-button-group">
                   <button type="button" onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit">CANCEL</button>
-                  <input style={{ display: this.state.button === false ? "none" : "initial" }} className="comment-submit" type="submit" value="COMMENT" />
+                  <input 
+                  style={{ display: this.state.button === false ? "none" : "initial" }}
+                  background-color={this.state.review === "" ? grey : blue}
+                  className="comment-submit" 
+                  type="submit" 
+                  value="COMMENT" />
                 </div>
               
               
