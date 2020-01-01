@@ -269,6 +269,10 @@
 }
 .review-textbox{
     font-size: 20px;
+    border-top: white;
+    border-left: white;
+    border-right: white;
+    outline: none;
 }
 .review-index{
     list-style: none;

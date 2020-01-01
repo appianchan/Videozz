@@ -7,6 +7,7 @@ export default class Reviews extends React.Component {
         this.state = {
             reviews: this.props.reviews || [],
             review: "Add a public comment...",
+            reviewcounter: false,
             user: this.props.user,
             currentUserId: this.props.currentUserId,
             video: this.props.video,
@@ -24,10 +25,20 @@ export default class Reviews extends React.Component {
   }
   showButton(){
     // document.getElementsByClassName("comment-submit").style.display="initial";
-    this.setState((state, props) => ({
-      review: "",
-      button: true
-    }))
+    var reviewprevious = this.state.review;
+    if (this.state.reviewcounter === false){
+      this.setState((state, props) => ({
+        reviewcounter: true,
+        review: "",
+        button: true
+      }))
+    } else {
+      this.setState((state, props) => ({
+        review: reviewprevious,
+        button: true
+      }))
+    }
+    
   }
 
     handleSubmit(e) {
