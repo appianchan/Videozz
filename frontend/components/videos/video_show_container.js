@@ -28,7 +28,7 @@ export const mapStateToProps = (state, ownProps) => {
 
 export const mapDispatchToProps = dispatch => ({
     requestAVideo: (videoId) => dispatch(fetchVideo(videoId)),
-    update: video => dispatch(updateVideo(video))
+    update: (video) => dispatch(updateVideo(video))
 });
 
 export default connect(

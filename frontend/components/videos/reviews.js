@@ -18,6 +18,9 @@ class Reviews extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         // this.showButton = this.showButton.bind(this);
     }
+    componentDidMount(){
+      this.props.requestAVideo(this.props.video.id);
+    }
     
   update(field) {
     return (e) => {
@@ -46,12 +49,13 @@ class Reviews extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger;
+        // debugger;
         if(this.state.review !== ""){
           const empty = this.state.reviews;
           empty.unshift([this.state.user, this.state.review]);
           var newvideo = this.props.video;
           newvideo.reviews = empty;
+          debugger;
           this.props.update(newvideo).then(
           this.setState(state => ({
             reviews: empty,
