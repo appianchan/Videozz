@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link, withRouter } from "react-router-dom";
 
-export default class Reviews extends React.Component {
+class Reviews extends React.Component {
     constructor(props) {
         super(props);
         // debugger;
@@ -26,7 +27,10 @@ export default class Reviews extends React.Component {
   showButton(){
     // document.getElementsByClassName("comment-submit").style.display="initial";
     var reviewprevious = this.state.review;
-    if (this.state.reviewcounter === false){
+    debugger;
+    if (this.props.user === ""){
+      this.props.history.push("/signup")
+    }else if (this.state.reviewcounter === false){
       this.setState((state, props) => ({
         reviewcounter: true,
         review: "",
@@ -120,3 +124,5 @@ export default class Reviews extends React.Component {
     }
 
 }
+
+export default withRouter(Reviews);
