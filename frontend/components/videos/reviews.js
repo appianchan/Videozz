@@ -59,6 +59,7 @@ export default class Reviews extends React.Component {
 
     hideButton(){
       this.setState((state, props) => ({
+        reviewcounter: false,
         button: false,
         review: "Add a public comment..."
       }))
