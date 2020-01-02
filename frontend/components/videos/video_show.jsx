@@ -16,9 +16,9 @@ export default class VideoShow extends React.Component {
     componentDidMount() {
         const videoId = this.props.videoId;
         this.props.requestAVideo(videoId);
-        if (this.props.video) {
-            this.props.update(this.props.video);
-        }
+        // if (this.props.video) {
+        //     this.props.update(this.props.video);
+        // }
         // this.props.update(this.props.video);
     }
     
@@ -70,6 +70,7 @@ export default class VideoShow extends React.Component {
                     <Reviews 
                         id={this.props.video.id}
                         update={this.props.update}
+                        requestAVideo={this.props.requestAVideo}
                         reviews={this.props.video.reviews}
                         user={this.props.user}
                         currentUserId={this.props.currentUserId}
