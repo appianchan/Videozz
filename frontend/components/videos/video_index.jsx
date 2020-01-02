@@ -42,7 +42,7 @@ export default class VideoIndex extends React.Component {
         if (this.props.videos[0] === undefined) {
             return null;
         }
-        debugger;
+        // debugger;
             const holder = videos.forEach(video =>
                     {video.title}
                 );

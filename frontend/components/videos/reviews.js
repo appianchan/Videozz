@@ -27,7 +27,6 @@ class Reviews extends React.Component {
   showButton(){
     // document.getElementsByClassName("comment-submit").style.display="initial";
     var reviewprevious = this.state.review;
-    debugger;
     if (this.props.user === ""){
       this.props.history.push("/signup")
     }else if (this.state.reviewcounter === false){
@@ -47,16 +46,19 @@ class Reviews extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger;
+        debugger;
         if(this.state.review !== ""){
           const empty = this.state.reviews;
           empty.unshift([this.state.user, this.state.review]);
+          var newvideo = this.props.video;
+          newvideo.reviews = empty;
+          this.props.update(newvideo).then(
           this.setState(state => ({
             reviews: empty,
             review: "Add a public comment...",
             reviewcounter: false,
             button: false
-          }));
+          })));
         }
         
     }
