@@ -305,6 +305,7 @@
   padding-right: 16px;
   padding-bottom: 10px;
   padding-left: 16px;
+  outline: none;
 }
 .cancel-submit{
     background-color: white;
@@ -314,6 +315,7 @@
     font-family: Roboto, Arial, sans-serif;
     border: none;
     align-self: flex-end;
+    outline: none;
 }
 /* video index css starts here */
 .thumbnail{
