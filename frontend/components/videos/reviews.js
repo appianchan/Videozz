@@ -31,7 +31,7 @@ class Reviews extends React.Component {
     // document.getElementsByClassName("comment-submit").style.display="initial";
     var reviewprevious = this.state.review;
     if (this.props.user === ""){
-      this.props.history.push("/signup")
+      this.props.history.push("/login")
     }else if (this.state.reviewcounter === false){
       this.setState((state, props) => ({
         reviewcounter: true,

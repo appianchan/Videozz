@@ -24,7 +24,7 @@ class Likes extends React.Component {
     handleLikes(e) {
         e.preventDefault();
         if (this.props.user === "") {
-            this.props.history.push("/signup")
+            this.props.history.push("/login")
         }
         // first if case: if likes array includes the userID
         if (this.state.likes.includes(this.state.currentUserId)) {
@@ -88,7 +88,7 @@ class Likes extends React.Component {
     handleDislikes(e) {
         e.preventDefault();
         if (this.props.user === "") {
-            this.props.history.push("/signup")
+            this.props.history.push("/login")
         }
         // first if case: if dislikes array includes the userID
         if (this.state.dislikes.includes(this.state.currentUserId)) {
