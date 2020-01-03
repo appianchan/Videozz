@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-    mode: "development",
+    mode: "production",
     context: __dirname,
     entry: "./frontend/entry.jsx",
     output: {
