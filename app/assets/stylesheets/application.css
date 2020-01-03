@@ -254,9 +254,12 @@ i.fas{
 .icon-container:active{
     background-color: lightgrey;
     border-radius:50%;
+    /* opacity: 0; */
+    transition: all 0.2s
     /* height: 33px;
     width: 33px; */
 }
+
 i.far{
 color: #606060
 }
