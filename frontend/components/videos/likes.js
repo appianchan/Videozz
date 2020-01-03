@@ -157,7 +157,7 @@ class Likes extends React.Component {
             &nbsp; 
             <div className="likes-number">{this.state.likes.length}</div>
         </div>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
         <div className="dislike-parent" onClick={this.handleDislikes}>
             <div className={this.state.dislikes.includes(this.state.currentUserId) ? "icon-container" : "icon-container-2"}>
             <i class={this.state.dislikes.includes(this.state.currentUserId) ? "fas fa-thumbs-down" : "far fa-thumbs-down"}></i>
