@@ -234,24 +234,35 @@
 .likes-number{
     font-size: 30px;
     color:#606060;
+    padding-top: 4px;
 }
 .dislikes-number{
     font-size: 30px;
-    color: #606060
+    color: #606060;
+    padding-top: 4px;
 }
 i.fas{
     color: rgba(6, 95, 212)
 }
+.icon-container{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .icon-container:active{
-    background-color: grey;
+    background-color: lightgrey;
     border-radius:50%;
+    /* height: 33px;
+    width: 33px; */
 }
 i.far{
 color: #606060
 }
 .fa-thumbs-up{
     font-size: 30px;
-    
+    padding-bottom: 5px;
 }
 .fa-thumbs-down{
     font-size: 30px;
