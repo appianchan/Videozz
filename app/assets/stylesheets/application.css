@@ -393,6 +393,21 @@ color: #606060
   padding-left: 16px;
   outline: none;
 }
+
+.comment-submit:active{
+    animation-name: colorchange3;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+@keyframes colorchange3 {
+  
+  100% {
+    opacity: 1;
+    background-color: lightgrey;
+  }
+}
+
+
 .cancel-submit{
     background-color: white;
     color: grey;
@@ -401,7 +416,25 @@ color: #606060
     font-family: Roboto, Arial, sans-serif;
     border: none;
     align-self: flex-end;
-    outline: none;
+    margin-right: 5px;
+    padding-top: 10px;
+  padding-right: 14px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  outline: none;
+    border-radius: 3px;
+}
+.cancel-submit:active{
+    animation-name: colorchange3;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+@keyframes colorchange3 {
+  
+  100% {
+    opacity: 1;
+    background-color: lightgrey;
+  }
 }
 /* video index css starts here */
 .thumbnail{
