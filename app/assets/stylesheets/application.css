@@ -244,6 +244,34 @@
 i.fas{
     color: rgba(6, 95, 212)
 }
+.icon-container-2{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-container-2:active{
+    
+    border-radius:50%;
+    /* opacity: 0; */
+    animation-name: colorchange2;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards; 
+    /* animation-duration: infinite; */
+    /* background-color: lightgrey; */
+    
+    /* height: 33px;
+    width: 33px; */
+}
+
+@keyframes colorchange2 {
+  
+  100% {
+    opacity: 1;
+    background-color: lightgrey;
+  }
+}
 .icon-container{
     width: 50px;
     height: 50px;
@@ -256,7 +284,7 @@ i.fas{
     border-radius:50%;
     /* opacity: 0; */
     animation-name: colorchange;
-    animation-duration: 0.2s;
+    animation-duration: 0.3s;
     animation-fill-mode: forwards; 
     /* animation-duration: infinite; */
     /* background-color: lightgrey; */
@@ -267,13 +295,9 @@ i.fas{
 
 @keyframes colorchange {
   
-  /* 20% {
-    transform: scale(5, 5);
-    opacity: 1;
-  } */
   100% {
     opacity: 1;
-    background-color: lightgrey;
+    background-color: lightblue;
   }
 }
 

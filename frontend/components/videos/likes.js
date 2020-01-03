@@ -145,7 +145,7 @@ export default class Likes extends React.Component {
         &nbsp;&nbsp;&nbsp;&nbsp;
         <i class="far fa-thumbs-down"  onClick={this.handleDislikes}>&nbsp;{this.state.dislikes.length}</i> */}
         <div className="like-parent" onClick={this.handleLikes}>
-            <div className="icon-container">
+            <div className={this.state.likes.includes(this.state.currentUserId) ? "icon-container" : "icon-container-2"}>
             <i class={this.state.likes.includes(this.state.currentUserId) ? "fas fa-thumbs-up" : "far fa-thumbs-up"} ></i>
             </div>
             &nbsp; 
@@ -153,9 +153,9 @@ export default class Likes extends React.Component {
         </div>
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
         <div className="dislike-parent" onClick={this.handleDislikes}>
-            <div className="icon-container">
-            </div>
+            <div className={this.state.dislikes.includes(this.state.currentUserId) ? "icon-container" : "icon-container-2"}>
             <i class={this.state.dislikes.includes(this.state.currentUserId) ? "fas fa-thumbs-down" : "far fa-thumbs-down"}></i>
+            </div>
             &nbsp; 
             <div className="dislikes-number">{this.state.dislikes.length}</div>
         </div>
