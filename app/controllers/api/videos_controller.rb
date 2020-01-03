@@ -19,7 +19,7 @@ class Api::VideosController < ApplicationController
 
   private
   def video_params
-    params.require(:video).permit(:likes, :dislikes)
+    params.require(:video).permit(:likes)
   end
 
 
