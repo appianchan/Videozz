@@ -257,6 +257,7 @@ i.fas{
     /* opacity: 0; */
     animation-name: colorchange;
     animation-duration: 0.2s;
+    animation-fill-mode: forwards; 
     /* animation-duration: infinite; */
     /* background-color: lightgrey; */
     
