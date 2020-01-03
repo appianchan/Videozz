@@ -252,27 +252,28 @@ i.fas{
     align-items: center;
 }
 .icon-container:active{
-    background-color: lightgrey;
+    
     border-radius:50%;
     /* opacity: 0; */
-    animation: ripple 0.2s ease-in;
+    animation-name: colorchange;
+    animation-duration: 0.2s;
+    /* animation-duration: infinite; */
+    /* background-color: lightgrey; */
+    
     /* height: 33px;
     width: 33px; */
 }
 
-@keyframes ripple {
-  0% {
-    transform: scale(0, 0);
-    opacity: 0;
-  }
+@keyframes colorchange {
+  
   /* 20% {
     transform: scale(5, 5);
     opacity: 1;
   } */
-  /* 100% {
-    opacity: 0;
-    transform: scale(10, 10);
-  } */
+  100% {
+    opacity: 1;
+    background-color: lightgrey;
+  }
 }
 
 i.far{
@@ -281,7 +282,7 @@ color: #606060
 .fa-thumbs-up{
     font-size: 30px;
     padding-bottom: 5px;
-    animation: ripple 0.2s ease-in reverse;
+
 }
 .fa-thumbs-down{
     font-size: 30px;
