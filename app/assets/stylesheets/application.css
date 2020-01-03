@@ -376,8 +376,8 @@ color: #606060
     font-size: 1.4rem;
     margin-bottom: 20px;
 }
-.comment-submit{
-    /* background-color: blue; */
+.comment-submit-grey{
+    background-color: grey;
     color: white;
     height: 50px;
     font-size: 18px;
@@ -394,16 +394,34 @@ color: #606060
   outline: none;
 }
 
-.comment-submit:active{
-    animation-name: colorchange3;
+.comment-submit-blue{
+    background-color: rgba(6, 95, 212);
+    color: white;
+    height: 50px;
+    font-size: 18px;
+    /* align-items: flex-end; */
+    font-family: Roboto, Arial, sans-serif;
+    margin-right: 80px;
+    border-radius: 5px;
+    align-self: flex-end;
+    /* display:none; */
+    padding-top: 10px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  outline: none;
+}
+
+.comment-submit-blue:active{
+    animation-name: colorchange4;
     animation-duration: 0.4s;
     animation-fill-mode: forwards;
 }
-@keyframes colorchange3 {
+@keyframes colorchange4 {
   
   100% {
     opacity: 1;
-    background-color: lightgrey;
+    background-color: rgb(37, 84, 145);
   }
 }
 

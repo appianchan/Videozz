@@ -55,7 +55,7 @@ class Reviews extends React.Component {
           empty.unshift([this.state.user, this.state.review]);
           var newvideo = this.props.video;
           newvideo.reviews = empty;
-          debugger;
+
           this.props.update(newvideo).then(
           this.setState(state => ({
             reviews: empty,
@@ -101,9 +101,9 @@ class Reviews extends React.Component {
                 <div className="comment-button-group">
                   <button type="button" onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit">CANCEL</button>
                   <input 
-                  style={{ display: this.state.button === false ? "none" : "initial", backgroundColor: this.state.review === "" ? "grey" : "rgba(6, 95, 212)"}}
+                  style={{ display: this.state.button === false ? "none" : "initial"}}
                   // style={{ color: "grey" }}
-                  className="comment-submit" 
+                  className={this.state.review === "" ? "comment-submit-grey" : "comment-submit-blue"}
                   type="submit" 
                   value="COMMENT" />
                 </div>
