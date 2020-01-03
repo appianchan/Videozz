@@ -255,9 +255,24 @@ i.fas{
     background-color: lightgrey;
     border-radius:50%;
     /* opacity: 0; */
-    transition: all 0.2s
+    animation: ripple 0.2s ease-in;
     /* height: 33px;
     width: 33px; */
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+  /* 20% {
+    transform: scale(5, 5);
+    opacity: 1;
+  } */
+  /* 100% {
+    opacity: 0;
+    transform: scale(10, 10);
+  } */
 }
 
 i.far{
@@ -266,6 +281,7 @@ color: #606060
 .fa-thumbs-up{
     font-size: 30px;
     padding-bottom: 5px;
+    animation: ripple 0.2s ease-in reverse;
 }
 .fa-thumbs-down{
     font-size: 30px;
