@@ -43,6 +43,7 @@ export default class VideoShow extends React.Component {
                     <LikesandDislikes
                         id={this.props.video.id}
                         update={this.props.update}
+                        user={this.props.user}
                         likes={this.props.video.likes}
                         dislikes={this.props.video.dislikes}
                         currentUserId={this.props.currentUserId}

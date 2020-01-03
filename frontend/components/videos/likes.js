@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link, withRouter } from "react-router-dom";
 
-export default class Likes extends React.Component {
+class Likes extends React.Component {
     constructor(props) {
         super(props);
         // debugger;
@@ -22,6 +23,9 @@ export default class Likes extends React.Component {
 
     handleLikes(e) {
         e.preventDefault();
+        if (this.props.user === "") {
+            this.props.history.push("/login")
+        }
         // first if case: if likes array includes the userID
         if (this.state.likes.includes(this.state.currentUserId)) {
             const index_item = this.state.likes.indexOf(this.state.currentUserId);
@@ -83,7 +87,9 @@ export default class Likes extends React.Component {
 
     handleDislikes(e) {
         e.preventDefault();
-        debugger;
+        if (this.props.user === "") {
+            this.props.history.push("/login")
+        }
         // first if case: if dislikes array includes the userID
         if (this.state.dislikes.includes(this.state.currentUserId)) {
             const index_item = this.state.dislikes.indexOf(this.state.currentUserId);
@@ -145,13 +151,17 @@ export default class Likes extends React.Component {
         &nbsp;&nbsp;&nbsp;&nbsp;
         <i class="far fa-thumbs-down"  onClick={this.handleDislikes}>&nbsp;{this.state.dislikes.length}</i> */}
         <div className="like-parent" onClick={this.handleLikes}>
+            <div className={this.state.likes.includes(this.state.currentUserId) ? "icon-container" : "icon-container-2"}>
             <i class={this.state.likes.includes(this.state.currentUserId) ? "fas fa-thumbs-up" : "far fa-thumbs-up"} ></i>
+            </div>
             &nbsp; 
             <div className="likes-number">{this.state.likes.length}</div>
         </div>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
         <div className="dislike-parent" onClick={this.handleDislikes}>
+            <div className={this.state.dislikes.includes(this.state.currentUserId) ? "icon-container" : "icon-container-2"}>
             <i class={this.state.dislikes.includes(this.state.currentUserId) ? "fas fa-thumbs-down" : "far fa-thumbs-down"}></i>
+            </div>
             &nbsp; 
             <div className="dislikes-number">{this.state.dislikes.length}</div>
         </div>
@@ -164,3 +174,4 @@ export default class Likes extends React.Component {
     }
 
 }
+export default withRouter(Likes);

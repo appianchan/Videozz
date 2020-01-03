@@ -234,23 +234,80 @@
 .likes-number{
     font-size: 30px;
     color:#606060;
+    padding-top: 4px;
 }
 .dislikes-number{
     font-size: 30px;
-    color: #606060
+    color: #606060;
+    padding-top: 4px;
 }
 i.fas{
     color: rgba(6, 95, 212)
 }
-i.fas:active{
-    box-shadow: 0px 5px
+.icon-container-2{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.icon-container-2:active{
+    
+    border-radius:50%;
+    /* opacity: 0; */
+    animation-name: colorchange2;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards; 
+    /* animation-duration: infinite; */
+    /* background-color: lightgrey; */
+    
+    /* height: 33px;
+    width: 33px; */
+}
+
+@keyframes colorchange2 {
+  
+  100% {
+    opacity: 1;
+    background-color: lightgrey;
+  }
+}
+.icon-container{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-container:active{
+    
+    border-radius:50%;
+    /* opacity: 0; */
+    animation-name: colorchange;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards; 
+    /* animation-duration: infinite; */
+    /* background-color: lightgrey; */
+    
+    /* height: 33px;
+    width: 33px; */
+}
+
+@keyframes colorchange {
+  
+  100% {
+    opacity: 1;
+    background-color: lightblue;
+  }
+}
+
 i.far{
 color: #606060
 }
 .fa-thumbs-up{
     font-size: 30px;
-    
+    padding-bottom: 5px;
+
 }
 .fa-thumbs-down{
     font-size: 30px;
@@ -319,8 +376,8 @@ color: #606060
     font-size: 1.4rem;
     margin-bottom: 20px;
 }
-.comment-submit{
-    /* background-color: blue; */
+.comment-submit-grey{
+    background-color: grey;
     color: white;
     height: 50px;
     font-size: 18px;
@@ -336,6 +393,39 @@ color: #606060
   padding-left: 16px;
   outline: none;
 }
+
+.comment-submit-blue{
+    background-color: rgba(6, 95, 212);
+    color: white;
+    height: 50px;
+    font-size: 18px;
+    /* align-items: flex-end; */
+    font-family: Roboto, Arial, sans-serif;
+    margin-right: 80px;
+    border-radius: 5px;
+    align-self: flex-end;
+    /* display:none; */
+    padding-top: 10px;
+  padding-right: 16px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  outline: none;
+}
+
+.comment-submit-blue:active{
+    animation-name: colorchange4;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+@keyframes colorchange4 {
+  
+  100% {
+    opacity: 1;
+    background-color: rgb(37, 84, 145);
+  }
+}
+
+
 .cancel-submit{
     background-color: white;
     color: grey;
@@ -344,7 +434,25 @@ color: #606060
     font-family: Roboto, Arial, sans-serif;
     border: none;
     align-self: flex-end;
-    outline: none;
+    margin-right: 5px;
+    padding-top: 10px;
+  padding-right: 14px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  outline: none;
+    border-radius: 3px;
+}
+.cancel-submit:active{
+    animation-name: colorchange3;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+@keyframes colorchange3 {
+  
+  100% {
+    opacity: 1;
+    background-color: lightgrey;
+  }
 }
 /* video index css starts here */
 .thumbnail{
