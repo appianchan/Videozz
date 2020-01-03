@@ -242,7 +242,7 @@
     padding-top: 4px;
 }
 i.fas{
-    color: rgba(6, 95, 212)
+    color: rgb(6, 95, 212)
 }
 .icon-container-2{
     width: 50px;
@@ -395,7 +395,7 @@ color: #606060
 }
 
 .comment-submit-blue{
-    background-color: rgba(6, 95, 212);
+    background-color: rgb(6, 95, 212);
     color: white;
     height: 50px;
     font-size: 18px;
