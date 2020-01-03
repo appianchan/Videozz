@@ -243,7 +243,8 @@ i.fas{
     color: rgba(6, 95, 212)
 }
 .icon-container:active{
-    color: grey;
+    background-color: grey;
+    border-radius:50%;
 }
 i.far{
 color: #606060
