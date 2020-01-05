@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom';
 import VideoShowContainer from './video_show_container';
+import VideoIndexNavbar from './video_index_navbar';
 
 
 export default class VideoIndex extends React.Component {
@@ -47,6 +48,8 @@ export default class VideoIndex extends React.Component {
                     {video.title}
                 );
         return (
+            <div className="index-page">
+            <VideoIndexNavbar />
             
             <section className="videos">
                 
@@ -57,6 +60,7 @@ export default class VideoIndex extends React.Component {
                 </ul>
 
             </section>
+            </div>
         )
     }
 }

@@ -67,6 +67,7 @@
     float: right;
 }
 
+
 .login-form-container {
     /* margin-left: auto;
     margin-right: auto;
@@ -455,6 +456,17 @@ color: #606060
   }
 }
 /* video index css starts here */
+.index-navbar{
+    height: 800px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.index-page{
+    display: flex;
+    flex-direction: row;
+}
 .thumbnail{
     width: 300px;
     height: 150px;
