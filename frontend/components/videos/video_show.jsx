@@ -25,7 +25,7 @@ export default class VideoShow extends React.Component {
     
 
     render() {
-        
+        // debugger;
         const video = this.props.video;
         if (!video) {
             return null;
@@ -42,6 +42,8 @@ export default class VideoShow extends React.Component {
                     <div className="show-information">
                         <div className="title-container">
                             <div className="show-title">{this.props.video.title}</div>
+                            <div className="show-viewcount">{this.props.video.view_count}</div>
+                            <div className="show-viewcount">{this.props.video.date_created}</div>
                             <LikesandDislikes
                                 id={this.props.video.id}
                                 update={this.props.update}
@@ -66,7 +68,7 @@ export default class VideoShow extends React.Component {
 
                         <div className="description-container">
                             {/* <div className="description-title">Description:</div> */}
-
+                            <div className="video-creator">{this.props.video.creator}</div>
                             <div className="show-description">{this.props.video.description}</div>
                         </div>
                         <div className="review-container">
