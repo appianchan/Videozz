@@ -13,7 +13,7 @@ Video.destroy_all
 User.create!(username: "ilovevideos", password: "abcdefg")
 x = User.first
 User.create!(username: "hunter12", password: "abcdefg")
-u = User.first
+u = User.last
 User.create!(username: "hunter3", password: "abcdefg")
 z = User.last
 User.create!(username: "hunter4", password: "abcdefg")
