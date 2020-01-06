@@ -73,6 +73,26 @@ padding:0;
     float: left;
     
 }
+.right-side-nav{
+    display: flex;
+    align-items: center;
+}
+.fa-linkedin{
+    font-size: 24px;
+    margin-left: 24px;
+    color: rgb(92, 91, 91);
+}
+.fa-angellist{
+    font-size: 24px;
+    margin-left: 24px;
+    color: rgb(92, 91, 91)
+}
+
+.fa-github{
+    font-size: 24px;
+    margin-left: 24px;
+    color:rgb(92, 91, 91);
+}
 .nav-2 {
     /* float: right; */
     border-radius: 2px;
@@ -86,6 +106,7 @@ padding:0;
     padding-bottom: 5px;
     padding-left: 11px;
     padding-right: 11px;
+    margin-left: 24px;
 }
 
 

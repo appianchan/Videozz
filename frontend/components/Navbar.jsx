@@ -12,8 +12,18 @@ const Navbar = () => (
             </Link>
 
         </header>
+        <div className="right-side-nav">
+            <Route exact path="/">
+                <a href="https://www.linkedin.com/in/anthony-chan-02381a81/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://angel.co/anthony-chan-26"><i class="fab fa-angellist"></i></a>
+                <a href="https://github.com/appianchan"><i class="fab fa-github"></i></a>
+            </Route>
+            
+            
+            <Route exact path="/" component={GreetingContainer} />
+
+        </div>
         
-        <Route exact path="/" component={GreetingContainer} />
 
     </div>
 );
