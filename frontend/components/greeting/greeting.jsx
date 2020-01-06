@@ -12,16 +12,19 @@ class Greeting extends React.Component {
     if (this.props.user) {
         return (
             <div className="greeting-text-block">
-                <h3 className="greeting-message"> Hello {this.props.user.username} </h3>
+                {/* <h3 className="greeting-message"> Hello {this.props.user.username} </h3> */}
                 <button className="logout-button" onClick={this.props.logout}>Logout </button>
             </div>
         );
     } else {
         return (
             <div className="nav-2">
-                {/* <p>{this.props.errors.responseJSON}</p> */}
-                <Link className="signup-button" to="/signup">Signup</Link>
-                <Link className="login-button" to="/login">Login</Link>
+                
+                <Link className="signup-button" to="/signup">
+                    <i class="fas fa-user-circle"></i>
+                    <div className="signin-words">SIGN IN</div>
+                </Link>
+                {/* <Link className="login-button" to="/login">Login</Link> */}
             </div>
         );
     }

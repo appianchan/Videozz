@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleButtonSubmit = this.handleButtonSubmit.bind(this);
         // this.renderErrors = this.renderErrors.bind(this);
     }
     handleInput(type) {
@@ -23,18 +24,22 @@ class SessionForm extends React.Component {
         this.props.processForm(user)
         .then(() => this.props.history.push("/"));
     }
+  handleButtonSubmit(e) {
+    e.preventDefault();
+    this.state.username = "ilovevideos";
+    this.state.password = "abcdefg"
+    const user = Object.assign({}, this.state);
+    if (this.props.formType === "Signup"){
+      this.props.login(user)
+        .then(() => this.props.history.push("/"));
+    }else{
+      this.props.processForm(user)
+        .then(() => this.props.history.push("/"));
+    }
+    
+  }
 
     renderErrors() {
-    
-            // <ul>
-            //     {this.props.errors.map.responseJSON.map((error, i) => (
-            //         <li key={`error-${i}`}>
-            //             {error}
-            //         </li>
-            //     ))}
-            // </ul>
-        
-      // debugger;
 
       if (this.props.errors instanceof Array || this.props.errors === null) {
         return (
@@ -88,8 +93,12 @@ class SessionForm extends React.Component {
             </label>
             {this.renderErrors()}
             <br/>
+          <div className="input-buttons">
+            <button type="button" className="demo-login-button" onClick={this.handleButtonSubmit}>Demo Login</button>
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
+          </div>
+         
         </form>
       </div>
     );

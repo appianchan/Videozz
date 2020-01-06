@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import React from "react";
-import {createNewUser} from "../../actions/session_actions"
+import {createNewUser} from "../../actions/session_actions";
+import { login } from "../../actions/session_actions"
 
 
 import signupForm from "./session_form";
@@ -18,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    processForm: user => dispatch(createNewUser(user))
+    processForm: user => dispatch(createNewUser(user)),
+    login: user => dispatch(login(user))
 });
 
 export default connect(
