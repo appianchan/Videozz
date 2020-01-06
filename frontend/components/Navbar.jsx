@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import GreetingContainer from './greeting/greeting_container';
+import personal from './personal/personal'
 
 
 const Navbar = () => (
@@ -13,13 +14,7 @@ const Navbar = () => (
 
         </header>
         <div className="right-side-nav">
-            <Route exact path="/">
-                <a href="https://www.linkedin.com/in/anthony-chan-02381a81/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://angel.co/anthony-chan-26"><i class="fab fa-angellist"></i></a>
-                <a href="https://github.com/appianchan"><i class="fab fa-github"></i></a>
-            </Route>
-            
-            
+            <Route exact path="/" component={personal} />
             <Route exact path="/" component={GreetingContainer} />
 
         </div>
