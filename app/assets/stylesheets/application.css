@@ -508,6 +508,7 @@ i.fa-home{
 .home-icon-text{
     font-size: 12px;
     margin-bottom: 20px;
+    color: red;
 }
 .trending{
     display: flex;
@@ -515,9 +516,12 @@ i.fa-home{
     flex-direction: column;
     width: 100%;
 }
+.trending:hover{
+    background-color: rgb(236, 236, 236);
+}
 i.fa-fire{
     font-size: 20px;
-    color: red;
+    color: rgb(92, 91, 91);
     margin-top: 20px;
     margin-bottom: 7px;
 }
@@ -532,15 +536,18 @@ i.fa-fire{
     flex-direction: column;
     width: 100%;
 }
+.subscribe:hover{
+    background-color: rgb(236, 236, 236);
+}
 i.fa-youtube-square{
     font-size: 20px;
-    color: red;
+    color: rgb(92, 91, 91);
     margin-top: 20px;
     margin-bottom: 7px;
 }
 
 .subscribe-icon-text{
-    font-size: 12px;
+    font-size: 10px;
     margin-bottom: 20px;
 }
 .Library{
@@ -549,9 +556,12 @@ i.fa-youtube-square{
     flex-direction: column;
     width: 100%;
 }
+.Library:hover{
+    background-color: rgb(236, 236, 236);
+}
 i.fa-folder{
     font-size: 20px;
-    color: red;
+    color: rgb(92, 91, 91);
     margin-top: 20px;
     margin-bottom: 7px;
 }
