@@ -90,7 +90,7 @@ class Reviews extends React.Component {
                 <div className="comment-length">{this.state.reviews.length} Comments</div>
                 <textarea
                   rows="1"
-                  cols="160"
+                  cols="80"
                   onClick={this.showButton.bind(this)}
                   className="review-textbox"
                   value={this.state.review}
