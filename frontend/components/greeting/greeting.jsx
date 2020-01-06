@@ -19,9 +19,9 @@ class Greeting extends React.Component {
     } else {
         return (
             <div className="nav-2">
-                {/* <p>{this.props.errors.responseJSON}</p> */}
-                <Link className="signup-button" to="/signup">Signup</Link>
-                <Link className="login-button" to="/login">Login</Link>
+                <i class="fas fa-user-circle"></i>
+                <Link className="signup-button" to="/signup">SIGN IN</Link>
+                {/* <Link className="login-button" to="/login">Login</Link> */}
             </div>
         );
     }

@@ -32,25 +32,22 @@ padding:0;
     display: flex;
     /* background-image: url(./YouTube-618x350.jpg); */
 }
-
+.fa-user-circle{
+    color: rgb(6, 95, 212);
+    font-size: 24px;
+}
 .signup-button{
     display: inline-flex;
     text-decoration: none;
-    color: blue;
-    font-size: 20px;
-    margin-left: 20px;
-    border-radius: 2px;
-    border-width: thin;
-    border-color: blue;
-    border-style: solid;
-    padding-top: 5px;
-    padding-right: 11px;
-    padding-bottom: 5px;
-    padding-left: 11px;
-    margin-top: 2px;
+    color: rgb(6, 95, 212);
+    font-size: 14px;
+    margin-left: 8px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+
+   
 }
 
-.login-button{
+/* .login-button{
     float: left;
     color: blue;
     text-decoration: none;
@@ -64,18 +61,31 @@ padding:0;
     border-radius: 2px;
     border-width: thin;
     margin-top: 2px;
-}
+} */
 .entire-nav-bar{
     /* border-bottom: 1px solid black; */
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 55px;
 }
 .nav-1 {
     float: left;
     
 }
 .nav-2 {
-    float: right;
+    /* float: right; */
+    border-radius: 2px;
+    border-width: thin;
+    border-color: rgb(6, 95, 212);
+    border-style: solid;
+    display:flex;
+    align-items: center;
+    margin-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
 }
 
 
@@ -273,7 +283,7 @@ padding:0;
     padding-top: 4px;
 }
 .like-parent .fas{
-    color: rgb(6, 95, 212)
+    color: rgb(6, 95, 212);
 }
 
 .dislike-parent .fas{

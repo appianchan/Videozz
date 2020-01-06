@@ -12,6 +12,7 @@ const Navbar = () => (
             </Link>
 
         </header>
+        
         <Route exact path="/" component={GreetingContainer} />
 
     </div>
