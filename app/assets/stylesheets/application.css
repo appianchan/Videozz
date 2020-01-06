@@ -476,11 +476,12 @@ color: #606060
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: 800px;
 }
 /* index navbar css starts here */
 .index-navbar{
-    height: 800px;
-    width: 64px;
+    height: 100%;
+    width: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -547,7 +548,7 @@ i.fa-youtube-square{
 }
 
 .subscribe-icon-text{
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 20px;
 }
 .Library{
@@ -591,6 +592,7 @@ i.fa-folder{
     list-style-type: none;
     display: flex;
     flex-direction: row;
+    padding-left: 0px;
 }
 
 
