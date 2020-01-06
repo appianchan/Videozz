@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    //   requestAPokemon: pokeId => dispatch(requestAPokemon(pokeId))
+    
     logout: () => dispatch(logout())
 });
 

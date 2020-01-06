@@ -118,6 +118,9 @@ padding:0;
 
     
 }
+
+
+
 .logo-sign-in{
     align-self: center;
 }
@@ -189,6 +192,11 @@ padding:0;
     /* vertical-align: top; */
 }
 
+.input-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .session-submit{
     background-color: blue;
     color: white;
@@ -197,7 +205,18 @@ padding:0;
     font-size: 25px;
     /* align-items: flex-end; */
     border-radius: 5px;
-    align-self: flex-end;
+    /* align-self: flex-end; */
+}
+.demo-login-button{
+    background-color: green;
+    color: white;
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    /* align-items: flex-end; */
+    border-radius: 5px;
+    /* align-self: flex-end; */
+    outline: none;
 }
 /* show page styling starts here */
 .show-container{

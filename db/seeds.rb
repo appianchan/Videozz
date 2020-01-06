@@ -10,6 +10,8 @@ require 'open-uri'
 User.destroy_all
 Video.destroy_all
 
+User.create!(username: "ilovevideos", password: "abcdefg")
+x = User.first
 User.create!(username: "hunter12", password: "abcdefg")
 u = User.first
 User.create!(username: "hunter3", password: "abcdefg")
