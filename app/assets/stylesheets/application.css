@@ -13,9 +13,20 @@
  *= require_tree .
  *= require_self
  */
-.body{
-    padding-bottom: 500px;
+html, body {
+
+
+
+margin:0;
+
+padding:0;
+
+
+
 }
+/* .body{
+    padding-bottom: 500px;
+} */
 .header-link {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
@@ -55,7 +66,7 @@
     margin-top: 2px;
 }
 .entire-nav-bar{
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     display: flex;
     justify-content: space-between;
 }
@@ -242,9 +253,14 @@
     color: #606060;
     padding-top: 4px;
 }
-i.fas{
+.like-parent .fas{
     color: rgb(6, 95, 212)
 }
+
+.dislike-parent .fas{
+    color: rgb(6, 95, 212);
+}
+
 .icon-container-2{
     width: 50px;
     height: 50px;
@@ -456,16 +472,98 @@ color: #606060
   }
 }
 /* video index css starts here */
-.index-navbar{
-    height: 800px;
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .index-page{
     display: flex;
     flex-direction: row;
+    width: 100%;
+}
+/* index navbar css starts here */
+.index-navbar{
+    height: 800px;
+    width: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+}
+
+
+.home{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+.home:hover{
+    background-color: rgb(236, 236, 236);
+}
+i.fa-home{
+    font-size: 20px;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 7px;
+}
+
+.home-icon-text{
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.trending{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+i.fa-fire{
+    font-size: 20px;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 7px;
+}
+
+.trending-icon-text{
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.subscribe{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+i.fa-youtube-square{
+    font-size: 20px;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 7px;
+}
+
+.subscribe-icon-text{
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.Library{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+i.fa-folder{
+    font-size: 20px;
+    color: red;
+    margin-top: 20px;
+    margin-bottom: 7px;
+}
+
+.library-icon-text{
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+/* list of videos css starts here */
+.videos{
+    background-color: rgb(248, 248, 248);
+    width: 100%;
 }
 .thumbnail{
     width: 300px;
