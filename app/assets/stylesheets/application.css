@@ -284,14 +284,24 @@ padding:0;
     width: 72%;
 }
 .title-container{
-    margin-left: 80px;
+    margin-left: 24px;
     /* margin-top: 5px; */
     /* margin-bottom: 15px; */
     /* margin-right: 80px; */
     border-bottom: 1px solid lightgray;
-    height: 50px;
+    height: 90px;
     display: flex;
+    flex-direction: column;
+}
+.title-bottom-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
+}
+.video-show-info{
+    display: flex;
+    flex-direction: row;
 }
 .show-title{
     font-size: 22px;
@@ -308,18 +318,19 @@ padding:0;
 .like-parent{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .dislike-parent{
     display: flex;
     flex-direction: row;
 }
 .likes-number{
-    font-size: 30px;
+    font-size: 25px;
     color:#606060;
     padding-top: 4px;
 }
 .dislikes-number{
-    font-size: 30px;
+    font-size: 25px;
     color: #606060;
     padding-top: 4px;
 }
@@ -392,12 +403,12 @@ i.far{
 color: #606060
 }
 .fa-thumbs-up{
-    font-size: 30px;
+    font-size: 20px;
     padding-bottom: 5px;
 
 }
 .fa-thumbs-down{
-    font-size: 30px;
+    font-size: 20px;
     
 }
 
@@ -405,6 +416,7 @@ color: #606060
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    margin-left: 24px;
 }
 .description-title{
     font-size: 30px;
@@ -441,7 +453,7 @@ color: #606060
 }
 .textarea-container{
     border-top: 1px solid lightgrey;
-    margin-left: 80px;
+    margin-left: 24px;
     margin-right: 80px;
     
 }

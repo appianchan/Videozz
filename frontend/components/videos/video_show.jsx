@@ -42,8 +42,11 @@ export default class VideoShow extends React.Component {
                     <div className="show-information">
                         <div className="title-container">
                             <div className="show-title">{this.props.video.title}</div>
-                            <div className="show-viewcount">{this.props.video.view_count}</div>
-                            <div className="show-viewcount">{this.props.video.date_created}</div>
+                            <div className="title-bottom-bar">
+                                <div className="video-show-info">
+                                    <div className="show-viewcount">{this.props.video.view_count} views · </div>
+                                    <div className="show-viewcount">{this.props.video.date_created}</div>
+                                </div>
                             <LikesandDislikes
                                 id={this.props.video.id}
                                 update={this.props.update}
@@ -52,13 +55,7 @@ export default class VideoShow extends React.Component {
                                 dislikes={this.props.video.dislikes}
                                 currentUserId={this.props.currentUserId}
                                 video={this.props.video} />
-                            {/* <Dislikes 
-                        id={this.props.video.id}
-                        update={this.props.update}
-                        likes={this.props.video.likes}
-                        dislikes={this.props.video.dislikes}
-                        currentUserId={this.props.currentUserId}
-                        video={this.props.video} /> */}
+                            </div>
                         </div>
 
                         {/* <div>
