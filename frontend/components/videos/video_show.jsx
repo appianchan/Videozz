@@ -65,8 +65,12 @@ export default class VideoShow extends React.Component {
 
                         <div className="description-container">
                             {/* <div className="description-title">Description:</div> */}
-                            <div className="video-creator">{this.props.video.creator}</div>
-                            <div className="show-description">{this.props.video.description}</div>
+                            <div><i class="fas fa-user-circle"></i></div>
+                            <div className="description-info">
+                                <div className="video-creator">{this.props.video.creator}</div>
+                                <div className="show-description">{this.props.video.description}</div>
+                            </div>
+                            
                         </div>
                         <div className="review-container">
                             <Reviews
