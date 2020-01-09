@@ -13,6 +13,15 @@ const Navbar = () => (
             </Link>
 
         </header>
+
+        
+        <form className="search-bar">
+            <input className="search-bar-text" type="text" />
+            <button className="search-bar-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        
         <div className="right-side-nav">
             <Route exact path="/" component={DemoLoginContainer} />
             <Route exact path="/" component={GreetingContainer} />

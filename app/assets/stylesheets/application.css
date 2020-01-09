@@ -663,6 +663,8 @@ color: #606060
     height: 800px;
 }
 /* index navbar css starts here */
+
+
 .index-navbar{
     height: 100%;
     width: 80px;
@@ -671,7 +673,21 @@ color: #606060
     align-items: center;
     font-size: 15px;
 }
-
+.search-bar{
+    margin-left: 120px;
+}
+.search-bar-text{
+    width: 550px;
+    height: 25px;
+    font-size: 14px;
+}
+.fa-search{
+    font-size: 14px;
+}
+.search-bar-button{
+    height: 30px;
+    width: 65px;
+}
 
 .home{
     display: flex;
