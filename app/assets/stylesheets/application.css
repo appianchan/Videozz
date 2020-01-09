@@ -314,6 +314,37 @@ padding:0;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
+}
+.title-bottom-bar-right{
+    display: flex;
+    align-items: center;
+}
+.share{
+    display: flex;
+}
+.fa-share{
+    color: rgb(90, 90, 90);
+    margin-left: 20px;
+}
+.share-text{
+    color: rgb(90, 90, 90);
+    margin-left: 5px;
+}
+.save{
+    display: flex;
+}
+.fa-save{
+    color: rgb(90, 90, 90);
+    margin-left: 25px;
+}
+.save-text{
+    color: rgb(90, 90, 90);
+    margin-left: 5px;
+}
+.fa-ellipsis-h{
+    color: rgb(90, 90, 90);
+    margin-left: 20px;
 }
 .video-show-info{
     display: flex;
@@ -685,6 +716,7 @@ color: #606060
 }
 .search-bar{
     margin-left: 250px;
+   
 }
 .search-bar-text{
     width: 550px;

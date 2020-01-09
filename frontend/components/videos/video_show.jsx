@@ -47,14 +47,27 @@ export default class VideoShow extends React.Component {
                                     <div className="show-viewcount">{this.props.video.view_count} views ·</div>
                                     <div className="show-viewcount-date">{this.props.video.date_created}</div>
                                 </div>
-                            <LikesandDislikes
-                                id={this.props.video.id}
-                                update={this.props.update}
-                                user={this.props.user}
-                                likes={this.props.video.likes}
-                                dislikes={this.props.video.dislikes}
-                                currentUserId={this.props.currentUserId}
-                                video={this.props.video} />
+                                <div className="title-bottom-bar-right">
+                                    <LikesandDislikes
+                                        id={this.props.video.id}
+                                        update={this.props.update}
+                                        user={this.props.user}
+                                        likes={this.props.video.likes}
+                                        dislikes={this.props.video.dislikes}
+                                        currentUserId={this.props.currentUserId}
+                                        video={this.props.video} />
+                                    <div className="share">
+                                        <i class="fas fa-share"></i>
+                                        <div className="share-text">SHARE</div>
+                                    </div>
+                                    <div className="save">
+                                        <i class="far fa-save"></i>
+                                        <div className="save-text">SAVE</div>
+                                    </div>
+                                    
+                                    <i class="fas fa-ellipsis-h"></i>
+                                    
+                                </div>
                             </div>
                         </div>
 
