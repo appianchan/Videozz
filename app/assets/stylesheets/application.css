@@ -80,7 +80,7 @@ padding:0;
     padding-bottom: 5px;
     padding-left: 11px;
     padding-right: 11px;
-    margin-left: 24px;
+    margin-left: 140px;
     cursor: pointer;
     outline: none;
 }
@@ -100,9 +100,13 @@ padding:0;
     align-items: center;
     height: 55px;
 }
+.navbar-left{
+    display: flex;
+    align-items: center;
+}
 .nav-1 {
     float: left;
-    
+    margin-left: 10px;
 }
 .right-side-nav{
     display: flex;
@@ -204,17 +208,19 @@ padding:0;
 
 .greeting-text-block{
     /* display: block; */
-    float: right;
+   /* margin-left: 156px; */
     /* vertical-align: top; */
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    overflow: visible;
 
 }
 
 .greeting-message{
-    display: inline-block;
+    /* display: inline-block; */
     /* width: 50%; */
-    margin-top: 10px;
+    
+    /* margin-bottom: 0px; */
     /* vertical-align: top; */
 }
 
@@ -673,14 +679,20 @@ color: #606060
     align-items: center;
     font-size: 15px;
 }
+.entire-nav-bar .fa-bars{
+    margin-left: 29px;
+    font-size: 20px;
+}
 .search-bar{
-    margin-left: 120px;
+    margin-left: 250px;
 }
 .search-bar-text{
     width: 550px;
     height: 25px;
     font-size: 14px;
+    outline: none;
 }
+
 .fa-search{
     font-size: 14px;
 }
