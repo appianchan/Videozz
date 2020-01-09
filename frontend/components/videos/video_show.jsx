@@ -2,7 +2,7 @@ import React from 'react';
 import LikesandDislikes from './likes';
 import Reviews from './reviews';
 // import Dislikes from './dislikes';
-import Playlist from './video_show_components/playlist_container.jsx'
+import Playlist from './video_show_components/playlist_container'
 
 export default class VideoShow extends React.Component {
 

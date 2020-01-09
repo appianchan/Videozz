@@ -93,7 +93,7 @@ class Reviews extends React.Component {
                   <div className="text-input-area">
                     <textarea
                       rows="1"
-                      cols="120"
+                      cols="119"
                       onClick={this.showButton.bind(this)}
                       className="review-textbox"
                       value={this.state.review}
