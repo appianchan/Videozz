@@ -95,22 +95,10 @@ padding:0;
     display: flex;
     align-items: center;
 }
-.fa-linkedin{
-    font-size: 24px;
-    margin-left: 24px;
-    color: rgb(92, 91, 91);
-}
-.fa-angellist{
-    font-size: 24px;
-    margin-left: 24px;
-    color: rgb(92, 91, 91)
-}
 
-.fa-github{
-    font-size: 24px;
-    margin-left: 24px;
-    color:rgb(92, 91, 91);
-}
+
+
+
 .nav-2 {
     /* float: right; */
     
@@ -457,7 +445,7 @@ color: #606060
     margin-bottom: 5px;
 }
 .show-description{
-    font-size: 18px;
+    font-size: 15px;
     margin-left: 0px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -652,65 +640,75 @@ i.fa-home{
     margin-bottom: 20px;
     color: red;
 }
-.trending{
+.linkedin{
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
+    text-decoration: none;
 }
-.trending:hover{
+.linkedin:hover{
     background-color: rgb(236, 236, 236);
 }
-i.fa-fire{
+i.fa-linkedin{
     font-size: 20px;
     color: rgb(92, 91, 91);
     margin-top: 20px;
     margin-bottom: 7px;
 }
 
-.trending-icon-text{
+.LinkedIn-icon-text{
     font-size: 12px;
     margin-bottom: 20px;
+    color: black;
+    
 }
-.subscribe{
+.angellist{
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
+    text-decoration: none;
 }
-.subscribe:hover{
+.angellist:hover{
     background-color: rgb(236, 236, 236);
 }
-i.fa-youtube-square{
+i.fa-angellist{
     font-size: 20px;
     color: rgb(92, 91, 91);
     margin-top: 20px;
     margin-bottom: 7px;
+
 }
 
-.subscribe-icon-text{
+.angellist-icon-text{
     font-size: 12px;
     margin-bottom: 20px;
+    color: black;
 }
-.Library{
+.github{
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
+    text-decoration: none;
 }
-.Library:hover{
+.github:hover{
     background-color: rgb(236, 236, 236);
 }
-i.fa-folder{
+i.fa-github{
     font-size: 20px;
     color: rgb(92, 91, 91);
     margin-top: 20px;
     margin-bottom: 7px;
+    text-decoration: none;
 }
 
-.library-icon-text{
+.github-icon-text{
     font-size: 12px;
     margin-bottom: 20px;
+    text-decoration: none;
+    color: black;
 }
 /* list of videos css starts here */
 .videos{
