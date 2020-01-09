@@ -21,18 +21,18 @@ export default class VideoIndexNavbar extends React.Component {
                     <i class="fas fa-home"></i>
                     <div className="home-icon-text">Home</div>
                 </div>
-                <div className="trending">
-                    <i class="fas fa-fire"></i>
-                    <div className="trending-icon-text">Trending</div>
-                </div>
-                <div className="subscribe">
-                    <i class="fab fa-youtube-square"></i>
-                    <div className="subscribe-icon-text"> Subscriptions</div>
-                </div>
-                <div className="Library">
-                    <i class="fas fa-folder"></i>
-                    <div className="library-icon-text">Library</div>
-                </div>
+                <a className="linkedin" href="https://www.linkedin.com/in/anthony-chan-02381a81/">
+                    <i class="fab fa-linkedin"></i>
+                    <div className="LinkedIn-icon-text">LinkedIn</div>
+                </a>
+                <a className="angellist" href="https://angel.co/anthony-chan-26">
+                    <i class="fab fa-angellist"></i>
+                    <div className="angellist-icon-text"> Angellist</div>
+                </a>
+                <a className="github" href="https://github.com/appianchan">
+                    <i class="fab fa-github"></i>
+                    <div className="github-icon-text">Github</div>
+                </a>
                 
                 
                 

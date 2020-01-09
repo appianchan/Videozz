@@ -88,25 +88,31 @@ class Reviews extends React.Component {
                 /> */}
               <div className="textarea-container">
                 <div className="comment-length">{this.state.reviews.length} Comments</div>
-                <textarea
-                  rows="1"
-                  cols="160"
-                  onClick={this.showButton.bind(this)}
-                  className="review-textbox"
-                  value={this.state.review}
-                  onChange={this.update("review")}
-                />
+                <div className="comment-section">
+                  <i class="fas fa-user-circle"></i>
+                  <div className="text-input-area">
+                    <textarea
+                      rows="1"
+                      cols="120"
+                      onClick={this.showButton.bind(this)}
+                      className="review-textbox"
+                      value={this.state.review}
+                      onChange={this.update("review")}
+                    />
+                    <div className="comment-button-group">
+                      <button type="button" onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit">CANCEL</button>
+                      <input 
+                      style={{ display: this.state.button === false ? "none" : "initial"}}
+                      // style={{ color: "grey" }}
+                      className={this.state.review === "" ? "comment-submit-grey" : "comment-submit-blue"}
+                      type="submit" 
+                      value="COMMENT" />
+                    </div>
+                  </div>
+                </div>
               </div>
 
-                <div className="comment-button-group">
-                  <button type="button" onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit">CANCEL</button>
-                  <input 
-                  style={{ display: this.state.button === false ? "none" : "initial"}}
-                  // style={{ color: "grey" }}
-                  className={this.state.review === "" ? "comment-submit-grey" : "comment-submit-blue"}
-                  type="submit" 
-                  value="COMMENT" />
-                </div>
+                
               
               
               
@@ -118,8 +124,11 @@ class Reviews extends React.Component {
               {this.state.reviews.map((review, i) => (
                 // <li key={`review-user`}>{review[0]}{review[1]}</li>
                 <li className="review-content">
-                  <div className="review-user">{review[0]}</div>
-                  <div className="review-body">{review[1]}</div>
+                  <i class="fas fa-user-circle"></i>
+                  <div className="review-info">
+                    <div className="review-user">{review[0]}</div>
+                    <div className="review-body">{review[1]}</div>
+                  </div>
                   </li>
                 // <li className="review-body">{review[1]}</li>
               ))}
