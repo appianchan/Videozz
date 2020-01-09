@@ -12,7 +12,7 @@ class Greeting extends React.Component {
     if (this.props.user) {
         return (
             <div className="greeting-text-block">
-                {/* <h3 className="greeting-message"> Hello {this.props.user.username} </h3> */}
+                <h3 className="greeting-message"> Hello {this.props.user.username} </h3>
                 <button className="logout-button" onClick={this.props.logout}>Logout </button>
             </div>
         );

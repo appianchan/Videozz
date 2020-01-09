@@ -6,13 +6,25 @@ import DemoLoginContainer from './personal/demologin_container.jsx'
 
 const Navbar = () => (
     <div className="entire-nav-bar">
-        <header className="nav-1">
-            <Link to="/" className="header-link">
-                <img src={window.logoURL} width='100px'
-                    height='50px' alt="logo" />
-            </Link>
+        <div className="navbar-left">
+            <i class="fas fa-bars"></i>
+            <header className="nav-1">
+                <Link to="/" className="header-link">
+                    <img src={window.logoURL} width='100px'
+                        height='50px' alt="logo" />
+                </Link>
 
-        </header>
+            </header>
+
+            
+            <form className="search-bar">
+                <input className="search-bar-text" type="text" />
+                <button className="search-bar-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        
         <div className="right-side-nav">
             <Route exact path="/" component={DemoLoginContainer} />
             <Route exact path="/" component={GreetingContainer} />
