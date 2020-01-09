@@ -49,14 +49,14 @@ padding:0;
     border-style: solid;
     display: flex;
     flex-direction: row;
-   align-items: center;
-   text-decoration: none;
-   margin-right: 15px;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 11px;
     padding-right: 11px;
-    margin-left: 24px;
+    margin-left: 15px;
 }
 .signin-words{
     font-size: 14px;
@@ -65,21 +65,34 @@ padding:0;
     color: rgb(6, 95, 212);
 }
 
-/* .login-button{
-    float: left;
-    color: blue;
-    text-decoration: none;
-    font-size: 20px;
-    border-color: blue;
-    border-style: solid;
-    padding-top: 5px;
-    padding-right: 11px;
-    padding-bottom: 5px;
-    padding-left: 11px;
+
+.demologin-button{
     border-radius: 2px;
     border-width: thin;
-    margin-top: 2px;
-} */
+    border-color: rgb(119, 11, 11);
+    border-style: solid;
+    display: flex;
+    flex-direction: row;
+   align-items: center;
+   text-decoration: none;
+   /* margin-right: 15px; */
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-left: 24px;
+    cursor: pointer;
+    outline: none;
+}
+.demologin-button .fa-user-circle{
+    color: rgb(119, 11, 11);
+}
+.demologin-words{
+    font-size: 14px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
+    margin-left: 8px;
+    color: rgb(119, 11, 11);
+}
 .entire-nav-bar{
     /* border-bottom: 1px solid black; */
     display: flex;
