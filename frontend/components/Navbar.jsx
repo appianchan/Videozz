@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import GreetingContainer from './greeting/greeting_container';
-import personal from './personal/personal'
+import DemoLoginContainer from './personal/demologin_container.jsx'
 
 
 const Navbar = () => (
@@ -14,7 +14,7 @@ const Navbar = () => (
 
         </header>
         <div className="right-side-nav">
-            <Route exact path="/" component={personal} />
+            <Route exact path="/" component={DemoLoginContainer} />
             <Route exact path="/" component={GreetingContainer} />
 
         </div>
