@@ -15,14 +15,28 @@ const Navbar = () => (
                 </Link>
 
             </header>
-
             
-            <form className="search-bar">
-                <input className="search-bar-text" type="text" />
-                <button className="search-bar-button">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form>
+            <Route exact path="/" render={() => (
+                <form className=" search-bar">
+                    <input className="search-bar-text" type="text" />
+                    <button type="button" className="search-bar-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            )} />
+            <Route path="/videos" render={() => (
+            <form className=" search-bar">
+            <input className="search-bar-text" type="text" />
+            <button type="button" className="search-bar-button">
+                <i class="fas fa-search"></i>
+            </button>
+                </form>
+            )} />
+            
+
+                
+           
+            
         </div>
         
         <div className="right-side-nav">
