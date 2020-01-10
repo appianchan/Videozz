@@ -885,6 +885,7 @@ i.fa-github{
     display: flex;
     flex-direction: row;
     padding-left: 0px;
+    flex-wrap: wrap;
 }
 
 
