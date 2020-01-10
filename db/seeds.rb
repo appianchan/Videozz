@@ -44,27 +44,27 @@ d = Video.last
 file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/vid_3.mov')
 d.video_attatchment.attach(io: file, filename: "test_video_3.mov")
 
-Video.create!(title: "Star", description: "This star was handmade with origami paper", user_id: x.id, view_count: 100, creator: "Baby-Yoda", date_created: "Jan 1, 2016")
+Video.create!(title: "Star", description: "This star was handmade with origami paper", user_id: x.id, view_count: 100, creator: "Baby_Yoda", date_created: "Jan 1, 2016")
 a = Video.last
 file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/star.mov')
 a.video_attatchment.attach(io: file, filename: "test_video_4.mov")
 
-Video.create!(title: "Stick Moving", description: "I made this stick move across the screen", user_id: t.id, view_count: 598, creator: "Dramatic-Squirrel", date_created: "Dec 11, 2017")
+Video.create!(title: "Stick Moving", description: "I made this stick move across the screen", user_id: t.id, view_count: 598, creator: "Dramatic_Squirrel", date_created: "Dec 11, 2017")
 b = Video.last
 file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/stick_motion.mov')
 b.video_attatchment.attach(io: file, filename: "test_video_5.mov")
 
-Video.create!(title: "Head Bobbing", description: "Listening to music is the best", user_id: v.id, view_count: 769, creator: "Pikachu the second", date_created: "Mar 30, 2015")
+Video.create!(title: "Head Bobbing", description: "Listening to music is the best", user_id: v.id, view_count: 769, creator: "Pikachu_the_second", date_created: "Mar 30, 2015")
 e = Video.last
 file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/Head_bobbing.mov')
 e.video_attatchment.attach(io: file, filename: "test_video_6.mov")
 
-Video.create!(title: "Thumbs up", description: "This is how a thumbs up should look like", user_id: p.id, view_count: 67, creator: "Jeanne the great", date_created: "Aug 21, 2000")
+Video.create!(title: "Thumbs up", description: "This is how a thumbs up should look like", user_id: p.id, view_count: 67, creator: "Jeanne_the_great", date_created: "Aug 21, 2000")
 f = Video.last
 file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/thumbs_up.mov')
 f.video_attatchment.attach(io: file, filename: "test_video_7.mov")
 
-Video.create!(title: "Sticky Note flipping", description: "If I had pictues on the sticky notes I could've made this a cool video", user_id: o.id, view_count: 879, creator: "Dark Plageus the Wise", date_created: "Jul 1, 2013")
+Video.create!(title: "Sticky Note flipping", description: "If I had pictues on the sticky notes I could've made this a cool video", user_id: o.id, view_count: 879, creator: "Dark_Plageus_the_Wise", date_created: "Jul 1, 2013")
 g = Video.last
 file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/Sticky-note.mov')
 g.video_attatchment.attach(io: file, filename: "test_video_8.mov")
