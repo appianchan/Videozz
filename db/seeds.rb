@@ -18,13 +18,13 @@ User.create!(username: "hunter3", password: "abcdefg")
 z = User.last
 User.create!(username: "hunter4", password: "abcdefg")
 y = User.last
-User.create!(username: "hunter4", password: "abcdefg")
+User.create!(username: "hunter5", password: "abcdefg")
 t = User.last
-User.create!(username: "hunter4", password: "abcdefg")
+User.create!(username: "hunter6", password: "abcdefg")
 v = User.last
-User.create!(username: "hunter4", password: "abcdefg")
+User.create!(username: "hunter7", password: "abcdefg")
 p = User.last
-User.create!(username: "hunter4", password: "abcdefg")
+User.create!(username: "hunter8", password: "abcdefg")
 o = User.last
 
 
