@@ -21,7 +21,7 @@ y = User.last
 User.create!(username: "hunter5", password: "abcdefg")
 t = User.last
 User.create!(username: "hunter6", password: "abcdefg")
-v = User.last
+i = User.last
 User.create!(username: "hunter7", password: "abcdefg")
 p = User.last
 User.create!(username: "hunter8", password: "abcdefg")
@@ -54,7 +54,7 @@ b = Video.last
 file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/stick_motion.mov')
 b.video_attatchment.attach(io: file, filename: "test_video_5.mov")
 
-Video.create!(title: "Head Bobbing", description: "Listening to music is the best", user_id: v.id, view_count: 769, creator: "Pikachu_the_second", date_created: "Mar 30, 2015")
+Video.create!(title: "Head Bobbing", description: "Listening to music is the best", user_id: i.id, view_count: 769, creator: "Pikachu_the_second", date_created: "Mar 30, 2015")
 e = Video.last
 file = open('https://videozz-test-bucket.s3-us-west-1.amazonaws.com/Head_bobbing.mov')
 e.video_attatchment.attach(io: file, filename: "test_video_6.mov")
