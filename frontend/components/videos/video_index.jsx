@@ -57,7 +57,7 @@ export default class VideoIndex extends React.Component {
                 );
         return (
             <div className="index-page">
-            <VideoIndexNavbar />
+            
             
 
             <section className="videos">
