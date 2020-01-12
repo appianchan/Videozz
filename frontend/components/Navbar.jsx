@@ -45,6 +45,8 @@ const Navbar = () => (
             <div className="right-side-nav">
                 <Route exact path="/" component={DemoLoginContainer} />
                 <Route exact path="/" component={GreetingContainer} />
+                <Route path="/videos" component={DemoLoginContainer} />
+                <Route path="/videos" component={GreetingContainer} />
 
             </div>
             
