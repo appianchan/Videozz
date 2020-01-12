@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom';
 import VideoShowContainer from './video_show_container';
-import VideoIndexNavbar from './video_index_navbar';
+import VideoIndexNavbar from '../video_index_navbar';
 
 
 export default class VideoIndex extends React.Component {

@@ -27,6 +27,16 @@ padding:0;
 /* .body{
     padding-bottom: 500px;
 } */
+
+.base-page{
+    display: flex;
+    flex-direction: column;
+
+}
+.base-page-layout{
+    display: flex;
+    flex-direction: row;
+}
 .header-link {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: flex;
@@ -278,9 +288,10 @@ padding:0;
 .show-container{
     display: flex;
     flex-direction: column;
+    width: 1360px;
 }
 .show-video{
-    display: inline-block;
+    /* display: inline-block; */
 }
 .video-container{
     text-align: center;
