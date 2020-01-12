@@ -2,13 +2,11 @@ import React from "react";
 import { Route, Switch, Link } from "react-router-dom";
 import GreetingContainer from './greeting/greeting_container';
 import DemoLoginContainer from './personal/demologin_container.jsx';
-import VideoIndexNavBar from './videos/video_index_navbar';
+import VideoIndexNavBar from './videos/video_index_navbar.js';
 
 
 const Navbar = () => (
     <div>
-        <VideoIndexNavbar />
-    
         <div className="entire-nav-bar">
             <div className="navbar-left">
                 <i class="fas fa-bars"></i>
@@ -52,6 +50,7 @@ const Navbar = () => (
             
 
         </div>
+        <VideoIndexNavBar />
     </div>
 );
 
