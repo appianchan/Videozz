@@ -40,7 +40,7 @@ export default class Navbar extends React.Component{
                         </button>
                     </form>
                 )} /> */}
-                <Route path="/" render={() => (
+                <Route exact path="/" render={() => (
                     <SearchBar func={this.props.func}/>
                 )} />
                 <Route path="/videos" render={() => (
