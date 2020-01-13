@@ -164,7 +164,7 @@ export default class Search extends React.Component {
                         {final}
                         
                     </ul>
-                    <p className="search-second-section-title">Other Videos For You</p>
+                    <p className="search-second-section-title" hidden={final2.length === 0 ? "true" : ""}>Other Videos For You</p>
                     <ul className="video-search-list">
                         {/* <img className="thumbnail" src="https://cdn.britannica.com/45/5645-050-B9EC0205/head-treasure-flower-disk-flowers-inflorescence-ray.jpg" /> */}
                         {final2}
