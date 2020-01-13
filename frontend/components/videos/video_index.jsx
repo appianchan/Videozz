@@ -52,9 +52,9 @@ export default class VideoIndex extends React.Component {
             return null;
         }
         // debugger;
-            const holder = videos.forEach(video =>
-                    {video.title}
-                );
+            // const holder = videos.forEach(video =>
+            //         {video.title}
+            //     );
         return (
             <div className="index-page">
             

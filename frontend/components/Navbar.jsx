@@ -1,12 +1,22 @@
 import React from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link, Redirect } from "react-router-dom";
 import GreetingContainer from './greeting/greeting_container';
 import DemoLoginContainer from './personal/demologin_container.jsx';
+import SearchBar from "./search_bar/search_bar";
 
 
 
-const Navbar = () => (
     
+export default class Navbar extends React.Component{
+    
+    constructor(props) {
+        super(props);
+    }
+
+
+    render(){
+        // debugger;
+    return(
         <div className="entire-nav-bar">
             <div className="navbar-left">
                 <i class="fas fa-bars"></i>
@@ -18,21 +28,23 @@ const Navbar = () => (
 
                 </header>
                 
-                <Route exact path="/" render={() => (
-                    <form className=" search-bar">
-                        <input className="search-bar-text" type="text" />
-                        <button type="button" className="search-bar-button">
+                {/* <Route exact path="/" render={() => (
+                    <form className="search-bar" onSubmit={this.handleSubmit}>
+                        <input 
+                        className="search-bar-text" 
+                        type="text" 
+                        value={this.state.search}
+                        onChange={this.handleInput('search')}/>
+                        <button type="submit" className="search-bar-button">
                             <i class="fas fa-search"></i>
                         </button>
                     </form>
+                )} /> */}
+                <Route exact path="/" render={() => (
+                    <SearchBar func={this.props.func}/>
                 )} />
                 <Route path="/videos" render={() => (
-                <form className=" search-bar">
-                <input className="search-bar-text" type="text" />
-                <button type="button" className="search-bar-button">
-                    <i class="fas fa-search"></i>
-                </button>
-                    </form>
+                    <SearchBar />
                 )} />
                 
 
@@ -52,8 +64,7 @@ const Navbar = () => (
             
 
         </div>
-        
-    
-);
+     )   
+    }
+}
 
-export default Navbar;
