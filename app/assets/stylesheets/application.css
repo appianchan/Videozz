@@ -707,9 +707,10 @@ color: #606060
 /* video index css starts here */
 .index-page{
     display: flex;
+    background-color: rgb(248, 248, 248);
     flex-direction: row;
     width: 100%;
-    height: 800px;
+    height: 100vh;
 }
 /* index navbar css starts here */
 
@@ -848,6 +849,7 @@ i.fa-github{
 .videos{
     background-color: rgb(248, 248, 248);
     width: 100%;
+    height: 100%;
 }
 .thumbnail{
     width: 319.984px;
@@ -906,4 +908,70 @@ i.fa-github{
     flex-direction: column;
     margin-left: 20px;
     margin-bottom: 40px;
+}
+
+/* searchbar css begins here */
+.search-page{
+    background-color: rgb(248, 248, 248);
+    width: 100%;
+    height: 100%;
+}
+.search-videos{
+    
+}
+.search-second-section-title{
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 20px;
+}
+.video-search-list{
+    display: flex;
+    flex-direction: column;
+}
+.video-search-element-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.thumbnail-search{
+    width: 240px;
+    height: 136px;
+}
+
+.search-video-info{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-search-title{
+    size: 20px;
+    font-weight: bold;
+}
+
+.video-search-middle-element{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 8px;
+}
+.video-search-creator{
+    font-size: 14px;
+    color: rgb(90, 90, 90);
+}
+
+.video-search-viewcount{
+    font-size: 14px;
+    color: rgb(90, 90, 90);
+    margin-left: 3px;
+}
+.video-search-datecreated{
+    font-size: 14px;
+    color: rgb(90, 90, 90);
+    margin-left: 3px;
+}
+
+.video-search-description{
+    font-size: 14px;
+    color: rgb(90, 90, 90);
 }
