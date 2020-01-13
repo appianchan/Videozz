@@ -28,11 +28,35 @@ export default class Search extends React.Component {
                         break;
                     }
                 }
+            
+
+            }
+            if (video.title === this.state.search){
+                wow.push(video);
             }
             
             
         })
-        debugger;
+
+        this.props.videos.forEach(video => {
+            if (video.creator.length > this.state.search.length) {
+                for (let i = 0; i <= (video.creator.length - this.state.search.length); i++) {
+                    const x = video.creator.substring(i, i + this.state.search.length);
+                    if (x === this.state.search && !wow.includes(video)) {
+                        wow.push(video);
+                        break;
+                    }
+                }
+
+
+            }
+            if (video.creator === this.state.search) {
+                wow.push(video);
+            }
+
+
+        })
+        
         
         const final = wow.map(video =>
             <li className="video-index-element-container" key={video.id}>
@@ -104,7 +128,7 @@ export default class Search extends React.Component {
         if (this.props.videos[0] === undefined) {
             return null;
         }
-        debugger;
+        
         return (
             <div className="index-page">
 
