@@ -6,16 +6,16 @@ import { Link, Route } from 'react-router-dom';
 export default class Search extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-            search: this.props.location.state.search || ""
-        }
         debugger;
+        this.state = {
+            search: this.props.location.state.search || "",
+        }
     }
 
     componentDidMount() {
         this.props.requestAllVideos();
     }
-
+   
     render() {
 
 
@@ -57,9 +57,6 @@ export default class Search extends React.Component {
         if (this.props.videos[0] === undefined) {
             return null;
         }
-        // debugger;
-        const holder = videos.forEach(video => { video.title }
-        );
         return (
             <div className="index-page">
 

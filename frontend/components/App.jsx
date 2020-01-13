@@ -62,6 +62,7 @@ export default class App extends React.Component {
                 <Route exact path="/" component={VideoIndexContainer} />
                 <Route exact path="/videos/:videoId" component={VideoShowContainer} />
                 <Route exact path="/search" component={SearchContainer} />
+                {/* <Route exact path="/search" render={() => <SearchContainer keyProp={"rawr"}  />} /> */}
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <AuthRoute path="/signup" component={SignupFormContainer} />
             </Switch>

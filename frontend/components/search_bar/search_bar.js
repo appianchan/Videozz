@@ -9,6 +9,7 @@ export default class SearchBar extends React.Component{
             redirect: false
         }
         this.handleInput = this.handleInput.bind(this);
+        // this.reloadRoute = this.reloadRoute.bind(this);
         // this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleInput(type) {
@@ -16,12 +17,9 @@ export default class SearchBar extends React.Component{
             this.setState({ [type]: e.target.value });
         };
     }
-    // handleSubmit(e){
-    //     e.preventDefault();
-    //     debugger;
-    //     this.props.func(this.state.search);
-        
-        
+    // reloadRoute () {
+    //     router.push({ pathname: '/empty' });
+    //     router.replace({ pathname: '/search' });
     // }
 
 
@@ -37,10 +35,12 @@ export default class SearchBar extends React.Component{
             <div className="search-bar">
                 <input className="search-bar-text" type="text" onChange={this.handleInput("search")} />
                 <Link 
+                // onClick={this.reloadRoute}
                 className="search-bar-button" 
                 to={{pathname: '/search',
                 state: {
-                    search: this.state.search
+                    search: this.state.search,
+                    
                 }}}>
                 <i class="fas fa-search"></i>
                 </ Link>
