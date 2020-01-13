@@ -6,18 +6,35 @@ import { Link, Route } from 'react-router-dom';
 export default class Search extends React.Component {
     constructor(props){
         super(props);
-        // debugger;
-        this.state = {
-            search: this.props.location.state.search || ""
-            // search_result: []
+        debugger;
+        
+        if (this.props.location.state !== undefined){
+            this.state = {
+                search: this.props.location.state.search
+            }
+            this.setSearch(this.props.location.state.search)
+        } else {
+            this.state = {
+                search: localStorage.getItem('Search')
+            }
+            this.forceUpdate();
         }
+        
+        
+        this.setSearch = this.setSearch.bind(this);
     }
 
     componentDidMount() {
         this.props.requestAllVideos();
+        // this.setSearch(this.state.search);
+    }
+
+    setSearch(option){
+        localStorage.setItem('Search', option);
     }
    
     render() {
+        debugger;
         const wow = [];
         const others = [];
         this.props.videos.forEach(video => {
