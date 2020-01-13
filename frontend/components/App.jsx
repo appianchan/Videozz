@@ -8,6 +8,7 @@ import VideoIndexContainer from "./videos/video_index_container";
 import Navbar from "./Navbar";
 import VideoShowContainer from "./videos/video_show_container";
 import VideoIndexNavBar from "./video_index_navbar";
+import SearchContainer from "./search_bar/search_container"
 
 // import logo from '/Users/anthonychan/Desktop/Fullstack Project/app/assets/stylesheets/YouTube-618x350.jpg';
 
@@ -21,7 +22,7 @@ const App = () => (
             <Switch>
                     <Route exact path="/" component={VideoIndexContainer } />
                     <Route exact path="/videos/:videoId" component={VideoShowContainer} />
-                    {/* <Route exact path="/search" component={SearchContainer} /> */}
+                    <Route exact path="/search" component={SearchContainer} />
                     <AuthRoute path="/login" component={LoginFormContainer} />
                     <AuthRoute path="/signup" component={SignupFormContainer} />
             </Switch>

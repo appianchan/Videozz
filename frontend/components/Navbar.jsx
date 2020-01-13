@@ -1,12 +1,38 @@
 import React from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, Link, Redirect } from "react-router-dom";
 import GreetingContainer from './greeting/greeting_container';
 import DemoLoginContainer from './personal/demologin_container.jsx';
 
 
 
-const Navbar = () => (
     
+export default class Navbar extends React.Component{
+    
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            redirect: false,
+            search: ""
+        };
+        // this.handleInput = this.handleInput.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    // handleInput(type) {
+    //     return e => {
+    //         this.setState({ [type]: e.target.value });
+    //     };
+    // }
+    // handleSubmit(){
+    //     // this.setState({redirect: true});
+    // }
+
+
+    render(){
+
+    if (this.state.redirect === true) {
+        return <Redirect to='/search' />;
+    } else { return(
         <div className="entire-nav-bar">
             <div className="navbar-left">
                 <i class="fas fa-bars"></i>
@@ -18,7 +44,19 @@ const Navbar = () => (
 
                 </header>
                 
-                <Route exact path="/" render={() => (
+                {/* <Route exact path="/" render={() => (
+                    <form className="search-bar" onSubmit={this.handleSubmit}>
+                        <input 
+                        className="search-bar-text" 
+                        type="text" 
+                        value={this.state.search}
+                        onChange={this.handleInput('search')}/>
+                        <button type="submit" className="search-bar-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                )} /> */}
+                <Route path="/" render={() => (
                     <form className=" search-bar">
                         <input className="search-bar-text" type="text" />
                         <button type="button" className="search-bar-button">
@@ -52,8 +90,7 @@ const Navbar = () => (
             
 
         </div>
-        
-    
-);
-
-export default Navbar;
+     )   
+    }
+}
+}
