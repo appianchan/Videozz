@@ -3,7 +3,14 @@ import { Link, Route } from 'react-router-dom';
 // import VideoShowContainer from './video_show_container';
 
 
-export default class VideoIndex extends React.Component {
+export default class Search extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            search: this.props.location.state.search || ""
+        }
+        debugger;
+    }
 
     componentDidMount() {
         this.props.requestAllVideos();

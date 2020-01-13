@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch, Link, Redirect } from "react-router-dom";
 import GreetingContainer from './greeting/greeting_container';
 import DemoLoginContainer from './personal/demologin_container.jsx';
+import SearchBar from "./search_bar/search_bar";
 
 
 
@@ -10,29 +11,12 @@ export default class Navbar extends React.Component{
     
     constructor(props) {
         super(props);
-
-        this.state = {
-            redirect: false,
-            search: ""
-        };
-        // this.handleInput = this.handleInput.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
     }
-    // handleInput(type) {
-    //     return e => {
-    //         this.setState({ [type]: e.target.value });
-    //     };
-    // }
-    // handleSubmit(){
-    //     // this.setState({redirect: true});
-    // }
 
 
     render(){
-
-    if (this.state.redirect === true) {
-        return <Redirect to='/search' />;
-    } else { return(
+        // debugger;
+    return(
         <div className="entire-nav-bar">
             <div className="navbar-left">
                 <i class="fas fa-bars"></i>
@@ -57,20 +41,10 @@ export default class Navbar extends React.Component{
                     </form>
                 )} /> */}
                 <Route path="/" render={() => (
-                    <form className=" search-bar">
-                        <input className="search-bar-text" type="text" />
-                        <button type="button" className="search-bar-button">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
+                    <SearchBar func={this.props.func}/>
                 )} />
                 <Route path="/videos" render={() => (
-                <form className=" search-bar">
-                <input className="search-bar-text" type="text" />
-                <button type="button" className="search-bar-button">
-                    <i class="fas fa-search"></i>
-                </button>
-                    </form>
+                    <SearchBar />
                 )} />
                 
 
@@ -93,4 +67,4 @@ export default class Navbar extends React.Component{
      )   
     }
 }
-}
+
