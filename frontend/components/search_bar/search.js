@@ -8,8 +8,8 @@ export default class Search extends React.Component {
         super(props);
         // debugger;
         this.state = {
-            search: this.props.location.state.search || "",
-            search_result: []
+            search: this.props.location.state.search || ""
+            // search_result: []
         }
     }
 
@@ -18,26 +18,23 @@ export default class Search extends React.Component {
     }
    
     render() {
-        if (this.props.videos[0] === undefined) {
-            return null;
-        }
-        // debugger;
-        
-        // debugger;
+        const wow = [];
         this.props.videos.forEach(video => {
             if (video.title.length > this.state.search.length){
                 for(let i = 0; i <= (video.title.length - this.state.search.length); i++){
                     const x = video.title.substring(i, i + this.state.search.length);
-                    if(x === this.state.search){
-                        this.state.search_result.push(video);
+                    if(x === this.state.search && !wow.includes(video)){
+                        wow.push(video);
+                        break;
                     }
                 }
             }
             
             
         })
+        debugger;
         
-        this.state.search_result.map(video =>
+        const final = wow.map(video =>
             <li className="video-index-element-container" key={video.id}>
                 <Link
                     className="thumbnail"
@@ -104,9 +101,9 @@ export default class Search extends React.Component {
 
 
         // );
-        // if (this.props.videos[0] === undefined) {
-        //     return null;
-        // }
+        if (this.props.videos[0] === undefined) {
+            return null;
+        }
         debugger;
         return (
             <div className="index-page">
@@ -118,7 +115,7 @@ export default class Search extends React.Component {
                     {/* <img src={`${this.props.videos[0].videoUrl}`} /> */}
                     <ul className="video-index-list">
                         {/* <img className="thumbnail" src="https://cdn.britannica.com/45/5645-050-B9EC0205/head-treasure-flower-disk-flowers-inflorescence-ray.jpg" /> */}
-                        {this.state.search_result}
+                        {final}
                     </ul>
 
                 </section>
