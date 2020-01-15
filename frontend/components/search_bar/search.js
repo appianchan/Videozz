@@ -6,7 +6,6 @@ import { Link, Route } from 'react-router-dom';
 export default class Search extends React.Component {
     constructor(props){
         super(props);
-        debugger;
         
         if (this.props.location.state !== undefined){
             this.state = {
@@ -34,14 +33,15 @@ export default class Search extends React.Component {
     }
    
     render() {
-        debugger;
         const wow = [];
         const others = [];
         this.props.videos.forEach(video => {
             if (video.title.length > this.state.search.length){
                 for(let i = 0; i <= (video.title.length - this.state.search.length); i++){
-                    const x = video.title.substring(i, i + this.state.search.length);
-                    if(x === this.state.search && !wow.includes(video)){
+                    const x = video.title.substring(i, i + this.state.search.length).toLowerCase();
+                    const y = this.state.search.toLowerCase();
+                    
+                    if(x === y && !wow.includes(video)){
                         wow.push(video);
                         break;
                     }
@@ -49,6 +49,7 @@ export default class Search extends React.Component {
             
 
             }
+            
             if (video.title === this.state.search){
                 wow.push(video);
             }
@@ -60,7 +61,7 @@ export default class Search extends React.Component {
             if (video.creator.length > this.state.search.length) {
                 for (let i = 0; i <= (video.creator.length - this.state.search.length); i++) {
                     const x = video.creator.substring(i, i + this.state.search.length);
-                    if (x === this.state.search && !wow.includes(video)) {
+                    if (x.toLowerCase() === this.state.search.toLowerCase() && !wow.includes(video)) {
                         wow.push(video);
                         break;
                     }
