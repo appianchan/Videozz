@@ -5,19 +5,21 @@ import { Link, Route } from 'react-router-dom';
 
 export default class Search extends React.Component {
     constructor(props){
+        
         super(props);
-        debugger;
         
         if (this.props.location.state !== undefined){
             this.state = {
-                search: this.props.location.state.search
+                search: this.props.location.state.search,
+                message: "Other Videos For You"
             }
             this.setSearch(this.props.location.state.search)
         } else {
             this.state = {
-                search: localStorage.getItem('Search')
+                search: localStorage.getItem('Search'),
+                message: "Other Videos For You"
             }
-            this.forceUpdate();
+            // this.forceUpdate();
         }
         
         
@@ -26,22 +28,32 @@ export default class Search extends React.Component {
 
     componentDidMount() {
         this.props.requestAllVideos();
-        // this.setSearch(this.state.search);
+    }
+
+    componentDidUpdate(){
+        
+        if (this.state.search !== localStorage.getItem('Search')){
+            this.setState({ search: localStorage.getItem('Search')})
+        }
     }
 
     setSearch(option){
         localStorage.setItem('Search', option);
     }
+    
    
     render() {
-        debugger;
+
         const wow = [];
         const others = [];
         this.props.videos.forEach(video => {
             if (video.title.length > this.state.search.length){
+                debugger;
                 for(let i = 0; i <= (video.title.length - this.state.search.length); i++){
-                    const x = video.title.substring(i, i + this.state.search.length);
-                    if(x === this.state.search && !wow.includes(video)){
+                    const x = video.title.substring(i, i + this.state.search.length).toLowerCase();
+                    const y = this.state.search.toLowerCase();
+                    
+                    if((y !== "") && x === y && !wow.includes(video)){
                         wow.push(video);
                         break;
                     }
@@ -49,7 +61,9 @@ export default class Search extends React.Component {
             
 
             }
-            if (video.title === this.state.search){
+            debugger;
+
+            if (video.title.toLowerCase() === this.state.search.toLowerCase()){
                 wow.push(video);
             }
             
@@ -60,7 +74,7 @@ export default class Search extends React.Component {
             if (video.creator.length > this.state.search.length) {
                 for (let i = 0; i <= (video.creator.length - this.state.search.length); i++) {
                     const x = video.creator.substring(i, i + this.state.search.length);
-                    if (x === this.state.search && !wow.includes(video)) {
+                    if (x !== "" && x.toLowerCase() === this.state.search.toLowerCase() && !wow.includes(video)) {
                         wow.push(video);
                         break;
                     }
@@ -68,7 +82,7 @@ export default class Search extends React.Component {
 
 
             }
-            if (video.creator === this.state.search) {
+            if (video.creator.toLowerCase() === this.state.search.toLowerCase()) {
                 wow.push(video);
             }
 
@@ -148,7 +162,13 @@ export default class Search extends React.Component {
                 </Link>
             </li>
         )
-        
+        debugger;
+        if(wow.length === 0){
+            this.state.message = "No Videos Matches Your Search"
+        }
+        if (wow.length > 0) {
+            this.state.message = "Other Videos For You"
+        }
 
        
         if (this.props.videos[0] === undefined) {
@@ -164,7 +184,16 @@ export default class Search extends React.Component {
                         {final}
                         
                     </ul>
-                    <p className="search-second-section-title" hidden={final2.length === 0 ? "true" : ""}>Other Videos For You</p>
+
+                    <p 
+                    className="search-second-section-title" 
+                    // hidden={final2.length === 0 ? "true" : ""}
+                    >
+                        {this.state.message}
+                        </p>
+
+
+
                     <ul className="video-search-list">
                         {/* <img className="thumbnail" src="https://cdn.britannica.com/45/5645-050-B9EC0205/head-treasure-flower-disk-flowers-inflorescence-ray.jpg" /> */}
                         {final2}

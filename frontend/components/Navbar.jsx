@@ -13,6 +13,9 @@ export default class Navbar extends React.Component{
         super(props);
     }
 
+    // randomGen(){
+
+    // }
 
     render(){
         // debugger;
@@ -41,9 +44,13 @@ export default class Navbar extends React.Component{
                     </form>
                 )} /> */}
                 <Route exact path="/" render={() => (
-                    <SearchBar func={this.props.func}/>
+                    <SearchBar />
                 )} />
                 <Route path="/videos" render={() => (
+                    <SearchBar key={Math.random()}/>
+                )} />
+
+                <Route path="/search" render={() => (
                     <SearchBar />
                 )} />
                 
