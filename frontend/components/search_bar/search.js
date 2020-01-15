@@ -25,12 +25,14 @@ export default class Search extends React.Component {
 
     componentDidMount() {
         this.props.requestAllVideos();
+        
         // this.setSearch(this.state.search);
     }
 
     setSearch(option){
         localStorage.setItem('Search', option);
     }
+    
    
     render() {
         const wow = [];
