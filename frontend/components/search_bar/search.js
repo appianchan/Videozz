@@ -5,6 +5,7 @@ import { Link, Route } from 'react-router-dom';
 
 export default class Search extends React.Component {
     constructor(props){
+        
         super(props);
         
         if (this.props.location.state !== undefined){
@@ -16,7 +17,7 @@ export default class Search extends React.Component {
             this.state = {
                 search: localStorage.getItem('Search')
             }
-            this.forceUpdate();
+            // this.forceUpdate();
         }
         
         
@@ -25,8 +26,13 @@ export default class Search extends React.Component {
 
     componentDidMount() {
         this.props.requestAllVideos();
+    }
+
+    componentDidUpdate(){
         
-        // this.setSearch(this.state.search);
+        if (this.state.search !== localStorage.getItem('Search')){
+            this.setState({ search: localStorage.getItem('Search')})
+        }
     }
 
     setSearch(option){
@@ -35,6 +41,7 @@ export default class Search extends React.Component {
     
    
     render() {
+
         const wow = [];
         const others = [];
         this.props.videos.forEach(video => {
@@ -51,8 +58,8 @@ export default class Search extends React.Component {
             
 
             }
-            
-            if (video.title === this.state.search){
+
+            if (video.title.toLowerCase() === this.state.search.toLowerCase()){
                 wow.push(video);
             }
             
@@ -71,7 +78,7 @@ export default class Search extends React.Component {
 
 
             }
-            if (video.creator === this.state.search) {
+            if (video.creator.toLowerCase() === this.state.search.toLowerCase()) {
                 wow.push(video);
             }
 

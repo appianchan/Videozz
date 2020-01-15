@@ -13,10 +13,10 @@ export default class SearchBar extends React.Component{
         // this.handleSubmit = this.handleSubmit.bind(this);
         
     }
-
-    // componentDidMount(){
-    //     this.enterToSubmit();
-    // }
+    componentDidUpdate(){
+        localStorage.setItem('Search', this.state.search);
+    }
+    
     handleInput(type) {
         return e => {
             this.setState({ [type]: e.target.value });
@@ -61,7 +61,6 @@ export default class SearchBar extends React.Component{
                 to={{pathname: '/search',
                 state: {
                     search: this.state.search,
-                    
                 }}}>
                 <i class="fas fa-search"></i>
                 </ Link>
