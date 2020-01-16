@@ -13,17 +13,26 @@ export default class VideoIndex extends React.Component {
             views: "0",
             date_created: "Jan 15, 2020",
             title: "",
-            description: ""
+            description: "",
+            photoFile: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
     handleInput(type) {
         return e => {
             this.setState({ [type]: e.target.value });
         };
     }
-    handleSubmit(){
+    handleFile(e){
+        debugger;
+        this.setState({photoFile: e.currentTarget.files[0]})
+    }
+    handleSubmit(e){
+        e.preventDefault();
+        // const formData = new FormData();
+        // formData.append('')
         this.props.history.push("/");
     }
 
@@ -45,6 +54,7 @@ export default class VideoIndex extends React.Component {
                         value={this.state.title}
                         onChange={this.handleInput('title')}
                     />
+                <input type="file" onChange={this.handleFile}></input>
                 </label>
 
                 <input className="upload-submit" type="submit" value="Upload" />
