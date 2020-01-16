@@ -28,13 +28,40 @@ export default class Upload extends React.Component {
     }
     handleFile(e){
         const file = e.currentTarget.files[0];
-        const fileReader = new FileReader();
-        fileReader.onloadend = () => {
+        if (file.size > 20000000){
+            this.setState({ photoFile: null, photoUrl: null})
+        } else {
+            const fileReader = new FileReader();
+            fileReader.onloadend = () => {
 
-            this.setState({photoFile: file, photoUrl: URL.createObjectURL(file)})
+                this.setState({ photoFile: file, photoUrl: URL.createObjectURL(file) })
+            }
+            if (file) {
+                fileReader.readAsDataURL(file);
+            }
         }
-        if (file){
-            fileReader.readAsDataURL(file);
+            
+        
+    }
+    renderErrors() {
+
+        if (this.props.errors instanceof Array || this.props.errors === null) {
+            return (
+                []
+            )
+        } else {
+            // debugger;
+            console.log(this.props.errors);
+            return (
+                // this.props.errors.responseJSON
+                <ul>
+                    {this.props.errors.responseJSON.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            );
         }
     }
     handleSubmit(e){
@@ -59,11 +86,18 @@ export default class Upload extends React.Component {
     }
 
     render() {
-        const preview = this.state.photoUrl ? <video src={this.state.photoUrl} controls></video> : null;
-        debugger;
+        const preview = this.state.photoUrl ? 
+            <video width="100%" height="100%" src={this.state.photoUrl} controls></video> : 
+            <label for="filez" className="initial-upload-button-container"><i class="fas fa-upload"></i> &nbsp;&nbsp;<input className="hidden-button" id="filez" type="file" onChange={this.handleFile}></input><label className="initial-upload-button" for="filez">Choose A Video</label></label>;
+        // debugger;
+        const preview_button = this.state.photoUrl ? <label className="alt-upload-button-container"><i class="fas fa-upload"></i>&nbsp;&nbsp;<input className="hidden-button" id="filez2" type="file" onChange={this.handleFile}></input><label for="filez2">Choose Another Video Instead</label></label> : null ;
         return (
             <form onSubmit={this.handleSubmit} className="upload-container">
-            {preview}
+                <div className="upload-file-container">
+                    {preview}
+                </div>
+                {preview_button}
+            
                <label>Title:
                     <input type="text"
                         className="upload-title"
@@ -73,12 +107,12 @@ export default class Upload extends React.Component {
                </label>
                
                 <label>Description:
-                    <input type="text"
+                    <textarea row="60" col="700"
                         className="upload-description"
                         value={this.state.description}
                         onChange={this.handleInput('description')}
                     />
-                <input type="file" onChange={this.handleFile}></input>
+                {/* <input type="file" onChange={this.handleFile}></input> */}
                 </label>
 
                 <input className="upload-submit" type="submit" value="Upload" />

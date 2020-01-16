@@ -8,14 +8,16 @@ import Upload from './upload';
 
 export const mapStateToProps = state => {
 
+    const errors = state.errors.session;
+    state.errors.session = null;
     const currentUserId = state.session.id;
-    // const username = state.entities.users[currentUserId].username;
     if (currentUserId !== undefined) {
         var user = state.entities.users[currentUserId].username;
     }
     return ({
         currentUserId: currentUserId,
-        user: user || ""
+        user: user || "",
+        errors: errors
     })
 
 };
