@@ -9,6 +9,7 @@ import Navbar from "./Navbar";
 import VideoShowContainer from "./videos/video_show_container";
 import VideoIndexNavBar from "./video_index_navbar";
 import SearchContainer from "./search_bar/search_container";
+import UploadContainer from "./videos/upload_video/upload_container";
 
 // import logo from '/Users/anthonychan/Desktop/Fullstack Project/app/assets/stylesheets/YouTube-618x350.jpg';
 
@@ -62,6 +63,7 @@ export default class App extends React.Component {
                 <Route exact path="/" component={VideoIndexContainer} />
                 <Route exact path="/videos/:videoId" component={VideoShowContainer} />
                 <Route exact path="/search" component={SearchContainer} />
+                <Route exact path="/upload" component={UploadContainer} />
                 {/* <Route exact path="/search" render={() => <SearchContainer keyProp={"rawr"}  />} /> */}
                 <AuthRoute path="/login" component={LoginFormContainer} />
                 <AuthRoute path="/signup" component={SignupFormContainer} />

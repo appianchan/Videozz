@@ -714,6 +714,10 @@ color: #606060
 }
 /* index navbar css starts here */
 
+.index-top-bar{
+    display: flex;
+    flex-direction: row;
+}
 
 .index-navbar{
     height: 100%;
