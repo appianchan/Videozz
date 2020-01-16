@@ -4,6 +4,16 @@ class Api::VideosController < ApplicationController
     render :index
   end
 
+  def create
+    @video = Video.new(video_params)
+    if @video.save
+      render json: {message: "you uploaded!"}
+    else
+      render json: @video.errors.full_messages
+    end
+  end
+
+
   def show
     @video = Video.find_by(id: params[:id])
     render :show
@@ -19,7 +29,7 @@ class Api::VideosController < ApplicationController
 
   private
   def video_params
-    params.require(:video).permit(:likes)
+    params.require(:video).permit(:title, :description, :reviews, :creator, :date_created, :likes, :video_attatchment, :view_count, :user_id)
   end
 
 
