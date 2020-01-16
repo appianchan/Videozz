@@ -61,7 +61,6 @@ export default class Search extends React.Component {
             
 
             }
-            debugger;
 
             if (video.title.toLowerCase() === this.state.search.toLowerCase()){
                 wow.push(video);
@@ -162,7 +161,6 @@ export default class Search extends React.Component {
                 </Link>
             </li>
         )
-        debugger;
         if(wow.length === 0){
             this.state.message = "No Videos Matches Your Search"
         }

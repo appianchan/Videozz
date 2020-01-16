@@ -20,6 +20,7 @@ export default class Upload extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleFile = this.handleFile.bind(this);
+        this.modalChanges = this.modalChanges.bind(this);
     }
     handleInput(type) {
         return e => {
@@ -84,6 +85,59 @@ export default class Upload extends React.Component {
         });
         // this.props.history.push("/")
     }
+    modalChanges(){
+        // Get the modal
+        var modal = document.getElementById("upload-modal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("Upload-form-info");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        debugger;
+        // When the user clicks the button, open the modal 
+        if (modal !== null){
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+        
+    }
+
+    renderErrors() {
+
+        if (this.props.errors instanceof Array || this.props.errors === null) {
+            return (
+                []
+            )
+        } else {
+            // debugger;
+            console.log(this.props.errors);
+            return (
+                // this.props.errors.responseJSON
+                <ul>
+                    {this.props.errors.responseJSON.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
+    }
 
     render() {
         const preview = this.state.photoUrl ? 
@@ -91,29 +145,39 @@ export default class Upload extends React.Component {
             <label for="filez" className="initial-upload-button-container"><i class="fas fa-upload"></i> &nbsp;&nbsp;<input className="hidden-button" id="filez" type="file" onChange={this.handleFile}></input><label className="initial-upload-button" for="filez">Choose A Video</label></label>;
         // debugger;
         const preview_button = this.state.photoUrl ? <label className="alt-upload-button-container"><i class="fas fa-upload"></i>&nbsp;&nbsp;<input className="hidden-button" id="filez2" type="file" onChange={this.handleFile}></input><label for="filez2">Choose Another Video Instead</label></label> : null ;
+        // this.modalChanges();
+        debugger;
         return (
             <form onSubmit={this.handleSubmit} className="upload-container">
                 <div className="upload-file-container">
                     {preview}
                 </div>
                 {preview_button}
+                <button type="button" id="Upload-form-info" onClick={this.modalChanges}>Fill Out Video Info</button>
+                
             
-               <label>Title:
+                <div id="upload-modal" className="upload-modal">
+                    <label>Title:
                     <input type="text"
-                        className="upload-title"
-                        value={this.state.title}
-                        onChange={this.handleInput('title')}
-                    />
-               </label>
-               
-                <label>Description:
+                            className="upload-title"
+                            value={this.state.title}
+                            onChange={this.handleInput('title')}
+                        />
+                    </label>
+
+                    <label>Description:
                     <textarea row="60" col="700"
-                        className="upload-description"
-                        value={this.state.description}
-                        onChange={this.handleInput('description')}
-                    />
-                {/* <input type="file" onChange={this.handleFile}></input> */}
-                </label>
+                            className="upload-description"
+                            value={this.state.description}
+                            onChange={this.handleInput('description')}
+                        />
+                        {/* <input type="file" onChange={this.handleFile}></input> */}
+                    </label>
+                    <span className="close">&times;</span>
+                </div>
+               
+                {this.renderErrors()}
+
 
                 <input className="upload-submit" type="submit" value="Upload" />
            </form>

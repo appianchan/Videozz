@@ -26,6 +26,7 @@ export default class SearchBar extends React.Component{
         var code = event.keyCode || event.which;
         if (code === 13) { //13 is the enter keycode
             event.preventDefault();
+            debugger;
             document.getElementById("myBtn").click();
         } 
     }
