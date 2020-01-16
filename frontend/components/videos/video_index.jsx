@@ -5,6 +5,9 @@ import VideoIndexNavbar from '../video_index_navbar';
 
 
 export default class VideoIndex extends React.Component {
+    constructor(props){
+        super(props);
+    }
 
     componentDidMount() {
         this.props.requestAllVideos();
