@@ -15,7 +15,6 @@ export default class VideoIndex extends React.Component {
 
     upload(e){
         e.preventDefault();
-        debugger;
         if (this.props.user === "") {
             this.props.history.push("/login")
         } else {
@@ -68,6 +67,7 @@ export default class VideoIndex extends React.Component {
             // const holder = videos.forEach(video =>
             //         {video.title}
             //     );
+            // debugger;
         return (
             <div className="index-page">
             

@@ -4,8 +4,6 @@ import GreetingContainer from './greeting/greeting_container';
 import DemoLoginContainer from './personal/demologin_container.jsx';
 import SearchBar from "./search_bar/search_bar";
 
-
-
     
 export default class Navbar extends React.Component{
     
