@@ -9,7 +9,7 @@ class Api::VideosController < ApplicationController
     if @video.save
       render json: {message: "you uploaded!"}
     else
-      render json: @video.errors.full_messages
+      render json: @video.errors.full_messages, status: 422
     end
   end
 

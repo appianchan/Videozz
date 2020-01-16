@@ -14,7 +14,8 @@ export default class Upload extends React.Component {
             date_created: "Jan 15, 2020",
             title: "",
             description: "",
-            photoFile: null
+            photoFile: null,
+            photoUrl: null
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -26,8 +27,15 @@ export default class Upload extends React.Component {
         };
     }
     handleFile(e){
-        debugger;
-        this.setState({photoFile: e.currentTarget.files[0]})
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+
+            this.setState({photoFile: file, photoUrl: URL.createObjectURL(file)})
+        }
+        if (file){
+            fileReader.readAsDataURL(file);
+        }
     }
     handleSubmit(e){
         e.preventDefault();
@@ -46,17 +54,16 @@ export default class Upload extends React.Component {
             data: formData,
             contentType: false,
             processData: false
-        }).then(
-            (response) => console.log(response.message),
-            (response) => console.log(response.responseJSON)
-            );
+        });
         // this.props.history.push("/")
     }
 
     render() {
-
+        const preview = this.state.photoUrl ? <video src={this.state.photoUrl} controls></video> : null;
+        debugger;
         return (
-           <form onSubmit={this.handleSubmit} className="upload-container">
+            <form onSubmit={this.handleSubmit} className="upload-container">
+            {preview}
                <label>Title:
                     <input type="text"
                         className="upload-title"
