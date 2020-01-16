@@ -5,9 +5,22 @@ import VideoIndexNavbar from '../video_index_navbar';
 
 
 export default class VideoIndex extends React.Component {
+    constructor(props){
+        super(props);
+    }
 
     componentDidMount() {
         this.props.requestAllVideos();
+    }
+
+    upload(e){
+        e.preventDefault();
+        debugger;
+        if (this.props.user === "") {
+            this.props.history.push("/login")
+        } else {
+            this.props.history.push("/upload")
+        }
     }
 
     render() {
@@ -61,7 +74,13 @@ export default class VideoIndex extends React.Component {
             
 
             <section className="videos">
-                <div className="recommended">Recommended</div>
+                    <div className="index-top-bar">
+                        <div className="recommended">Recommended</div>
+                        <div className="upload-text" onClick={this.upload.bind(this)}>
+                            Upload A Video
+                        </div>
+                    </div>
+                
                 {/* <img src={`${this.props.videos[0].videoUrl}`} /> */}
                 <ul className="video-index-list">
                     {/* <img className="thumbnail" src="https://cdn.britannica.com/45/5645-050-B9EC0205/head-treasure-flower-disk-flowers-inflorescence-ray.jpg" /> */}
