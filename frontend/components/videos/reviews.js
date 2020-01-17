@@ -56,13 +56,13 @@ class Reviews extends React.Component {
           var newvideo = this.props.video;
           newvideo.reviews = empty;
           // newvideo.reviews = "this is hardd"
-          this.props.update(newvideo).then(
+          
           this.setState(state => ({
             reviews: empty,
             review: "Add a public comment...",
             reviewcounter: false,
             button: false
-          })));
+          }));
         }
         
     }
