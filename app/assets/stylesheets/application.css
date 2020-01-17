@@ -922,11 +922,13 @@ i.fa-github{
 
 
 .video-index-list{
+    background-color: rgb(248, 248, 248);
     list-style-type: none;
     display: flex;
     flex-direction: row;
     padding-left: 0px;
     flex-wrap: wrap;
+    margin-bottom: 0px;
 }
 
 
@@ -1005,14 +1007,14 @@ i.fa-github{
 .upload-container{
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
     
 }
 .upload-button-group{
     display: flex;
     margin-top: 10px;
-    justify-content: space-between;
+    justify-content: center;
     /* width: 1000px; */
 }
 .Upload-form-info{
@@ -1103,12 +1105,7 @@ i.fa-github{
 .upload-modal{
   display: flex;
   flex-direction: column;
-  background-color: #fefefe;
-  /* margin: 15% auto; 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 500px; 
-  height: 500px;
+
 }
 .upload-information{
     display: flex;
@@ -1116,12 +1113,6 @@ i.fa-github{
     height: 100%;
 }
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
 
 .upload-title{
     font-size: 20px;
@@ -1142,11 +1133,7 @@ i.fa-github{
     height: 250px;
 }
 
-.close{
-    width:30px;
-    height: 30px;
-    text-align: center;
-}
+
 
 .upload-submit{
     width: 200px;
@@ -1161,5 +1148,13 @@ i.fa-github{
     cursor: pointer;
     margin-top: 5px;
     align-self: center;
-    
+    margin-bottom: 20px;
 }
+
+.loading{
+    font-size: 50px;
+    margin-left: 540px;
+    margin-top: 220px;
+    width: 220px;
+}
+

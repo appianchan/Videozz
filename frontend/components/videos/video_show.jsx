@@ -8,11 +8,15 @@ export default class VideoShow extends React.Component {
 
     constructor(props){
         super(props);
-    
+        debugger;
         this.state = {
-            video: this.props.video || []
+            title: this.props.video || []
         };
-        
+        this.updateReviews = this.updateReviews.bind(this);
+    }
+    updateReviews(video){  
+        this.props.update(video);
+        debugger;
     }
     componentDidMount() {
         const videoId = this.props.videoId;
@@ -22,6 +26,14 @@ export default class VideoShow extends React.Component {
         // }
         // this.props.update(this.props.video);
     }
+
+    // componentDidUpdate(prevProps) {
+    //     const videoId = this.props.videoId;
+    //     debugger;
+    //     if (prevProps.video.id != videoId) {
+    //         this.props.requestAVideo(videoId);
+    //     }
+    // }
     
 
     render() {
@@ -29,7 +41,7 @@ export default class VideoShow extends React.Component {
         const video = this.props.video;
         if (!video) {
             return null;
-        }
+        } 
         // debugger;
         return (
             
@@ -88,7 +100,7 @@ export default class VideoShow extends React.Component {
                         <div className="review-container">
                             <Reviews
                                 id={this.props.video.id}
-                                update={this.props.update}
+                                update={this.updateReviews}
                                 requestAVideo={this.props.requestAVideo}
                                 reviews={this.props.video.reviews}
                                 user={this.props.user}
