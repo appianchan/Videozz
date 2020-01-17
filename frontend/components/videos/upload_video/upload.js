@@ -174,51 +174,45 @@ export default class Upload extends React.Component {
         </div> : 
         
         null ;
-        const loading = this.state.loading === true ? <div>Loading...</div> : 
-            <div id="upload-modal" className="upload-modal">
-                {preview_button}
-                <div className="upload-information">
-                    <p className="upload-title">Title: </p>
-                    <input type="text"
-                        className="upload-title-info"
-                        value={this.state.title}
-                        onChange={this.handleInput('title')}
-                    />
-
-
-                    <p className="upload-description">Description: </p>
-                    <textarea row="500" col="1500"
-                        className="upload-description-info"
-                        value={this.state.description}
-                        onChange={this.handleInput('description')}
-                    />
-                    {/* <input type="file" onChange={this.handleFile}></input> */}
-                </div>
-                {/* {this.state.errors} */}
-                {this.renderErrors()}
-
-                <input className="upload-submit" type="submit" value="Upload" />
-            </div>
-        // this.modalChanges();
-        return (
+            
+        const entire_page = this.state.loading ? <div className="loading">Loading ...</div> : 
             <form onSubmit={this.handleSubmit} className="upload-container">
                 <div className="upload-file-container">
                     {preview}
                 </div>
-                
+
                 {/* {preview_button} */}
-                
-                
-                {loading}
-                
+
+
+                <div id="upload-modal" className="upload-modal">
+                    {preview_button}
+                    <div className="upload-information">
+                        <p className="upload-title">Title: </p>
+                        <input type="text"
+                            className="upload-title-info"
+                            value={this.state.title}
+                            onChange={this.handleInput('title')}
+                        />
+
+
+                        <p className="upload-description">Description: </p>
+                        <textarea row="500" col="1500"
+                            className="upload-description-info"
+                            value={this.state.description}
+                            onChange={this.handleInput('description')}
+                        />
+                        {/* <input type="file" onChange={this.handleFile}></input> */}
+                    </div>
+                    {/* {this.state.errors} */}
+                    {this.renderErrors()}
+
+                    <input className="upload-submit" type="submit" value="Upload" />
+                </div>
+
+            </form> ;
+        return (
+            <div className="upload-top">{entire_page}</div>
             
-                
-               
-                
-
-
-                
-           </form>
         )
     }
 }

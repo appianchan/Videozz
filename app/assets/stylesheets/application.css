@@ -1150,3 +1150,11 @@ i.fa-github{
     align-self: center;
     margin-bottom: 20px;
 }
+
+.loading{
+    font-size: 50px;
+    margin-left: 540px;
+    margin-top: 220px;
+    width: 220px;
+}
+
