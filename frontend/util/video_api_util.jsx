@@ -12,10 +12,12 @@ export const fetchVideo = id => (
     })
 );
 
-export const updateVideo = video => (
+export const updateVideo = video => {
+    debugger
+    return (
     $.ajax({
-        method: 'PATCH',
+        method: 'PUT',
         url: `/api/videos/${video.id}`,
         data: { video }
-    })
-);
+    }))
+};

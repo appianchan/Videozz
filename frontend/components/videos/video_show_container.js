@@ -8,7 +8,7 @@ import VideoShow from './video_show';
 
 
 export const mapStateToProps = (state, ownProps) => {
-    // debugger;
+    debugger;
 
     const videoId = ownProps.match.params['videoId'];
     const currentUserId = state.session.id;
@@ -19,7 +19,8 @@ export const mapStateToProps = (state, ownProps) => {
     
     
     return ({
-        video: selectAVideo(state, videoId),
+        // video: selectAVideo(state, videoId),
+        video: state.entities.videos[videoId],
         videoId: videoId,
         currentUserId: currentUserId,
         user: user || ""

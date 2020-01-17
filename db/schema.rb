@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_16_104912) do
+ActiveRecord::Schema.define(version: 2020_01_17_045856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,11 +59,10 @@ ActiveRecord::Schema.define(version: 2020_01_16_104912) do
     t.integer "user_id", null: false
     t.integer "view_count", null: false
     t.text "likes", default: [], array: true
-    t.text "reviews", default: [], array: true
     t.text "dislikes", default: [], array: true
-    t.text "subscribers", default: [], array: true
     t.string "date_created"
     t.string "creator"
+    t.text "reviews", array: true
     t.index ["title"], name: "index_videos_on_title"
     t.index ["user_id"], name: "index_videos_on_user_id"
   end

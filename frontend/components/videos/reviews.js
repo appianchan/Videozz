@@ -55,7 +55,7 @@ class Reviews extends React.Component {
           empty.unshift([this.state.user, this.state.review]);
           var newvideo = this.props.video;
           newvideo.reviews = empty;
-
+          // newvideo.reviews = "this is hardd"
           this.props.update(newvideo).then(
           this.setState(state => ({
             reviews: empty,
@@ -77,7 +77,7 @@ class Reviews extends React.Component {
     
 
     render() {
-      //  debugger;
+       debugger;
         return (
           <div>
             <form className="comment-form" onSubmit={this.handleSubmit}>
