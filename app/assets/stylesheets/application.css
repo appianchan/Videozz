@@ -1012,7 +1012,7 @@ i.fa-github{
 .upload-button-group{
     display: flex;
     margin-top: 10px;
-    justify-content: space-between;
+    justify-content: center;
     /* width: 1000px; */
 }
 .Upload-form-info{

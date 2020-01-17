@@ -16,7 +16,8 @@ export default class Upload extends React.Component {
             description: "",
             photoFile: null,
             photoUrl: null,
-            errors: []
+            errors: [],
+            loading: false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -68,6 +69,7 @@ export default class Upload extends React.Component {
     }
     handleSubmit(e){
         e.preventDefault();
+        this.setState({loading: true});
         const formData = new FormData();
         formData.append('video[title]', this.state.title);
         formData.append('video[description]', this.state.description);
@@ -88,8 +90,8 @@ export default class Upload extends React.Component {
             processData: false
         }).then(
             response => console.log(response.message),
-            response => this.setState({errors: response.responseJSON})
-        )
+            response => this.setState({errors: response.responseJSON, loading: false})
+        ).then(() => this.setState({loading: false})).then(() => this.props.history.push("/"))
         
             
             
@@ -172,6 +174,31 @@ export default class Upload extends React.Component {
         </div> : 
         
         null ;
+        const loading = this.state.loading === true ? <div>Loading...</div> : 
+            <div id="upload-modal" className="upload-modal">
+                {preview_button}
+                <div className="upload-information">
+                    <p className="upload-title">Title: </p>
+                    <input type="text"
+                        className="upload-title-info"
+                        value={this.state.title}
+                        onChange={this.handleInput('title')}
+                    />
+
+
+                    <p className="upload-description">Description: </p>
+                    <textarea row="500" col="1500"
+                        className="upload-description-info"
+                        value={this.state.description}
+                        onChange={this.handleInput('description')}
+                    />
+                    {/* <input type="file" onChange={this.handleFile}></input> */}
+                </div>
+                {/* {this.state.errors} */}
+                {this.renderErrors()}
+
+                <input className="upload-submit" type="submit" value="Upload" />
+            </div>
         // this.modalChanges();
         return (
             <form onSubmit={this.handleSubmit} className="upload-container">
@@ -179,33 +206,11 @@ export default class Upload extends React.Component {
                     {preview}
                 </div>
                 
-                {preview_button}
+                {/* {preview_button} */}
                 
                 
+                {loading}
                 
-                <div id="upload-modal" className="upload-modal">
-                    <div className="upload-information">
-                        <p className="upload-title">Title: </p>
-                        <input type="text"
-                            className="upload-title-info"
-                            value={this.state.title}
-                            onChange={this.handleInput('title')}
-                        />
-                        
-
-                        <p className="upload-description">Description: </p>
-                        <textarea row="500" col="1500"
-                            className="upload-description-info"
-                            value={this.state.description}
-                            onChange={this.handleInput('description')}
-                        />
-                            {/* <input type="file" onChange={this.handleFile}></input> */}
-                    </div>
-                    {/* {this.state.errors} */}
-                    {this.renderErrors()}
-                    
-                <input className="upload-submit" type="submit" value="Upload" />
-                </div>
             
                 
                
