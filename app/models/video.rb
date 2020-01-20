@@ -5,6 +5,7 @@ class Video < ApplicationRecord
     validate :ensure_video
 
     belongs_to :user
+    has_many :reviews
     has_one_attached :video_attatchment
 
     def ensure_video
