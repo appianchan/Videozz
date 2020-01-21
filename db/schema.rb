@@ -37,11 +37,15 @@ ActiveRecord::Schema.define(version: 2020_01_20_034458) do
   end
 
   create_table "dislikes", force: :cascade do |t|
+    t.integer "dislikes_number", default: 0
+    t.integer "video_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
+    t.integer "likes_number", default: 0
+    t.integer "video_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
