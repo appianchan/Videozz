@@ -1,6 +1,6 @@
 import React from 'react';
 import LikesandDislikes from './likes';
-import Reviews from './reviews';
+import Reviews from './reviews/reviews_container';
 // import Dislikes from './dislikes';
 import Playlist from './video_show_components/playlist_container'
 
@@ -8,7 +8,7 @@ export default class VideoShow extends React.Component {
 
     constructor(props){
         super(props);
-        debugger;
+        // debugger;
         this.state = {
             title: this.props.video || []
         };
@@ -99,14 +99,8 @@ export default class VideoShow extends React.Component {
                         </div>
                         <div className="review-container">
                             <Reviews
-                                id={this.props.video.id}
-                                update={this.updateReviews}
-                                requestAVideo={this.props.requestAVideo}
-                                reviews={this.props.video.reviews}
-                                user={this.props.user}
-                                currentUserId={this.props.currentUserId}
-                                video={this.props.video}
-                                username={this.props.username}
+                                video_id={this.props.video.id}
+                                creator={this.props.video.creator}
                             />
                         </div>
 
