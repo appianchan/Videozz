@@ -179,7 +179,7 @@ export default class Upload extends React.Component {
             <form onSubmit={this.handleSubmit} className="upload-container">
                 <div className="upload-file-container">
                     {preview}
-                    <p>upload a video</p>
+                    <p className="upload-video-text">Select Video to Upload</p>
                 </div>
 
                 {/* {preview_button} */}

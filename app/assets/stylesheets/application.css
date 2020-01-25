@@ -1042,10 +1042,13 @@ i.fa-github{
     border-color: black;
     border-style: solid;
 }
+.initial-upload-button-container .fa-upload{
+    font-size: 50px;
+}
 
 .initial-upload-button-container{
-    width: 200px;
-    height: 40px;
+    width: 150px;
+    height: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1065,7 +1068,10 @@ i.fa-github{
     border-radius: 5px; */
     
     
-    
+
+}
+.upload-video-text{
+    font-size: 30px;
 }
 .hidden-button{
     width: 0.1px;
