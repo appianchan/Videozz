@@ -1034,6 +1034,7 @@ i.fa-github{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 1300px;
     height: 500px;
     border-radius: 2px;
