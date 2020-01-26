@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
     has_many :videos 
     has_many :reviews
+    has_many :likes
+    has_many :dislikes
 
     def self.find_by_credentials(uname, pwd)
        user = User.find_by(username: uname )

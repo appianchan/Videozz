@@ -109,10 +109,12 @@ padding:0;
     justify-content: space-between;
     align-items: center;
     height: 55px;
+    /* margin: 0 auto; */
 }
 .navbar-left{
     display: flex;
     align-items: center;
+    
 }
 .nav-1 {
     float: left;
@@ -223,6 +225,8 @@ padding:0;
     display: flex;
     align-items: center;
     overflow: visible;
+    /* width: 500px; */
+    /* margin-left: 100px; */
 
 }
 
@@ -1034,6 +1038,7 @@ i.fa-github{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 1300px;
     height: 500px;
     border-radius: 2px;
@@ -1041,10 +1046,13 @@ i.fa-github{
     border-color: black;
     border-style: solid;
 }
+.initial-upload-button-container .fa-upload{
+    font-size: 50px;
+}
 
 .initial-upload-button-container{
-    width: 200px;
-    height: 40px;
+    width: 150px;
+    height: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1064,7 +1072,10 @@ i.fa-github{
     border-radius: 5px; */
     
     
-    
+
+}
+.upload-video-text{
+    font-size: 30px;
 }
 .hidden-button{
     width: 0.1px;

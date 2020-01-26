@@ -1,7 +1,7 @@
 export const fetchReviews = id => (
     $.ajax({
         method: 'GET',
-        url: 'api/videos/${id}',
+        url: 'api/reviews',
     })
 );
 
