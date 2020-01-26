@@ -28,6 +28,7 @@ class Reviews extends React.Component {
     }
     
   update(field) {
+    
     return (e) => {
       this.setState({[field]: e.target.value});
     };
@@ -35,7 +36,7 @@ class Reviews extends React.Component {
   showButton(){
     // document.getElementsByClassName("comment-submit").style.display="initial";
     var reviewprevious = this.state.review;
-    if (this.props.user === ""){
+    if (this.props.user === undefined){
       this.props.history.push("/login")
     }else if (this.state.reviewcounter === false){
       this.setState((state, props) => ({
@@ -99,6 +100,11 @@ class Reviews extends React.Component {
         review: "Add a public comment..."
       }))
     }
+    // redirect(){
+    //   if (this.props.user === undefined) {
+    //     this.props.history.push("/login")
+    //   }
+    // }
     
 
     render() {
@@ -135,6 +141,7 @@ class Reviews extends React.Component {
                       className="review-textbox"
                       value={this.state.review}
                       onChange={this.update("review")}
+                      // onClick={this.redirect.bind(this)}
                     />
                     <div className="comment-button-group">
                       <button type="button" onClick={this.hideButton.bind(this)} style={{ display: this.state.button === false ? "none" : "initial" }} className="cancel-submit">CANCEL</button>
