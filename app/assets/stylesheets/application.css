@@ -236,6 +236,8 @@ padding:0;
     
     /* margin-bottom: 0px; */
     /* vertical-align: top; */
+    /* min-width: 135px; */
+    min-width: 135px;
 }
 
 .logout-button{
