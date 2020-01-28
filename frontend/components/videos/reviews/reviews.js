@@ -165,7 +165,7 @@ class Reviews extends React.Component {
             </form>
             {/* <div>{this.state.reviews}</div> */}
             <ul className="review-index">
-              {arr.map((review, i) => (
+              {arr.reverse().map((review, i) => (
                 // <li key={`review-user`}>{review[0]}{review[1]}</li>
                 <li className="review-content">
                   <i class="fas fa-user-circle"></i>
