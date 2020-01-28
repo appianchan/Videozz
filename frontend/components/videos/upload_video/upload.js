@@ -17,7 +17,8 @@ export default class Upload extends React.Component {
             photoFile: null,
             photoUrl: null,
             errors: [],
-            loading: false
+            loading: false,
+            video_show: false
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -44,6 +45,9 @@ export default class Upload extends React.Component {
                 fileReader.readAsDataURL(file);
             }
         // }
+        this.setState(state => ({
+            video_show: true
+        }))
             
         
     }
@@ -160,7 +164,7 @@ export default class Upload extends React.Component {
         // debugger;
         const preview = this.state.photoUrl ? 
             <video width="100%" height="100%" src={this.state.photoUrl} controls></video> : 
-            <label for="filez" className="initial-upload-button-container"><i class="fas fa-upload"></i> &nbsp;&nbsp;<input className="hidden-button" id="filez" type="file" onChange={this.handleFile}></input><label className="initial-upload-button" for="filez"></label><p></p></label>;
+            <div className="upload-box"><label for="filez" className="initial-upload-button-container"><i class="fas fa-upload"></i> &nbsp;&nbsp;<input className="hidden-button" id="filez" type="file" onChange={this.handleFile}></input><label className="initial-upload-button" for="filez"></label></label><p className="upload-button-text">Choose A Video To Upload</p></div>;
         // debugger;
         const preview_button = this.state.photoUrl ? 
         <div className="upload-button-group">
@@ -177,15 +181,15 @@ export default class Upload extends React.Component {
             
         const entire_page = this.state.loading ? <div className="loading">Loading ...</div> : 
             <form onSubmit={this.handleSubmit} className="upload-container">
-                <div className="upload-file-container">
+                <div className="upload-file-container" >
                     {preview}
-                    <p className="upload-video-text">Select Video to Upload</p>
+
                 </div>
 
                 {/* {preview_button} */}
 
 
-                <div id="upload-modal" className="upload-modal">
+                <div id="upload-modal" className="upload-modal" style={{ display: this.state.video_show === false ? "none" : "initial" }}>
                     {preview_button}
                     <div className="upload-information">
                         <p className="upload-title">Title: </p>
