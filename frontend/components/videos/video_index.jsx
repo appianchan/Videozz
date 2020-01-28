@@ -77,7 +77,8 @@ export default class VideoIndex extends React.Component {
                     <div className="index-top-bar">
                         <div className="recommended">Recommended</div>
                         <div className="upload-text" onClick={this.upload.bind(this)}>
-                            <i class="fas fa-upload"></i>
+                            {/* <i class="fas fa-upload"></i> */}
+                            Upload a Video
                         </div>
                     </div>
                 

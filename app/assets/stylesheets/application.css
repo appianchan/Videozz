@@ -236,6 +236,8 @@ padding:0;
     
     /* margin-bottom: 0px; */
     /* vertical-align: top; */
+    /* min-width: 135px; */
+    min-width: 135px;
 }
 
 .logout-button{
@@ -1050,7 +1052,18 @@ i.fa-github{
     font-size: 50px;
 }
 
+.upload-box{
+    display: flex;
+    flex-direction: column;
+
+}
+.upload-button-text{
+    /* margin-right: 500px; */
+    font-size: 20px;
+}
+
 .initial-upload-button-container{
+    align-self: center;
     width: 150px;
     height: 90px;
     display: flex;

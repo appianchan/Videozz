@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_21_180855) do
+ActiveRecord::Schema.define(version: 2020_01_26_033348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,17 +37,17 @@ ActiveRecord::Schema.define(version: 2020_01_21_180855) do
   end
 
   create_table "dislikes", force: :cascade do |t|
-    t.integer "dislikes_number", default: 0
     t.integer "video_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "likes_number", default: 0
     t.integer "video_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
