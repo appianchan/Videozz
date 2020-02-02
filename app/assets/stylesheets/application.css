@@ -229,6 +229,11 @@ padding:0;
     /* margin-left: 100px; */
 
 }
+.greeting-text-block .fa-user-circle{
+    font-size: 32px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
 
 .greeting-message{
     /* display: inline-block; */
