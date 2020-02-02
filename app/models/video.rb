@@ -9,9 +9,9 @@ class Video < ApplicationRecord
     has_many :reviews
     has_one_attached :video_attatchment
 
-    def ensure_video
-        unless self.video_attatchment.attached?
-            errors[:video] << "Must be attached"
-        end
-    end
+    # def ensure_video
+    #     unless self.video_attatchment.attached?
+    #         errors[:video] << "Must be attached"
+    #     end
+    # end
 end
