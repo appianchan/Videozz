@@ -271,10 +271,15 @@ padding:0;
   border: none;
   cursor: pointer;
 }
-.dropdown {
+.dropdown-user {
   position: relative;
   float: left;
   
+}
+.dropdown-user .fa-user-circle{
+    font-size: 32px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .greeting-text-dropdown{
@@ -290,12 +295,30 @@ padding:0;
 .dropdown-content {
   display: flex;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: white;
   right: 70px;
-  min-width: 310px;
-  height: 500px;
+  min-width: 250px;
+  min-height: 50px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+}
+.logout-text-dropdown{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.logout-text-dropdown:hover{
+    background-color: rgb(235, 235, 235);
+}
+.logout-text-dropdown .fa-sign-out-alt{
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 20px;
+    color: rgb(100, 100, 100);
+}
+
+.logout-text{
+    font-size: 18px;
 }
 
 .logout-button{

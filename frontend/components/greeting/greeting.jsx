@@ -14,7 +14,7 @@ class Greeting extends React.Component {
     myFunction(e) {
         e.preventDefault();
         // const i = document.getElementsByClassName("dropdown-content");
-        debugger;
+        
         if(this.state.dropdown === false){
             this.setState((state, props) => ({
                 dropdown: true
@@ -50,14 +50,17 @@ class Greeting extends React.Component {
                 <i class="far fa-list-alt"></i>
                 <i class="fas fa-bell"></i>
                 
-                <div class="dropdown">
+                <div class="dropdown-user">
                     <i onClick={this.myFunction} class="fas fa-user-circle" ></i>
                     <div id="myDropdown" style={{ display: this.state.dropdown === false ? "none" : "initial" }} className="dropdown-content">
                         <div className="greeting-text-dropdown"> 
                             <i class="fas fa-user-circle"></i>
                             <h3 className="greeting-message"> {this.props.user.username} </h3>
                         </div>
-                        <div onClick={this.logout.bind(this)}><i class="fas fa-sign-out-alt"></i> &nbsp; Sign out</div>
+                        <div className="logout-text-dropdown" onClick={this.logout.bind(this)}>
+                            <i class="fas fa-sign-out-alt"></i> 
+                            <div className="logout-text">Sign out</div>
+                        </div>
                     </div>
                 </div>
             </div>
