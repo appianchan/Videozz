@@ -76,10 +76,10 @@ export default class VideoIndex extends React.Component {
             <section className="videos">
                     <div className="index-top-bar">
                         <div className="recommended">Recommended</div>
-                        <div className="upload-text" onClick={this.upload.bind(this)}>
-                            {/* <i class="fas fa-upload"></i> */}
-                            Upload a Video
-                        </div>
+                        {/* <div className="upload-text" onClick={this.upload.bind(this)}> */}
+                            
+                            {/* Upload a Video */}
+                        {/* </div> */}
                     </div>
                 
                 {/* <img src={`${this.props.videos[0].videoUrl}`} /> */}
