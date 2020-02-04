@@ -263,13 +263,68 @@ padding:0;
     min-width: 135px;
 }
 /* dropdown stuff */
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+.dropdown-other-projects{
+    /* display: flex; */
+  position: relative;
+  float: left;
+}
+
+.dropdown-content-list{
+  /* display: flex; */
+  position: absolute;
+  /* flex-direction: column; */
+  background-color: white;
+  right: 70px;
+  min-width: 250px;
+  min-height: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-project-list-intro-text{
+    padding-left: 12px;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid lightgray;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+.project-link-list{
+    display: flex;
+    flex-direction: column;
+}
+.Spaceship-Fighters{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.Spaceship-Fighters:hover{
+    background-color: rgb(235, 235, 235);
+}
+.RipCamp{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.RipCamp:hover{
+    background-color: rgb(235, 235, 235);
+}
+
+.Forgetful{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.Forgetful:hover{
+    background-color: rgb(235, 235, 235);
 }
 .dropdown-user {
   position: relative;
@@ -374,21 +429,27 @@ padding:0;
 /* show page styling starts here */
 .show-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 1360px;
     /* background-color: rgb(248, 248, 248); */
 }
 .show-video{
     /* display: inline-block; */
+    align-self: flex-start;
 }
 .video-container{
-    text-align: center;
+    /* text-align: center; */
+}
+.video-left{
+    width: 72%;
+    display: flex;
+    flex-direction: column;
 }
 
 .show-information{
     display: flex;
     flex-direction: column;
-    width: 72%;
+    width: 70%;
     margin-right: 20px;
 }
 
@@ -407,6 +468,7 @@ padding:0;
     /* height: 90px; */
     display: flex;
     flex-direction: column;
+    width: 960px;
 }
 .title-bottom-bar{
     display: flex;

@@ -4,7 +4,7 @@ import Review from "./reviews"
 
 const mapStateToProps = (state, ownProps) => {
     const user = state.entities.users[state.session.id];
-    debugger;
+    
     return ({
         user: user,
         user_id: state.session.id,
