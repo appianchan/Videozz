@@ -229,6 +229,29 @@ padding:0;
     /* margin-left: 100px; */
 
 }
+.greeting-text-block .fa-upload{
+    font-size: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    color: rgb(100, 100, 100);
+}
+.greeting-text-block .fa-list-alt{
+    font-size: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    color:  rgb(100, 100, 100);
+}
+.greeting-text-block .fa-bell{
+    font-size: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    color:  rgb(100, 100, 100);
+}
+.dropdown .fa-user-circle{
+    font-size: 32px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
 
 .greeting-message{
     /* display: inline-block; */
@@ -238,6 +261,119 @@ padding:0;
     /* vertical-align: top; */
     /* min-width: 135px; */
     min-width: 135px;
+}
+/* dropdown stuff */
+.dropdown-other-projects{
+    /* display: flex; */
+  position: relative;
+  float: left;
+}
+
+.dropdown-content-list{
+  /* display: flex; */
+  position: absolute;
+  /* flex-direction: column; */
+  background-color: white;
+  right: 70px;
+  min-width: 250px;
+  min-height: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-project-list-intro-text{
+    padding-left: 12px;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid lightgray;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+.project-link-list{
+    display: flex;
+    flex-direction: column;
+}
+.Spaceship-Fighters{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.Spaceship-Fighters:hover{
+    background-color: rgb(235, 235, 235);
+}
+.RipCamp{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.RipCamp:hover{
+    background-color: rgb(235, 235, 235);
+}
+
+.Forgetful{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.Forgetful:hover{
+    background-color: rgb(235, 235, 235);
+}
+.dropdown-user {
+  position: relative;
+  float: left;
+  
+}
+.dropdown-user .fa-user-circle{
+    font-size: 32px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.greeting-text-dropdown{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid lightgray;
+    justify-content: flex-start;
+}
+.greeting-text-dropdown .fa-user-circle{
+    font-size: 32px;
+    margin-top: 13px;
+}
+.dropdown-content {
+  display: flex;
+  position: absolute;
+  background-color: white;
+  right: 70px;
+  min-width: 250px;
+  min-height: 50px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.logout-text-dropdown{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.logout-text-dropdown:hover{
+    background-color: rgb(235, 235, 235);
+}
+.logout-text-dropdown .fa-sign-out-alt{
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 20px;
+    color: rgb(100, 100, 100);
+}
+
+.logout-text{
+    font-size: 18px;
 }
 
 .logout-button{
@@ -293,21 +429,27 @@ padding:0;
 /* show page styling starts here */
 .show-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 1360px;
     /* background-color: rgb(248, 248, 248); */
 }
 .show-video{
     /* display: inline-block; */
+    align-self: flex-start;
 }
 .video-container{
-    text-align: center;
+    /* text-align: center; */
+}
+.video-left{
+    width: 72%;
+    display: flex;
+    flex-direction: column;
 }
 
 .show-information{
     display: flex;
     flex-direction: column;
-    width: 72%;
+    width: 70%;
     margin-right: 20px;
 }
 
@@ -326,6 +468,7 @@ padding:0;
     /* height: 90px; */
     display: flex;
     flex-direction: column;
+    width: 960px;
 }
 .title-bottom-bar{
     display: flex;

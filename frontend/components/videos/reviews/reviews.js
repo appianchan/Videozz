@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 class Reviews extends React.Component {
     constructor(props) {
         super(props);
-        debugger;
+        
 
         this.state = {
             // reviews: this.props.reviews || [],
@@ -55,7 +55,7 @@ class Reviews extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger;
+        
         // if(this.state.review !== ""){
         //   const empty = this.state.reviews;
         //   empty.unshift([this.state.user, this.state.review]);
@@ -70,7 +70,7 @@ class Reviews extends React.Component {
           //   button: false
           // }));
         // }
-        debugger;
+        
         const formData = new FormData();
         formData.append('review[body]', this.state.review);
         formData.append('review[user_id]', this.props.user_id);
@@ -116,7 +116,7 @@ class Reviews extends React.Component {
             arr.push(this.props.reviews[key])
           }
         }
-        debugger;
+        
 
       }
       
@@ -165,7 +165,7 @@ class Reviews extends React.Component {
             </form>
             {/* <div>{this.state.reviews}</div> */}
             <ul className="review-index">
-              {arr.map((review, i) => (
+              {arr.reverse().map((review, i) => (
                 // <li key={`review-user`}>{review[0]}{review[1]}</li>
                 <li className="review-content">
                   <i class="fas fa-user-circle"></i>

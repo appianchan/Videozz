@@ -52,7 +52,8 @@ export default class SearchBar extends React.Component{
                 className="search-bar-text" 
                 type="text" 
                 onChange={this.handleInput("search")} 
-                onKeyPress={this.enterPressed.bind(this)} />
+                onKeyPress={this.enterPressed.bind(this)} 
+                placeholder=" Search"/>
 
 
                 <Link 
