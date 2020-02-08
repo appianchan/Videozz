@@ -375,6 +375,12 @@ padding:0;
 }
 .logout-text-dropdown:hover{
     background-color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+.logout-text-dropdown:active{
+    background-color: rgb(204, 204, 204);
+    
+    
 }
 .logout-text-dropdown .fa-sign-out-alt{
     margin-left: 10px;
