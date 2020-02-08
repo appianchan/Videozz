@@ -303,6 +303,9 @@ padding:0;
 .Spaceship-Fighters:hover{
     background-color: rgb(235, 235, 235);
 }
+.Spaceship-Fighters:active{
+    background-color: rgb(204, 204, 204);
+}
 .RipCamp{
     text-decoration: none;
     color: black;
@@ -315,6 +318,10 @@ padding:0;
     background-color: rgb(235, 235, 235);
 }
 
+.RipCamp:active{
+    background-color: rgb(204, 204, 204);
+}
+
 .Forgetful{
     text-decoration: none;
     color: black;
@@ -325,6 +332,10 @@ padding:0;
 }
 .Forgetful:hover{
     background-color: rgb(235, 235, 235);
+}
+
+.Forgetful:active{
+    background-color: rgb(204, 204, 204);
 }
 .dropdown-user {
   position: relative;
