@@ -30,7 +30,7 @@ class Greeting extends React.Component {
     handleUserBubble(e){
         // e.preventDefault();
         // debugger;
-        if (e.target.className === 'fas fa-user-circle' && this.state.dropdown_user === false) {
+        if (e.target.className === 'dropdown-user' && this.state.dropdown_user === false) {
             debugger;
             this.setState({ dropdown_user: true })
         } else {
