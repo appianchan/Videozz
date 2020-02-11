@@ -29,8 +29,12 @@ class Greeting extends React.Component {
     handleClickOutside(e){
         e.preventDefault();
         const el = document.getElementsByClassName("fa-list-alt");
-        if(el !== e.target){
-            this.setState({dropdown_list: false})
+        if(e.target.className === 'far fa-list-alt' && this.state.dropdown_list === false){
+            // debugger;
+            this.setState({dropdown_list: true})
+        } else {
+            // debugger;
+            this.setState({ dropdown_list: false })
         }
     }
     userDropdown(e) {
@@ -105,7 +109,7 @@ class Greeting extends React.Component {
                 {/* <h3 className="greeting-message"> Hello {this.props.user.username} </h3> */}
                 <i class="fas fa-upload" onClick={this.upload.bind(this)}></i>
                 <div class="dropdown-other-projects">
-                    <i class="far fa-list-alt" onClick={this.listDropdown}></i>
+                    <i class="far fa-list-alt" ></i>
                     <div style={{ display: this.state.dropdown_list === false ? "none" : "initial" }} className="dropdown-content-list">
                         <div className="dropdown-project-list-intro-text">Check out my other projects!</div>
                         <div className="project-link-list">
