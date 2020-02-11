@@ -17,13 +17,13 @@ export default class Playlist extends React.Component {
         const videos = this.props.videos.map(video =>
 
             // console.log(video)
-            <li className="video-index-element-container" key={video.id}>
+            <li className="playlist-video-index-element-container" key={video.id}>
                 <Link
-                    className="thumbnail"
+                    className="playlist-thumbnail"
                     to={`/videos/${video.id}`}
                     key={video.id}
                 >
-                    <video className="thumbnail" src={`${video.videoUrl}`}></video>
+                    <video className="playlist-thumbnail" src={`${video.videoUrl}`}></video>
                 </Link>
 
 
@@ -33,9 +33,9 @@ export default class Playlist extends React.Component {
                     key={video.id}
                 >
                     
-                    <div className="index-video-info">
+                    <div className="playlist-index-video-info">
                         <div className="playlist-video-index-title">{video.title} </div>
-                        <div className="video-index-bottom-element">
+                        <div className="playlist-video-index-bottom-element">
                             <div className="playlist-video-index-creator">{video.creator} ·</div>
                             <div className="playlist-video-index-viewcount">{video.view_count} views</div>
                         </div>

@@ -12,6 +12,42 @@ class Greeting extends React.Component {
         console.log("constructor: This props user: ", this.props.user);
         this.userDropdown = this.userDropdown.bind(this);
         this.listDropdown = this.listDropdown.bind(this);
+        this.collapse = this.collapse.bind(this);
+        this.onClickHandler = this.onClickHandler.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+        this.handleUserBubble = this.handleUserBubble.bind(this);
+    }
+
+    componentDidMount() {
+        document.addEventListener('click', this.handleClickOutside, true);
+        document.addEventListener('click', this.handleUserBubble, true);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleClickOutside, true);
+        document.removeEventListener('click', this.handleUserBubble, true);
+    }
+    handleUserBubble(e){
+        // e.preventDefault();
+        // debugger;
+        if (e.target.className === 'dropdown-user' && this.state.dropdown_user === false) {
+            debugger;
+            this.setState({ dropdown_user: true })
+        } else {
+            // debugger;
+            this.setState({ dropdown_user: false })
+        }
+    }
+
+    handleClickOutside(e){
+        // e.preventDefault();
+        if(e.target.className === 'far fa-list-alt' && this.state.dropdown_list === false){
+            // debugger;
+            this.setState({dropdown_list: true})
+        } else {
+            // debugger;
+            this.setState({ dropdown_list: false })
+        }
     }
     userDropdown(e) {
         e.preventDefault();
@@ -41,6 +77,12 @@ class Greeting extends React.Component {
             }))
         }
     }
+    onClickHandler(){
+                this.setState((state, props) => ({
+                    dropdown_user: false,
+                    dropdown_list: false
+                }))
+    }
     upload(e){
         e.preventDefault();
         this.props.history.push("/upload");
@@ -52,19 +94,26 @@ class Greeting extends React.Component {
             dropdown: false
         })))
     }
-
-
-    render(){
-        window.onclick = function (event) {
-            if (!event.target.matches('.fa-list-alt')) {
+    collapse(){
                 this.setState((state, props) => ({
                     dropdown_user: false,
                     dropdown_list: false
                 }))
-            }
-        }
-    
-    if (this.props.user) {
+    }
+
+
+    render(){
+        // window.onclick = function (event) {
+        //     if (!event.target.matches('.fa-list-alt')) {
+        //         this.setState((state, props) => ({
+        //             dropdown_user: false,
+        //             dropdown_list: false
+        //         }))
+        //     }
+        // }
+        
+        if (this.props.user) {
+            
         return (
             <div className="greeting-text-block">
                 
@@ -72,7 +121,7 @@ class Greeting extends React.Component {
                 {/* <h3 className="greeting-message"> Hello {this.props.user.username} </h3> */}
                 <i class="fas fa-upload" onClick={this.upload.bind(this)}></i>
                 <div class="dropdown-other-projects">
-                    <i class="far fa-list-alt" onClick={this.listDropdown}></i>
+                    <i class="far fa-list-alt" ></i>
                     <div style={{ display: this.state.dropdown_list === false ? "none" : "initial" }} className="dropdown-content-list">
                         <div className="dropdown-project-list-intro-text">Check out my other projects!</div>
                         <div className="project-link-list">
@@ -87,7 +136,7 @@ class Greeting extends React.Component {
                 <i class="fas fa-bell"></i>
                 
                 <div class="dropdown-user">
-                    <i onClick={this.userDropdown} class="fas fa-user-circle" ></i>
+                    <i class="fas fa-user-circle" ></i>
                     <div id="myDropdown" style={{ display: this.state.dropdown_user === false ? "none" : "initial" }} className="dropdown-content">
                         <div className="greeting-text-dropdown"> 
                             <i class="fas fa-user-circle"></i>
