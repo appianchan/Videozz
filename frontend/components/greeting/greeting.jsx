@@ -12,6 +12,26 @@ class Greeting extends React.Component {
         console.log("constructor: This props user: ", this.props.user);
         this.userDropdown = this.userDropdown.bind(this);
         this.listDropdown = this.listDropdown.bind(this);
+        this.collapse = this.collapse.bind(this);
+        this.onClickHandler = this.onClickHandler.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+    }
+
+    componentDidMount() {
+        document.addEventListener('click', this.handleClickOutside, true);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.handleClickOutside, true);
+    }
+    
+
+    handleClickOutside(e){
+        e.preventDefault();
+        const el = document.getElementsByClassName("fa-list-alt");
+        if(el !== e.target){
+            this.setState({dropdown_list: false})
+        }
     }
     userDropdown(e) {
         e.preventDefault();
@@ -41,6 +61,12 @@ class Greeting extends React.Component {
             }))
         }
     }
+    onClickHandler(){
+                this.setState((state, props) => ({
+                    dropdown_user: false,
+                    dropdown_list: false
+                }))
+    }
     upload(e){
         e.preventDefault();
         this.props.history.push("/upload");
@@ -52,19 +78,26 @@ class Greeting extends React.Component {
             dropdown: false
         })))
     }
-
-
-    render(){
-        window.onclick = function (event) {
-            if (!event.target.matches('.fa-list-alt')) {
+    collapse(){
                 this.setState((state, props) => ({
                     dropdown_user: false,
                     dropdown_list: false
                 }))
-            }
-        }
-    
-    if (this.props.user) {
+    }
+
+
+    render(){
+        // window.onclick = function (event) {
+        //     if (!event.target.matches('.fa-list-alt')) {
+        //         this.setState((state, props) => ({
+        //             dropdown_user: false,
+        //             dropdown_list: false
+        //         }))
+        //     }
+        // }
+        
+        if (this.props.user) {
+            
         return (
             <div className="greeting-text-block">
                 

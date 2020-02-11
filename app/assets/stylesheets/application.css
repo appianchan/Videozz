@@ -694,7 +694,7 @@ color: #606060
 }
 .playlist-videos{
     /* margin-top: 25px; */
-    margin-left: 30px;
+    margin-left: 20px;
     width: 300px;
 }
 .show-playlist-container{
@@ -708,6 +708,9 @@ color: #606060
 .playlist-video-index-element-container{
     display: flex;
     flex-direction: row;
+}
+.playlist-video-index-title{
+    padding-bottom: 3px;
 }
 .playlist-thumbnail{
     width: 168px;
