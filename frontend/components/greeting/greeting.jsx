@@ -15,20 +15,32 @@ class Greeting extends React.Component {
         this.collapse = this.collapse.bind(this);
         this.onClickHandler = this.onClickHandler.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
+        this.handleUserBubble = this.handleUserBubble.bind(this);
     }
 
     componentDidMount() {
         document.addEventListener('click', this.handleClickOutside, true);
+        document.addEventListener('click', this.handleUserBubble, true);
     }
 
     componentWillUnmount() {
         document.removeEventListener('click', this.handleClickOutside, true);
+        document.removeEventListener('click', this.handleUserBubble, true);
     }
-    
+    handleUserBubble(e){
+        e.preventDefault();
+        // debugger;
+        if (e.target.className === 'fas fa-user-circle' && this.state.dropdown_user === false) {
+            debugger;
+            this.setState({ dropdown_user: true })
+        } else {
+            // debugger;
+            this.setState({ dropdown_user: false })
+        }
+    }
 
     handleClickOutside(e){
         e.preventDefault();
-        const el = document.getElementsByClassName("fa-list-alt");
         if(e.target.className === 'far fa-list-alt' && this.state.dropdown_list === false){
             // debugger;
             this.setState({dropdown_list: true})
@@ -124,7 +136,7 @@ class Greeting extends React.Component {
                 <i class="fas fa-bell"></i>
                 
                 <div class="dropdown-user">
-                    <i onClick={this.userDropdown} class="fas fa-user-circle" ></i>
+                    <i class="fas fa-user-circle" ></i>
                     <div id="myDropdown" style={{ display: this.state.dropdown_user === false ? "none" : "initial" }} className="dropdown-content">
                         <div className="greeting-text-dropdown"> 
                             <i class="fas fa-user-circle"></i>
