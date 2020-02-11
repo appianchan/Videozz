@@ -28,7 +28,7 @@ class Greeting extends React.Component {
         document.removeEventListener('click', this.handleUserBubble, true);
     }
     handleUserBubble(e){
-        e.preventDefault();
+        // e.preventDefault();
         // debugger;
         if (e.target.className === 'fas fa-user-circle' && this.state.dropdown_user === false) {
             debugger;
@@ -40,7 +40,7 @@ class Greeting extends React.Component {
     }
 
     handleClickOutside(e){
-        e.preventDefault();
+        // e.preventDefault();
         if(e.target.className === 'far fa-list-alt' && this.state.dropdown_list === false){
             // debugger;
             this.setState({dropdown_list: true})
