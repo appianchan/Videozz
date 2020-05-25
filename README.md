@@ -28,6 +28,12 @@ Videozz is built with React/Redux on the frontend and Ruby on Rails in the backe
 
 <img src="./screenshots/Screen Shot 2020-05-25 at 12.45.42 PM.png">
 
+**Comments**
+
+- From the home page, click on a video picture to redirect to the page for that video. Under that video there will be the option to comment on that video with the user's account. All previous comments will also be displayed. 
+
+<img src="./screenshots/Screen Shot 2020-05-25 at 11.23.16 AM.png">
+
 
 
 
