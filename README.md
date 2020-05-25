@@ -22,6 +22,16 @@ Videozz is built with React/Redux on the frontend and Ruby on Rails in the backe
 
 <img src="./screenshots/Screen Shot 2020-05-25 at 11.21.04 AM.png">
 
+**Uploading a Video**
+
+- This option will only be available once the user has logged in. Once the user has chosen a video to upload he can preview it and edit its description and title. The user can only finish the upload if the title and description are filled. The video will then appear in on the home page. 
+
+<img src="./screenshots/Screen Shot 2020-05-25 at 12.45.42 PM.png">
+
+
+
+
+
 
 
 
